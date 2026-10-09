@@ -1,0 +1,76 @@
+name: Validate skill
+
+# Lightweight metadata checks for this Claude Code skill/plugin: the plugin
+# manifest JSON and the SKILL.md frontmatter. Tests run in tests.yml.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate .claude-plugin/plugin.json is well-formed JSON
+        run: |
+          node -e '
+            const fs = require("fs");
+            const path = ".claude-plugin/plugin.json";
+            const raw = fs.readFileSync(path, "utf8");
+            let data;
+            try {
+              data = JSON.parse(raw);
+            } catch (e) {
+              console.error("plugin.json is not valid JSON: " + e.message);
+              process.exit(1);
+            }
+            for (const key of ["name", "description", "version"]) {
+              if (!data[key]) {
+                console.error("plugin.json is missing required key: " + key);
+                process.exit(1);
+              }
+            }
+            console.log("plugin.json OK (name=" + data.name + ", version=" + data.version + ")");
+          '
+
+      - name: Validate SKILL.md YAML frontmatter
+        run: |
+          python3 - <<'PY'
+          import sys, re
+
+          path = "skills/tx-property-tax-protest/SKILL.md"
+          with open(path, "r", encoding="utf-8") as f:
+              text = f.read()
+
+          m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.DOTALL)
+          if not m:
+              print(f"{path} is missing a YAML frontmatter block (--- ... ---)")
+              sys.exit(1)
+
+          front = m.group(1)
+          try:
+              import yaml
+              data = yaml.safe_load(front)
+          except ModuleNotFoundError:
+              # PyYAML not present: fall back to a minimal top-level key check.
+              data = {}
+              for line in front.splitlines():
+                  km = re.match(r"^([A-Za-z0-9_-]+):", line)
+                  if km:
+                      data[km.group(1)] = True
+
+          if not isinstance(data, dict):
+              print(f"{path} frontmatter did not parse to a mapping")
+              sys.exit(1)
+
+          for key in ("name", "description"):
+              if key not in data or not data[key]:
+                  print(f"{path} frontmatter is missing required key: {key}")
+                  sys.exit(1)
+
+          print(f"SKILL.md frontmatter OK (name={data.get('name')})")
+          PY
