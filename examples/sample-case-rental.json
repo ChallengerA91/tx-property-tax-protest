@@ -1,0 +1,242 @@
+{
+  "_comment": "Fictional rental sample. The address, people, phone numbers and the property and market figures are invented. Cites and deadlines follow references/law-and-figures.md, deadlines.md and income-approach.md.",
+  "path": "rental",
+  "tax_year": 2027,
+  "county": "Example County",
+  "prepared_on": "2027-04-28",
+  "cad": {
+    "name": "Example County Appraisal District",
+    "address": "100 Appraisal Way, Exampleville, TX 75000",
+    "phone": "555-0100",
+    "website": "www.example-cad.invalid"
+  },
+  "filing": {
+    "methods": [
+      {
+        "method": "Online",
+        "detail": "Use the district's online filing system if it has one, and keep the confirmation."
+      },
+      {
+        "method": "Mail",
+        "detail": "Mail the protest so it is postmarked on or before the last day (Tax Code §1.08); use a method that gives a dated receipt."
+      }
+    ],
+    "hearing_documents": [
+      "Signed leases and the rent roll for the subject",
+      "Twelve months of income and expense records"
+    ],
+    "notes": [
+      "Ask the chief appraiser in writing for the district's evidence when you file. Information you request that is not delivered at least 14 days before the hearing cannot be used by the district (Tax Code §41.461; §41.67(d))."
+    ]
+  },
+  "notice_date": "2027-04-24",
+  "owner": {
+    "name": "Jordan Example",
+    "mailing_address": "PO Box 100, Exampleville, TX 75000",
+    "phone": "555-0177"
+  },
+  "subject": {
+    "address": "456 Sample Avenue, Exampleville, TX 75000",
+    "cad_account": "R000654321",
+    "legal_description": "Lot 4, Block 9, Example Heights",
+    "sqft": 1600,
+    "year_built": 1998,
+    "beds": 3,
+    "baths": 2,
+    "lot_sqft": 6500,
+    "appraised_value": 312000,
+    "land_value": 70000,
+    "improvement_value": 242000,
+    "value_history": [
+      {
+        "year": 2025,
+        "value": 255000
+      },
+      {
+        "year": 2026,
+        "value": 265000
+      }
+    ]
+  },
+  "legal_basis": {
+    "market_value_cite": "Tax Code §41.41(a)(1)",
+    "valuation_date": "2027-01-01",
+    "protest_form": "Form 50-132, Property Owner's Notice of Protest (the form is optional; counties under 120,000 population use Form 50-132-A)"
+  },
+  "tax_rates": {
+    "total": 2.3,
+    "source": "Sample tax rate sheet for the Exampleville taxing units"
+  },
+  "comps": [
+    {
+      "address": "460 Sample Avenue, Exampleville, TX 75000",
+      "price": 289000,
+      "price_type": "sale",
+      "sale_date": "2026-08-14",
+      "sqft": 1580,
+      "year_built": 1997,
+      "beds": 3,
+      "baths": 2,
+      "distance_mi": 0.1,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Smaller living area (20 sq ft)",
+          "amount": 1000
+        }
+      ]
+    },
+    {
+      "address": "12 Heights Court, Exampleville, TX 75000",
+      "price": 301000,
+      "price_type": "sale",
+      "sale_date": "2026-10-02",
+      "sqft": 1680,
+      "year_built": 2000,
+      "beds": 3,
+      "baths": 2,
+      "distance_mi": 0.5,
+      "source": "MLS export",
+      "adjustments": [
+        {
+          "label": "Larger living area (80 sq ft)",
+          "amount": -4000
+        },
+        {
+          "label": "Newer by two years",
+          "amount": -2000
+        }
+      ]
+    },
+    {
+      "address": "77 Orchard Bend, Exampleville, TX 75000",
+      "price": 276500,
+      "price_type": "sale",
+      "sale_date": "2026-06-09",
+      "sqft": 1540,
+      "year_built": 1995,
+      "beds": 3,
+      "baths": 2,
+      "distance_mi": 0.7,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Smaller living area (60 sq ft)",
+          "amount": 3000
+        },
+        {
+          "label": "Older by three years",
+          "amount": 3000
+        }
+      ]
+    },
+    {
+      "address": "300 Trial Road, Exampleville, TX 75000",
+      "price": 318000,
+      "price_type": "sale",
+      "sale_date": "2026-04-27",
+      "sqft": 1710,
+      "year_built": 1999,
+      "beds": 4,
+      "baths": 2,
+      "distance_mi": 0.9,
+      "source": "MLS export",
+      "adjustments": [
+        {
+          "label": "Larger living area (110 sq ft)",
+          "amount": -5500
+        },
+        {
+          "label": "Extra bedroom",
+          "amount": -6000
+        }
+      ]
+    },
+    {
+      "address": "21 Demonstration Drive, Exampleville, TX 75000",
+      "price": 284000,
+      "price_type": "sale",
+      "sale_date": "2026-11-20",
+      "sqft": 1620,
+      "year_built": 1996,
+      "beds": 3,
+      "baths": 2,
+      "distance_mi": 1.0,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Older by two years",
+          "amount": 2000
+        },
+        {
+          "label": "Larger living area (20 sq ft)",
+          "amount": -1000
+        }
+      ]
+    }
+  ],
+  "neighbors": [
+    {
+      "address": "452 Sample Avenue",
+      "appraised_value": 301000,
+      "sqft": 1590,
+      "year_built": 1998
+    },
+    {
+      "address": "464 Sample Avenue",
+      "appraised_value": 296000,
+      "sqft": 1610,
+      "year_built": 1998
+    },
+    {
+      "address": "468 Sample Avenue",
+      "appraised_value": 305000,
+      "sqft": 1640,
+      "year_built": 1999
+    },
+    {
+      "address": "448 Sample Avenue",
+      "appraised_value": 288000,
+      "sqft": 1560,
+      "year_built": 1997
+    },
+    {
+      "address": "472 Sample Avenue",
+      "appraised_value": 310000,
+      "sqft": 1700
+    }
+  ],
+  "market_notes": [
+    "Rents for three-bedroom homes in Example Heights were flat over the past year (sample figure).",
+    "Comparable sales closed between $276,500 and $318,000 before adjustments."
+  ],
+  "arguments": [
+    "The appraisal rose 17.7% in one year while comparable sales were flat.",
+    "The income approach, using actual rent and expenses, indicates a value well below the appraisal."
+  ],
+  "strategy": "market_value",
+  "argued_value": 285000,
+  "income": {
+    "gross_rent": 25800,
+    "vacancy_pct": 5,
+    "expenses": [
+      {
+        "label": "Property insurance",
+        "amount": 1650
+      },
+      {
+        "label": "Repairs and maintenance",
+        "amount": 2100
+      },
+      {
+        "label": "Property management",
+        "amount": 2064
+      }
+    ],
+    "cap_rate_pct": 7,
+    "cap_rate_source": "Sample broker survey of small residential rentals, 2026",
+    "rent_source": "Current lease: $2,150 per month",
+    "circuit_breaker_note": "The 20% limit on appraisal increases for non-homestead property (Tax Code §23.231) expires December 31, 2026 and is not in effect for tax year 2027. The taxable value is the market value, so market value is the number to protest. The Legislature meets in January 2027; confirm nothing changed before you file."
+  },
+  "disclaimer_text": "Sample output for a fictional property; all names, addresses and figures are invented. This package is general information, not legal, tax, or appraisal advice, and does not guarantee any reduction."
+}

@@ -1,0 +1,204 @@
+{
+  "_comment": "Fictional capped-homestead sample. The address, people, phone numbers and the property and market figures are invented. The notice shows a market value above the capped appraised value, so a lower market value saves no tax this year unless it falls below the capped value.",
+  "path": "homestead",
+  "tax_year": 2027,
+  "county": "Example County",
+  "prepared_on": "2027-04-18",
+  "cad": {
+    "name": "Example County Appraisal District",
+    "address": "100 Appraisal Way\nExampleville, TX 75000",
+    "phone": "555-0100",
+    "website": "www.example-cad.invalid"
+  },
+  "filing": {
+    "methods": [
+      {
+        "method": "Online",
+        "detail": "Use the district's online filing system if it has one, and keep the confirmation."
+      },
+      {
+        "method": "Mail",
+        "detail": "Mail the protest so it is postmarked on or before the last day (Tax Code §1.08); use a method that gives a dated receipt."
+      }
+    ],
+    "notes": [
+      "Check the notice for two values: the market value and the capped appraised value. Your tax bill uses the capped appraised value."
+    ]
+  },
+  "notice_date": "2027-04-01",
+  "owner": {
+    "name": "Sam Sample",
+    "mailing_address": "910 Illustration Court, Exampleville, TX 75000",
+    "phone": "555-0163"
+  },
+  "subject": {
+    "address": "910 Illustration Court, Exampleville, TX 75000",
+    "cad_account": "R000777888",
+    "legal_description": "Lot 7, Block 2, Sample Ridge Phase 1",
+    "subdivision": "Sample Ridge",
+    "sqft": 2400,
+    "year_built": 2010,
+    "beds": 4,
+    "baths": 3,
+    "lot_sqft": 9200,
+    "market_value": 520000,
+    "appraised_value": 462000,
+    "value_history": [
+      {
+        "year": 2025,
+        "value": 385000
+      },
+      {
+        "year": 2026,
+        "value": 420000
+      }
+    ]
+  },
+  "legal_basis": {
+    "market_value_cite": "Tax Code §41.41(a)(1)",
+    "valuation_date": "2027-01-01",
+    "protest_form": "Form 50-132, Property Owner's Notice of Protest (the form is optional; counties under 120,000 population use Form 50-132-A)"
+  },
+  "tax_rates": {
+    "total": 2.2,
+    "school": 1.1,
+    "source": "Sample tax rate sheet for the Exampleville taxing units"
+  },
+  "exemptions": {
+    "on_file": [
+      {
+        "name": "School-district residence homestead exemption",
+        "amount": 140000,
+        "applies_to": "school",
+        "cite": "Tax Code §11.13(b)"
+      }
+    ],
+    "eligible": [
+      {
+        "name": "Over-65 or disabled additional school exemption",
+        "amount": 60000,
+        "applies_to": "school",
+        "cite": "Tax Code §11.13(c)",
+        "how_to_claim": "The district must grant it without an application if your birth date is already in its records and you have the general homestead exemption. Otherwise file Form 50-114 with the appraisal district (not the Comptroller) with a copy of your Texas driver's license or state ID showing the property address. Apply no later than the first anniversary of turning 65.",
+        "documents": [
+          "Texas driver's license or state ID showing the property address"
+        ]
+      }
+    ]
+  },
+  "comps": [
+    {
+      "address": "925 Illustration Court, Exampleville, TX 75000",
+      "price": 481000,
+      "price_type": "sale",
+      "sale_date": "2026-08-20",
+      "sqft": 2420,
+      "year_built": 2010,
+      "beds": 4,
+      "baths": 3,
+      "distance_mi": 0.1,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Larger living area (20 sq ft)",
+          "amount": -1000
+        },
+        {
+          "label": "Has pool (subject has none)",
+          "amount": -12000
+        }
+      ]
+    },
+    {
+      "address": "31 Prototype Place, Exampleville, TX 75000",
+      "price": 455000,
+      "price_type": "sale",
+      "sale_date": "2026-10-02",
+      "sqft": 2350,
+      "year_built": 2009,
+      "beds": 4,
+      "baths": 3,
+      "distance_mi": 0.3,
+      "source": "MLS export",
+      "adjustments": [
+        {
+          "label": "Smaller living area (50 sq ft)",
+          "amount": 3500
+        },
+        {
+          "label": "Updated kitchen",
+          "amount": 13500
+        }
+      ]
+    },
+    {
+      "address": "77 Demo Lane, Exampleville, TX 75000",
+      "price": 489000,
+      "price_type": "sale",
+      "sale_date": "2026-06-15",
+      "sqft": 2480,
+      "year_built": 2011,
+      "beds": 4,
+      "baths": 3,
+      "distance_mi": 0.5,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Larger living area (80 sq ft)",
+          "amount": -5000
+        },
+        {
+          "label": "Extra garage bay",
+          "amount": -5000
+        }
+      ]
+    },
+    {
+      "address": "402 Mock Orchard Road, Exampleville, TX 75000",
+      "price": 468000,
+      "price_type": "sale",
+      "sale_date": "2026-11-30",
+      "sqft": 2390,
+      "year_built": 2010,
+      "beds": 4,
+      "baths": 3,
+      "distance_mi": 0.8,
+      "source": "MLS export",
+      "adjustments": [
+        {
+          "label": "Lot backs to a greenbelt",
+          "amount": -4000
+        }
+      ]
+    },
+    {
+      "address": "6 Specimen Court, Exampleville, TX 75000",
+      "price": 470000,
+      "price_type": "sale",
+      "sale_date": "2026-09-09",
+      "sqft": 2400,
+      "year_built": 2007,
+      "beds": 4,
+      "baths": 3,
+      "distance_mi": 1.0,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Older by three years",
+          "amount": 5000
+        }
+      ]
+    }
+  ],
+  "market_notes": [
+    "The notice shows a market value of $520,000 and a capped appraised value of $462,000 (last year's $420,000 plus 10%). Tax is based on the capped value; the protest is about the market value.",
+    "Comparable sales closed between $455,000 and $489,000 before adjustments (sample figures)."
+  ],
+  "arguments": [
+    "The district's market value rose 23.8% in one year while comparable sales were flat.",
+    "Every comparable sale adjusts to well below the district's market value."
+  ],
+  "strategy": "market_value",
+  "argued_value": 470000,
+  "disclaimer_text": "Sample output for a fictional property; all names, addresses and figures are invented. This package is general information, not legal, tax, or appraisal advice, and does not guarantee any reduction."
+}

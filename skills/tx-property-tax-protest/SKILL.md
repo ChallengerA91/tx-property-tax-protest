@@ -1,333 +1,224 @@
 ---
 name: tx-property-tax-protest
 description: >
-  Protest property tax appraisals in Texas. Use this skill whenever the user mentions
-  property taxes, tax protest, appraisal protest, CAD, property appraisal, or wants to
-  lower their property tax bill. Also triggers on "my property taxes are too high",
-  "protest my appraisal", "fight my property taxes", "reduce property taxes",
-  "comparable properties", "homestead exemption", or "disabled veteran exemption". This
-  skill researches the property, finds comps, builds an evidence package, and generates
-  a protest-ready letter and spreadsheet. Works for any Texas county.
+  Protest a Texas property tax appraisal, for homeowners and for rental or investment
+  property. Use this skill whenever the user mentions property taxes, a tax protest, an
+  appraisal notice, the CAD or appraisal district, an ARB hearing, comparable sales,
+  unequal appraisal, or wants to lower their property tax bill. It also covers missed
+  exemptions: homestead, over-65, disabled, and disabled veteran. The skill checks the
+  county record, finds comps and neighbor appraisals, builds an evidence package
+  (spreadsheet, protest letter, checklist, dashboard, calendar file), computes the
+  user's real deadlines, and can run a mock hearing. Works for any Texas county; the 25
+  largest have built-in filing details.
 user_invocable: true
 triggers:
   - protest property taxes
   - property tax protest
-  - fight property taxes
   - lower property taxes
+  - appraisal notice
   - appraisal protest
-  - property appraisal too high
-  - comparable properties for protest
+  - unequal appraisal
+  - ARB hearing
+  - mock hearing
+  - rental property tax
   - homestead exemption
   - disabled veteran exemption
 ---
 
-# Texas Property Tax Protest Skill
+# Texas Property Tax Protest
 
-Help the user protest their property tax appraisal with their county's Central Appraisal
-District (CAD). Produce a complete evidence package: comp analysis spreadsheet, formal
-protest letter, filing checklist, and exemption guidance.
+Take the user from an appraisal notice to a filed protest and a prepared hearing. Be direct
+and efficient: plain sentences, no jokes, no filler.
 
-## Why This Matters
+## Rules for every run
 
-Texas has no state income tax, so property taxes are high — often 2-3% of home value.
-The county appraisal district sets your home's "market value" each January 1 and your
-tax bill is based on that number. Appraisals are often inflated. Texas law gives every
-property owner the right to protest, and most protests result in some reduction. Even a
-$20,000 reduction saves ~$400-600/year. The process is free and low-risk.
+1. **One question at a time.** Ask, wait for the answer, move on. Start each step with a
+   progress line: `Step 3 of 8: Your situation`.
+2. **Facts come from `references/`, never from memory.** Do not state a dollar amount,
+   deadline, percentage or statute cite unless it is in `references/law-and-figures.md`,
+   `references/deadlines.md`, `references/income-approach.md` or `references/beyond-arb.md`.
+   Copy it exactly. If the file marks something unresolved or secondary-only, say so.
+   Take CAD details (name, address, phone, filing methods) only from
+   `scripts/county_lookup.py`, the user's notice, the CAD website, or the user. Never fill
+   them in from memory.
+3. **Check the as-of date.** The references were verified on 2026-10-08 for tax year 2027.
+   The Legislature meets from 2027-01-12 and can change exemptions and rules. If today's
+   date, or the date on the user's notice, is after that, tell the user once, early, to
+   confirm exemption amounts and deadlines with the appraisal district (CAD) before
+   relying on them.
+4. **Disclaimer, kept light.** Use this one sentence: "This is general information, not
+   legal or tax advice. Confirm figures and deadlines with your appraisal district."
+   Say it once at the start and once in Step 8 before the filing steps. Use the same sentence
+   for `disclaimer_text` in `case.json`; the spreadsheet, checklist and dashboard print it
+   as a footer. The protest letter never carries it, because it goes to the CAD. Do not
+   repeat it anywhere else.
+5. **Savings meter.** After any step that adds an exemption, corrects an error or sets a
+   stronger value, print one line: `Estimated savings so far: $X to $Y per year`. Use the
+   formulas under "What is computed" in `references/case-schema.md`, or run
+   `scripts/savings.py` once `work/case.json` is complete. Say the first time that these
+   are scenarios, not predictions.
+6. **Never invent evidence.** Comps, neighbor values, rents, expenses and cap rates come from
+   a source the user can show at the hearing. Record the source for each one. Adjustment
+   amounts must have a stated basis (paired sales, CAD data, or a market source). Mark an
+   adjustment as an estimate if it has none.
+7. **Never submit anything for the user.** Do not file a protest, upload to a CAD portal or
+   send email. Prepare it and tell them where and how to file.
 
-## Folder Structure
+## Setup
 
-```
-working_dir/
-  work/                  ← intermediate files
-    property_details.txt ← subject property info from CAD
-    comps_data.txt       ← comparable sales data
-  output/                ← final deliverables
-    comp_analysis.xlsx   ← spreadsheet with comp table and summary
-    protest_letter.docx  ← ready-to-file formal letter
-    filing_checklist.md  ← step-by-step guide with exemption info
-```
+- Create `work/` (drafts, notes, `case.json`) and `output/` (final files) in the user's
+  working folder. Both are git-ignored. Tell the user that their address and account number
+  stay in those folders.
+- The `scripts/` folder is next to this file, not in the user's folder. Run scripts by their
+  full path. Install once: `pip install -r <skill folder>/scripts/requirements.txt`.
+- Use the browser tools for the CAD site, Redfin, Zillow and similar. If a site blocks
+  automated browsing or the user has MLS or a CAD export, ask them to paste the data and
+  map it into `comps[]` or `neighbors[]`. This fallback is always allowed.
 
-Create `work/` and `output/` at the start. Keep the working directory clean.
+## The steps
 
-## Dependencies
+### Start (before Step 1)
+Give the disclaimer sentence. Ask first whether they are **preparing a protest** or
+**already have an ARB order** they want to appeal. For an order, open `references/beyond-arb.md`,
+ask for the date on the order, and compute follow-on deadlines with
+`python scripts/deadlines.py --tax-year YYYY --arb-order-date YYYY-MM-DD`. Otherwise ask
+which path applies: **homestead** (they live in it) or **rental/investment**. Tell them the
+plan in one sentence: eight steps, an evidence package at the end, and a mock hearing if
+they want one.
 
-Install before generating the evidence package:
+### Step 1: Property and county
+Ask for the address or CAD account number. Find the county, then run
+`python scripts/county_lookup.py "<county>"` for its CAD name, website, phone, protest portal,
+filing methods and quirks. Do not open `references/counties.json` directly; it is large.
+If the script reports that the county is not covered, use the Comptroller's appraisal
+district directory linked in `references/counties.md`, and take the CAD name, address and
+filing methods from the notice, the CAD website or the user. Counties marked partially
+verified need a confirmation from the CAD site before you tell the user how to file. Save
+the notes to `work/property_details.txt`.
+
+### Step 2: Notice and value
+Ask for the appraised value, the date on the notice, and whether the notice shows **one
+value or two** (a market value and a lower appraised or capped value).
+- **Homestead with two values:** put the market value in `subject.market_value` and the
+  taxable appraised value in `subject.appraised_value`. A lower market value saves tax only
+  if it falls below the appraised value (`references/law-and-figures.md` section 4). Tell
+  the user that now.
+- **Rental:** the answer tells you whether any cap on the 2027 notice is still showing
+  (see Step 5).
+- **No notice date:** ask the user to find the notice (mail or the CAD portal). If they
+  cannot, run `deadlines.py` with `--notice-date <tax year>-04-01` as a placeholder and
+  label every deadline "assumed".
+
+Run `python scripts/deadlines.py --notice-date YYYY-MM-DD --tax-year YYYY`. Tell the user
+the statutory protest deadline, the date it moves to when it falls on a weekend or holiday,
+and the last business day before it; some portals close on the original date, so advise
+filing by that earlier day. Compare the deadline with today's date. If it has passed, read
+`references/deadlines.md` for late-protest options before going on.
+
+### Step 3: Their situation
+Ask one at a time, skipping what does not apply to the path:
+purchase price and date; known problems (foundation, flood, repairs, noise, nearby
+commercial); whether the home is their homestead and whether the exemption is on file;
+age 65 or older; disabled; veteran and VA rating; surviving spouse.
+For a 65+ or disabled owner, ask whether the tax bill or notice shows a **school tax
+ceiling** (a freeze). If it does, set `tax_rates.school_ceiling: true`. Savings then leave
+out school-tax savings, and you must tell the user the figure is uncertain until they know
+the ceiling amount. For rentals, rent, vacancy and expenses are collected in Step 5.
+
+### Step 4: County record and exemptions
+Open the property on the CAD site. Record the fields listed in `references/case-schema.md`
+under `subject`, plus value history, exemptions on file, protest status, taxing units and
+their rates, and the total tax rate. Check the description line by line against what the
+user knows (square footage, baths, year built, lot size, features). Compare exemptions on
+file with `references/law-and-figures.md` sections 1 to 3. A missing exemption can be worth
+more than the protest, so flag it clearly, give the filing steps and form from that file,
+and update the savings meter. Rental owners have no homestead exemptions (those need the
+owner's principal residence), but ask whether the owner is a disabled veteran: a disabled
+veteran exemption can be designated against any one property the veteran owns, including a
+rental.
+
+### Step 5: Evidence
+- **Homestead.** Read `references/strategies.md`, then gather both kinds of evidence:
+  sales comps (CAD, Redfin or Zillow, web search, MLS if the user has it) and neighbor
+  appraisals from the CAD site for the unequal-appraisal ground. Aim for 5 to 8 sales comps (a practical target, not a legal rule).
+  Good comps are close in location, size and age, sold near January 1 of the tax year, and
+  were arm's-length sales. Those are selection guidelines, not legal rules. Follow
+  `references/unequal-appraisal.md` for the neighbor sample. Listings and online estimates
+  go in as `price_type: "listing"` or `"estimate"`; they support the argument but are not
+  counted as sales.
+- **Rental.** Read `references/income-approach.md`. Gather sales comps and neighbor
+  appraisals as above. Add the `income` block only if the user has a rent source (lease or
+  rent roll), vacancy, expenses, and a **cap rate with a source**. If they have no sourced
+  cap rate, skip the income block, point them to the sourcing section of that file, and
+  never suggest a number. Duplexes to fourplexes can lead with the income approach.
+  Tell the user, and put the same text in `income.circuit_breaker_note` if you include
+  `income`: "Texas's 20% limit on appraisal increases for non-homestead property (Tax Code
+  §23.231) is written to end after tax year 2026. Under current law it does not apply to
+  tax year 2027. The Legislature meets in 2027 and could change that, so check whether your
+  notice shows one value or two."
+
+Save raw data to `work/comps_data.txt`.
+
+### Step 6: Analysis
+Write a draft `work/case.json` as soon as you have comps and neighbors, and build it to
+`work/draft` to see the computed medians, unequal-appraisal statistics and savings. Adjust
+each comp with a stated basis. Compare the subject's CAD value per square foot with the
+neighbors. Recommend a strategy (`market_value`, `unequal_appraisal` or `both`) and an
+**argued value**, show the numbers behind them, and let the user adjust. The argued value is
+the user's opinion of value, not a formula output. Update the savings meter.
+
+### Step 7: Build the package
+Finish `work/case.json` following `references/case-schema.md`. Set `prepared_on` to today's
+date. Fill the legal fields from the references, not from memory: `legal_basis` cites, each
+`exemptions` item's amount, `cite` and `how_to_claim`. Take the `cad` and `filing` blocks
+from `python scripts/county_lookup.py "<county>" --case-fragment` when the county is
+covered. Then run:
+
 ```bash
-pip install openpyxl python-docx
+python scripts/build_package.py work/case.json --out output
 ```
 
-## Key Deadlines
+This writes `comp_analysis.xlsx`, `protest_letter.docx`, `filing_checklist.md`,
+`dashboard.html` and `deadlines.ics`. The script lists every field error at once; fix them
+and rerun. Tell the user to read the letter and the spreadsheet before filing.
 
-- **Appraisal notices** mailed: mid-April
-- **Protest deadline**: May 15 (or 30 days after the notice date, whichever is later)
-- **Informal hearings**: May-June
-- **Formal ARB hearings**: June-August
-- If past the deadline, check whether the user qualifies for a late protest (errors,
-  late notice delivery, etc.)
-
-## Workflow
-
-### Step 1: Gather Info from the User
-
-Ask the user for ALL of the following before proceeding:
-1. **Property address** or **CAD account number**
-2. **County** (if not obvious from the address)
-3. The **current appraised value** from their notice (or "I don't have it")
-4. **What they paid** for the property and when (purchase price is the strongest
-   evidence of market value — especially for recent purchases within 1-2 years)
-5. Any known issues (deferred maintenance, foundation, flood zone, road noise,
-   needed repairs, nearby commercial/industrial, HOA issues)
-6. **Veteran status** — are they a disabled veteran? What VA disability rating %?
-7. **Age** — are they 65 or older?
-
-### Step 2: Look Up the Property on the County CAD Website
-
-Navigate to the county's CAD website using the browser. Search by address.
-
-**Record all of these** (save to `work/property_details.txt`):
-- CAD account/property ID
-- Legal description (subdivision, block, lot)
-- Current year appraised value (land + improvement breakdown)
-- Square footage (living area AND gross building area)
-- Year built
-- Bedrooms and bathrooms (from improvement features section)
-- Lot size (acres and square feet)
-- Foundation type, roof, exterior
-- Garage type and size
-- **Value history** (prior year values — shows appraisal trend)
-- **Exemptions on file** — CHECK THIS CAREFULLY
-- **Protest status** — has one already been filed?
-- Taxing units and tax rates
-
-**Calculate price per square foot**: appraised value / living area sqft.
-
-### Step 3: Check Exemptions (Often Worth MORE Than the Protest)
-
-Compare the CAD exemption field against what the user qualifies for. Missing
-exemptions should be flagged prominently — they can save thousands per year.
-
-**Homestead Exemption** (Tax Code §11.13):
-- $100,000 exemption from school district taxes (as of 2023 amendment)
-- 10% annual cap on appraisal increases (huge for long-term savings)
-- Additional local exemptions vary by taxing unit
-- Requires: TX driver's license + vehicle registration at the property address
-- Can be filed any time; applies to Jan 1 of the year filed
-
-**Disabled Veteran Exemption** (Tax Code §11.22):
-
-| VA Rating | Exemption |
-|-----------|-----------|
-| 10-29% | $5,000 off assessed value |
-| 30-49% | $7,500 off assessed value |
-| 50-69% | $10,000 off assessed value |
-| 70-99% | $12,000 off assessed value |
-| 100% | **TOTAL exemption — $0 property taxes** |
-
-- Stacks with homestead exemption
-- Requires: VA disability rating letter or benefit summary, DD-214, TX driver's license
-- Surviving spouse of deceased disabled veteran may also qualify (§11.22(h))
-- If rating increases later, the user can refile for the higher exemption
-
-**Over-65 / Disabled Exemption** (Tax Code §11.13(c)-(d)):
-- Additional $10,000 exemption from school taxes
-- School tax ceiling (freeze) — school taxes can never increase above the
-  amount in the year you turned 65 or became disabled
-- Portable: transfers to a new homestead (adjusted proportionally)
-
-### Step 4: Research Comparable Sales (Comps)
-
-This is the core of the protest. Find similar homes that sold for less than the
-appraised value. Use MULTIPLE sources — no single source is complete.
-
-**Source 1: CAD Website (Neighbor Appraisals)**
-- Search for other properties on the same street / in the same subdivision
-- Record their appraised values, sqft, year built
-- This supports the **unequal appraisal** argument (your $/sqft vs theirs)
-
-**Source 2: Redfin / Zillow (Market Estimates + Sold Data)**
-- Search for the subject property on Redfin — record the Redfin Estimate
-- Check the "Sale & Tax History" tab for the user's purchase price
-- Search for "Recently Sold" homes nearby with similar characteristics
-- Record Zillow Zestimate and Zestimate trend (% change over 1-3 years)
-- A declining trend strengthens the argument that the CAD overvalued
-
-**Source 3: Web Search (Recent Sales)**
-- Search: `"[subdivision name]" [city] TX sold [year] price`
-- Search: `[zip code] Denton TX homes sold [year] 3 bedroom 2000 sqft`
-- Look for actual closing prices, not just listing prices
-
-**Source 4: MLS (if the user has access)**
-- Pull comps from NTREIS Matrix or their local MLS
-- MLS data is the most authoritative source for sale prices
-
-**What makes a good comp:**
-- Same subdivision (best) or within 1 mile
-- Within 20% of square footage
-- Within 10 years of year built
-- Similar bed/bath count and condition
-- Sold within 12 months of January 1 of the tax year
-- Sale was arm's-length (not foreclosure, family transfer, or auction)
-
-**Record for each comp** (aim for 5-8):
-- Address
-- Sale price and sale date (or Zestimate if sale price unavailable)
-- Square footage, year built, beds/baths, lot size
-- Distance from subject property
-- Price per square foot
-- Condition notes (pool, renovation, builder quality)
-- Source (CAD, Redfin, Zillow, MLS)
-
-**Also record market-wide data points:**
-- Zip code median sold price (from Redfin or Zillow market reports)
-- Redfin Estimate for the subject property
-- Zillow Zestimate trend (% change)
-- Any similar listings sitting unsold for months (shows market resistance)
-
-Save everything to `work/comps_data.txt`.
-
-### Step 5: Analyze and Adjust Comps
-
-For each comp, calculate price per square foot. Then adjust for differences:
-- **Size**: Smaller homes tend to have higher $/sqft; adjust ~$50-80/sqft for
-  significant size gaps
-- **Age**: Newer homes command a premium
-- **Builder quality**: Premium builders (Toll Brothers, Highland) vs value builders
-  (Impression, DR Horton) — adjust ~$20-40K
-- **Pool**: +$15-25K if comp has pool and subject doesn't (or vice versa)
-- **Garage**: +$10-20K per extra bay
-- **Lot size**: Adjust if materially different
-- **Condition**: Renovated vs original
-
-Calculate the **median** and **average** of adjusted comp values. This is the
-"indicated market value" — the number you argue the property is actually worth.
-
-### Step 6: Build the Evidence Package
-
-Generate three files in `output/` using a Python script:
-
-#### 1. `comp_analysis.xlsx` (openpyxl)
-
-Professional spreadsheet with:
-- **Header section**: subject property address, CAD account, subdivision, sqft,
-  beds/baths, year built, current appraised value, appraised $/sqft
-- **Comp table** with columns: Address, Sale/List Price, Sq Ft, $/Sq Ft,
-  Beds/Baths, Year Built, Distance, Adjustments, Adjusted Value
-- **Summary section** (highlighted): median adjusted value, average adjusted value,
-  CAD appraised value, argued market value, potential reduction
-- **Notes section**: zip median, Redfin/Zillow estimates, market trends, unsold
-  listings that show market resistance
-- Professional formatting: header fills, borders, number formats, column widths
-
-#### 2. `protest_letter.docx` (python-docx)
-
-Formal 1-2 page letter:
-- Addressed to the county's Central Appraisal District (use correct address)
-- References property ID and address
-- States the protest of the current appraised value
-- Cites protest basis: Market Value (§41.43(b)(1))
-- Includes a comp summary table (address, price, sqft, $/sqft)
-- Lists key arguments as bullet points (market estimates, zip median, trends,
-  unsold comps, condition issues)
-- States the owner's opinion of value (the median adjusted comp value)
-- Requests reduction to the argued value
-- Professional, factual tone — data over emotion
-- Signature block with owner name and address
-
-#### 3. `filing_checklist.md`
-
-Step-by-step guide covering:
-- Filing deadline and how to file (online, mail, in person) for the specific county
-- What documents to bring to the informal hearing
-- Hearing tips and what to expect
-- Formal ARB hearing process if informal doesn't work
-- **Exemption filing instructions** — homestead, veteran, over-65 (with what documents
-  are needed for each)
-- **Estimated savings breakdown** — table showing savings from protest + each exemption
-
-### Step 7: Present Results
-
-Show a clean summary:
+### Step 8: Hand-off
+Show this summary, with real numbers:
 
 ```
 PROPERTY TAX PROTEST SUMMARY
-=============================
-Subject:               [address]
-CAD Account:           [number]
-Current Appraised:     $XXX,XXX
-Argued Market Value:   $XXX,XXX
-Potential Reduction:   $XX,XXX
-
-Estimated Annual Savings:
-  Protest:             $XXX - $XXX
-  Homestead Exemption: $X,XXX - $X,XXX  [if missing]
-  Veteran Exemption:   $XXX - $XXX      [if applicable]
-  TOTAL:               $X,XXX - $X,XXX
-
-Evidence Package:
-  output/comp_analysis.xlsx
-  output/protest_letter.docx
-  output/filing_checklist.md
-
-DEADLINE: May 15, [year]
+Subject:             [address]   CAD account: [number]
+Market value:        $[x]        Argued value: $[y]
+Estimated savings:   $[low] to $[high] per year (protest)
+                     + exemptions: [list, or "none missing"]
+Protest deadline:    [statutory date; moved date if it applies; last business day before]
+Files:               output/ (spreadsheet, letter, checklist, dashboard, calendar)
 ```
 
-Then walk the user through the immediate next steps (file protest, file exemptions).
+Then say the disclaimer sentence once more, walk through how to file in this county (from
+`filing_checklist.md`), and offer: the calendar file for the deadlines, the mock hearing,
+and, if they later lose at the ARB, `references/beyond-arb.md`. Once they have a hearing
+date or an ARB order, rerun `scripts/deadlines.py` with `--hearing-date` or
+`--arb-order-date` to get the follow-on deadlines.
 
-## Protest Strategies
+## Mock hearing (optional)
 
-1. **Market value** (§41.43(b)(1)) — comparable properties sold for less than your
-   appraisal. The primary strategy. Use actual sale prices, not listing prices.
+Offer it once at hand-off. If the user opts in, follow the mock-hearing rules in
+`references/hearing-script.md` (section 6). Use only the user's real case data. End with
+exactly three concrete improvements.
 
-2. **Unequal appraisal** (§41.43(b)(3)) — your property is appraised at a higher
-   $/sqft than similar properties in the same area. Compare CAD appraisals of
-   neighbors, not sale prices. Often easier to prove because you're using the
-   district's own data against them.
+## References
 
-3. **Errors in property description** — wrong sqft, extra bathrooms counted,
-   incorrect year built, wrong lot size. Check CAD records line by line.
+| Need | File |
+|---|---|
+| Any exemption, cap, protest ground, burden of proof, deadline or form | `references/law-and-figures.md` |
+| How each deadline is computed | `references/deadlines.md` |
+| County, CAD website, phone, portal, filing methods | `scripts/county_lookup.py`, `references/counties.md` |
+| Choosing and combining strategies | `references/strategies.md` |
+| Neighbor-appraisal workflow | `references/unequal-appraisal.md` |
+| Rental income approach, circuit-breaker status | `references/income-approach.md` |
+| Hearing scripts, rebuttals, mock hearing | `references/hearing-script.md` |
+| Binding arbitration, SOAH, court | `references/beyond-arb.md` |
+| `case.json` fields and what the scripts compute | `references/case-schema.md` |
 
-4. **Condition issues** — foundation problems, flood zone, needed repairs, road
-   noise, power lines, adjacent commercial. Bring dated photos.
-
-5. **Recent purchase price** — if the user bought within the last 1-2 years, the
-   purchase price is the strongest single data point. The CAD's own guidelines
-   treat arm's-length transactions as the best evidence of market value.
-
-## Hearing Tips
-
-- **Informal hearing**: One-on-one with an appraiser. Be friendly and professional.
-  Most reductions happen here (~85% of protests settle informally). Bring your comp
-  spreadsheet printed. The appraiser will counter-offer. Know your bottom line
-  before you walk in. You can accept on the spot or decline and go to formal.
-
-- **Formal ARB hearing**: 3-person citizen panel. More structured. You get ~15
-  minutes to present. Lead with your strongest 3 comps, not all 8. Bring 4
-  printed copies of everything (3 for panel + 1 for you). The panel votes.
-
-- **Key phrase**: "Based on comparable market data, I believe the market value of
-  my property as of January 1 is $[your number], not $[their number]."
-
-- **Don't**: get emotional, argue about tax rates (ARB only controls appraised
-  value), compare to neighbors without data, or badmouth the appraiser.
-
-- **Do**: bring your purchase contract (if recent), photos of condition issues,
-  printouts of Redfin/Zillow estimates, and the comp spreadsheet.
-
-## Major Texas CAD Websites
-
-| County | Website | Phone |
-|--------|---------|-------|
-| Denton | dentoncad.com | 940-349-3800 |
-| Collin | collincad.org | 469-742-9200 |
-| Tarrant | tad.org | 817-284-0024 |
-| Dallas | dallascad.org | 214-631-0910 |
-| Harris (Houston) | hcad.org | 713-957-7800 |
-| Travis (Austin) | traviscad.org | 512-834-9317 |
-| Bexar (San Antonio) | bcad.org | 210-242-2432 |
-| Williamson | wcad.org | 512-930-3787 |
-| Fort Bend | fbcad.org | 281-344-8623 |
-| Montgomery | mcad-tx.org | 936-756-3354 |
-
-**Protest form**: Form 50-132 (Notice of Protest) —
-comptroller.texas.gov/taxes/property-tax/forms/
+Load a reference only when its step needs it.

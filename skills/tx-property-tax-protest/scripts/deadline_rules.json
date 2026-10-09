@@ -1,0 +1,575 @@
+{
+  "holidays_note": "Tax Code §1.06 makes an act timely if it is performed on the next regular business day after a last day that is a Saturday, Sunday, or legal state or national holiday. The statute does not define the term. Gov't Code §662.003(a) says a national holiday 'includes only' nine days and §662.003(b) says a state holiday 'includes only' eight days, so this file models those 17 days, recomputed for every year. Section 662.003 does not say whether a holiday that falls on a weekend shifts to the Friday before or the Monday after, so no shift is modeled: a weekend holiday is simply a weekend. Optional holidays (§662.003(c)) and local holidays are not modeled.",
+  "holidays": [
+    {
+      "name": "New Year's Day",
+      "type": "annual",
+      "month": 1,
+      "day": 1,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Martin Luther King, Jr., Day",
+      "type": "nth_weekday",
+      "month": 1,
+      "weekday": "monday",
+      "n": 3,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Presidents' Day",
+      "type": "nth_weekday",
+      "month": 2,
+      "weekday": "monday",
+      "n": 3,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Memorial Day",
+      "type": "nth_weekday",
+      "month": 5,
+      "weekday": "monday",
+      "n": -1,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Independence Day",
+      "type": "annual",
+      "month": 7,
+      "day": 4,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Labor Day",
+      "type": "nth_weekday",
+      "month": 9,
+      "weekday": "monday",
+      "n": 1,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Veterans Day",
+      "type": "annual",
+      "month": 11,
+      "day": 11,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Thanksgiving Day",
+      "type": "nth_weekday",
+      "month": 11,
+      "weekday": "thursday",
+      "n": 4,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Christmas Day",
+      "type": "annual",
+      "month": 12,
+      "day": 25,
+      "statute": "Gov't Code §662.003(a)"
+    },
+    {
+      "name": "Confederate Heroes Day",
+      "type": "annual",
+      "month": 1,
+      "day": 19,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "Texas Independence Day",
+      "type": "annual",
+      "month": 3,
+      "day": 2,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "San Jacinto Day",
+      "type": "annual",
+      "month": 4,
+      "day": 21,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "Emancipation Day in Texas",
+      "type": "annual",
+      "month": 6,
+      "day": 19,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "Lyndon Baines Johnson Day",
+      "type": "annual",
+      "month": 8,
+      "day": 27,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "Friday after Thanksgiving Day",
+      "type": "after",
+      "holiday": "Thanksgiving Day",
+      "days": 1,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "December 24 (state holiday)",
+      "type": "annual",
+      "month": 12,
+      "day": 24,
+      "statute": "Gov't Code §662.003(b)"
+    },
+    {
+      "name": "December 26 (state holiday)",
+      "type": "annual",
+      "month": 12,
+      "day": 26,
+      "statute": "Gov't Code §662.003(b)"
+    }
+  ],
+  "rules": [
+    {
+      "id": "exemption_application_deadline",
+      "event": "Exemption application deadline",
+      "type": "fixed_date",
+      "params": {
+        "month": 4,
+        "day": 30
+      },
+      "weekend_roll": true,
+      "statute": "Tax Code §11.43(d); §1.06",
+      "note": "The statute says before May 1. The chief appraiser may extend once, by written order, for good cause, by up to 60 days."
+    },
+    {
+      "id": "protest_deadline",
+      "event": "Protest filing deadline",
+      "type": "later_of",
+      "params": {
+        "options": [
+          {
+            "type": "fixed_date",
+            "params": {
+              "month": 5,
+              "day": 15
+            }
+          },
+          {
+            "type": "days_after_notice",
+            "params": {
+              "days": 30
+            }
+          }
+        ]
+      },
+      "weekend_roll": true,
+      "statute": "Tax Code §41.44(a)(1); §1.06; §1.07(c); §1.08",
+      "note": "Later of May 15 and 30 days after the notice mailing date. A first-class-mail notice is presumed delivered the day it is mailed (rebuttable). A mailed protest is timely if postmarked on or before the last day. If your notice or the CAD shows an earlier date, protest by the earlier date."
+    },
+    {
+      "id": "protest_late_good_cause",
+      "event": "ARB records-approval date (not an owner deadline)",
+      "type": "fixed_date",
+      "params": {
+        "month": 7,
+        "day": 20
+      },
+      "statute": "Tax Code §41.44(b); §41.12(a), (c)",
+      "note": "The ARB must approve the appraisal records by this date. A protest filed after your deadline can still be heard, if the ARB finds good cause, only until the ARB actually approves the records, which may be earlier. Do not treat this as your filing date. A county of 1,000,000 or more may postpone approval to August 30 by CAD board resolution."
+    },
+    {
+      "id": "delinquency_date",
+      "event": "Taxes become delinquent",
+      "type": "fixed_date",
+      "params": {
+        "month": 2,
+        "day": 1,
+        "year_offset": 1
+      },
+      "statute": "Tax Code §31.02(a); §31.03; §31.04(a)",
+      "note": "Tax is delinquent if not paid before February 1, so the last day to pay without penalty is January 31. If the bill is mailed after January 10, the date is the first day of the next month that gives at least 21 days after the mailing date. Read the date on your bill."
+    },
+    {
+      "id": "notice_of_value_target_homestead",
+      "event": "CAD target date to mail the notice (homestead)",
+      "type": "fixed_date",
+      "params": {
+        "month": 4,
+        "day": 1
+      },
+      "core": false,
+      "statute": "Tax Code §25.19(a)",
+      "note": "A target, not a hard deadline for the CAD ('or as soon after as practicable'). A notice is required only if the value rose, exceeds the rendered value, the property is new to the roll, or an exemption was cancelled or reduced."
+    },
+    {
+      "id": "notice_of_value_target_other",
+      "event": "CAD target date to mail the notice (other property)",
+      "type": "fixed_date",
+      "params": {
+        "month": 5,
+        "day": 1
+      },
+      "core": false,
+      "statute": "Tax Code §25.19(a), (g)",
+      "note": "A target, 'or as soon after as practicable'."
+    },
+    {
+      "id": "exemption_deadline_age65_or_disabled",
+      "event": "Last day to apply for the 65+ or disabled exemption",
+      "type": "years_after_input",
+      "params": {
+        "input": "qualified_date",
+        "years": 1
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §11.43(k), (m)",
+      "note": "No later than the first anniversary of turning 65 or becoming disabled; the general April 30 rule also applies for the year. No application is needed if your birth date is already in the CAD records and you had the general homestead exemption."
+    },
+    {
+      "id": "exemption_deadline_new_buyer",
+      "event": "Last day to apply for the part-year homestead exemption (new buyer)",
+      "type": "years_after_input",
+      "params": {
+        "input": "acquisition_date",
+        "years": 1,
+        "days": -1
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §11.42(f); §11.43(d)",
+      "note": "Apply before the first anniversary of buying the home, for the part-year homestead exemption when you bought after January 1. This is not the 65+ or disabled exemption."
+    },
+    {
+      "id": "exemption_late_homestead",
+      "event": "Last day to file a late homestead exemption",
+      "type": "years_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "years": 2
+      },
+      "core": false,
+      "statute": "Tax Code §11.431(a)",
+      "note": "Two years after the delinquency date. Includes the 65+ and disabled homestead exemptions. Form 50-114 says two years after the filing deadline (April 30, 2029 for tax year 2027); the statute says two years after the delinquency date. File as early as you can."
+    },
+    {
+      "id": "exemption_late_disabled_veteran",
+      "event": "Last day to file a late disabled-veteran exemption",
+      "type": "years_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "years": 5
+      },
+      "core": false,
+      "statute": "Tax Code §11.439(a); §11.431(a)",
+      "note": "Five years after the delinquency date, for a §11.22 application (veteran or survivor) and for a disabled veteran's own §11.131 or §11.132 homestead application. A surviving spouse's §11.131 or §11.132 application uses the two-year homestead date instead."
+    },
+    {
+      "id": "protest_late_no_notice",
+      "event": "Last day to protest a notice never received",
+      "type": "days_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "days": -1
+      },
+      "core": false,
+      "statute": "Tax Code §41.411; §41.44(c), (c-3)",
+      "note": "File before the taxes are delinquent. If already delinquent: 125 days after the first notice of taxes, and the hearing is limited to whether a tax bill was timely delivered."
+    },
+    {
+      "id": "protest_late_offshore_or_deployed",
+      "event": "Last day for a late protest (offshore worker or deployed)",
+      "type": "days_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "days": -1
+      },
+      "core": false,
+      "statute": "Tax Code §41.44(c-1), (c-2)",
+      "note": "File before the taxes are delinquent if the owner was continuously employed in the Gulf of Mexico for at least 20 days spanning the deadline (employer letter or sworn affidavit), or on full-time active duty outside the U.S. on the deadline day (DoD ID and deployment order)."
+    },
+    {
+      "id": "motion_to_correct_overappraisal",
+      "event": "Last day for a motion to correct a large over-appraisal",
+      "type": "days_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "days": -1
+      },
+      "core": false,
+      "statute": "Tax Code §25.25(d), (d-1)",
+      "note": "File before the taxes are delinquent. Only if the error puts the value more than 1/4 over the correct value for a homestead (more than 1/3 for other property). The owner then pays a 10% late-correction penalty on tax at the corrected value. Not available if the ARB already decided a protest on the merits or the value was set by agreement."
+    },
+    {
+      "id": "court_prepayment",
+      "event": "Last day to prepay taxes to keep a court appeal",
+      "type": "days_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "days": -1
+      },
+      "core": false,
+      "statute": "Tax Code §42.08(b), (c)",
+      "note": "Pay the lesser of (a) tax on the undisputed value, (b) tax under the ARB order, (c) last year's tax, or the right to a final determination is forfeited. Under split payment, half before December 1 and half before July 1."
+    },
+    {
+      "id": "arbitration_prepayment",
+      "event": "Last day to prepay taxes to keep a binding-arbitration appeal",
+      "type": "days_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "days": -1
+      },
+      "core": false,
+      "statute": "Tax Code §41A.10(a)-(b)",
+      "note": "Pay the tax on the portion of value not in dispute. The appeal is dismissed if taxes are delinquent."
+    },
+    {
+      "id": "soah_prepayment",
+      "event": "Last day to prepay taxes to keep a SOAH appeal",
+      "type": "days_after_event",
+      "params": {
+        "event": "delinquency_date",
+        "days": -1
+      },
+      "core": false,
+      "statute": "Gov't Code §2003.913",
+      "note": "Pay the tax on the portion of value not in dispute. The appeal is dismissed if taxes are delinquent."
+    },
+    {
+      "id": "hearing_notice_from_arb",
+      "event": "ARB mails the hearing notice by",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -15
+      },
+      "safe_day": true,
+      "statute": "Tax Code §41.46(a), (d)",
+      "note": "Written notice at least 15 days before the hearing; certified mail on request."
+    },
+    {
+      "id": "cad_evidence_notice",
+      "event": "CAD delivers the pamphlet and hearing procedures by",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -14
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.461(a)",
+      "note": "The CAD delivers the Comptroller pamphlet, the ARB hearing procedures, and notice that the owner may request the CAD's data, schedules and formulas."
+    },
+    {
+      "id": "cad_evidence_delivery_if_requested",
+      "event": "CAD delivers the evidence you requested by",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -14
+      },
+      "safe_day": true,
+      "statute": "Tax Code §41.461(a)-(d); §41.67(d)",
+      "note": "Measured to the scheduled or postponed hearing. Requested information not delivered by then cannot be used by the CAD, except to rebut the owner's evidence. Free; by mail, by electronic delivery if elected, or by link."
+    },
+    {
+      "id": "owner_request_cad_evidence",
+      "event": "Send your written request for the CAD's evidence by",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -21
+      },
+      "safe_day": true,
+      "statute": "Tax Code §41.461(a)(2) (practical rule, not a statutory deadline)",
+      "note": "Advice, not a legal deadline: send the request with the protest and no later than this date so the CAD has time to meet its 14-day delivery date. The statute sets no deadline and no form."
+    },
+    {
+      "id": "hearing_procedures_copy_if_requested",
+      "event": "ARB sends the hearing procedures you asked for by",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -10
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.66(a)",
+      "note": "Applies if the owner asked for a copy in the notice of protest or earlier writing (Form 50-132 has a box)."
+    },
+    {
+      "id": "owner_certified_appraisal",
+      "event": "Last day to file a certified appraisal (higher burden for the CAD)",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -14
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.43(a-1), (a-2)",
+      "note": "Counted from the first hearing day. File with the ARB and deliver to the chief appraiser. The appraisal must be dated within 180 days before the first hearing day, and the CAD's value of the property must be $1,000,000 or less. The CAD's burden then becomes clear and convincing."
+    },
+    {
+      "id": "owner_info_after_prior_year_reduction",
+      "event": "Last day to file comparables after a prior-year reduction",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -14
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.43(a-3)-(a-5)",
+      "note": "Counted from the first hearing day. File with the ARB and deliver to the chief appraiser sufficient comparable-sales, income and expense, or unequal-appraisal information. Applies only if the value was lowered last year and not by agreement. The CAD's burden then becomes clear and convincing."
+    },
+    {
+      "id": "exchange_written_materials",
+      "event": "Exchange written materials by the start of the hearing",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": 0
+      },
+      "statute": "Tax Code §41.45(h), (p); 34 TAC §9.805",
+      "note": "Each side hands the other a copy of anything it will offer, before the hearing or immediately after it begins. The ARB keeps a set."
+    },
+    {
+      "id": "affidavit_in_lieu_of_appearing",
+      "event": "Deliver your affidavit to the ARB by the start of the hearing",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": 0
+      },
+      "core": false,
+      "statute": "Tax Code §41.45(b), (i), (n)",
+      "note": "An owner who files an affidavit instead of appearing keeps the right to appear."
+    },
+    {
+      "id": "remote_hearing_request_no_agent",
+      "event": "Request a telephone or video hearing by (no agent)",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -5
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.45(b), (b-1)(1)",
+      "note": "Or state the election in the notice of protest. Evidence must then be by affidavit."
+    },
+    {
+      "id": "remote_hearing_request_with_agent",
+      "event": "Request a telephone or video hearing by (with an agent)",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -10
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.45(b-1)(2)",
+      "note": "Evidence must then be by affidavit."
+    },
+    {
+      "id": "single_member_panel_request",
+      "event": "Request a single-member panel by",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": -10
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.45(b-4)",
+      "note": "Or make the request in the notice of protest."
+    },
+    {
+      "id": "postponement_window_start",
+      "event": "Earliest new date after one postponement",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": 5
+      },
+      "core": false,
+      "statute": "Tax Code §41.45(e); §41.66(n)",
+      "note": "An owner without an agent gets one postponement without showing cause by asking before the hearing date. The new date falls 5 to 30 days after the original unless the ARB chair, owner and chief appraiser agree otherwise. The ARB must answer a written request within 7 days, and the request must include a mailing and e-mail address."
+    },
+    {
+      "id": "postponement_window_end",
+      "event": "Latest new date after one postponement",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": 30
+      },
+      "core": false,
+      "statute": "Tax Code §41.45(e); §41.66(n)",
+      "note": "See the earliest-date entry for the conditions."
+    },
+    {
+      "id": "missed_hearing_new_hearing",
+      "event": "Last day to ask for a new hearing after a missed hearing",
+      "type": "days_after_input",
+      "params": {
+        "input": "hearing_date",
+        "days": 4
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Tax Code §41.45(e-1), (e-2)",
+      "note": "A written statement showing good cause and asking for a new hearing."
+    },
+    {
+      "id": "rba_request",
+      "event": "Request binding arbitration by",
+      "type": "days_after_input",
+      "params": {
+        "input": "arb_order_date",
+        "days": 60
+      },
+      "safe_day": true,
+      "statute": "Tax Code §41A.03(a)-(b)",
+      "note": "File with the Comptroller with the deposit. Strict compliance is required or the right is waived. Filing in court waives binding arbitration."
+    },
+    {
+      "id": "court_petition",
+      "event": "File a court petition for review by",
+      "type": "days_after_input",
+      "params": {
+        "input": "arb_order_date",
+        "days": 60
+      },
+      "safe_day": true,
+      "statute": "Tax Code §42.21(a); §42.06(a)",
+      "note": "May be filed any time after the hearing and before this date. The owner files no notice of appeal. Pay the required tax before the delinquency date or lose the appeal."
+    },
+    {
+      "id": "soah_notice_of_appeal",
+      "event": "File a SOAH notice of appeal by",
+      "type": "days_after_input",
+      "params": {
+        "input": "arb_order_date",
+        "days": 30
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Gov't Code §2003.901, §2003.906(a-1)",
+      "note": "File with the chief appraiser. Only if the ARB value is over $1,000,000 and the property is not industrial."
+    },
+    {
+      "id": "soah_deposit",
+      "event": "Pay the SOAH deposit by",
+      "type": "days_after_input",
+      "params": {
+        "input": "arb_order_date",
+        "days": 90
+      },
+      "safe_day": true,
+      "core": false,
+      "statute": "Gov't Code §2003.906(a)(2), (a-2), (a-3)",
+      "note": "$1,500 to the chief appraiser, payable to SOAH. Missing it means dismissal and no SOAH appeal in later years. Only if the ARB value is over $1,000,000 and the property is not industrial."
+    }
+  ]
+}
