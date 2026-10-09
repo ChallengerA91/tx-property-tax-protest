@@ -1,0 +1,1786 @@
+{
+  "verified_date": "2026-10-08",
+  "population_source": "U.S. Census Bureau, Population Estimates Program, Vintage 2025 county resident population estimates for July 1, 2025 (table CO-EST2025-POP / dataset co-est2025-alldata, released March 2026). Landing page: https://www.census.gov/data/tables/time-series/demo/popest/2020s-counties-total.html . Data file read: https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv (POPESTIMATE2025). Counties are ranked by that figure; the next county (26th) is Johnson at 218,048.",
+  "cross_check": "All 25 CAD phone numbers were also checked against the Texas Comptroller appraisal district directory (https://comptroller.texas.gov/taxes/property-tax/county-directory/) on 2026-10-08 and match. That directory is self-reported by the districts.",
+  "field_notes": {
+    "null": "Not confirmed. Never guessed.",
+    "confidence": "Maps a field name to 'secondary' when only a non-CAD source confirmed it.",
+    "verification_status": "'verified' = website, phone, property search, filing methods and mailing address confirmed on the CAD's own site. 'partial' = something core is missing or only secondary.",
+    "filing_methods": "Only methods the CAD itself publishes. A method that is not listed is not proof the CAD refuses it; check the notice.",
+    "protest_portal.short_name": "Short label used in counties.md. 'name' is the CAD's own wording.",
+    "v1_check": "Comparison against the v1 SKILL.md table; null for counties that were not in v1."
+  },
+  "counties": [
+    {
+      "population_rank": 1,
+      "county": "Harris",
+      "population_2025": 5045026,
+      "verification_status": "verified",
+      "cad_name": "Harris Central Appraisal District",
+      "cad_abbrev": "HCAD",
+      "website": "https://hcad.org/",
+      "phone": "713-957-7800",
+      "phone_notes": "Telephone Information Center, Mon-Fri 8:00 AM-5:00 PM. Other published lines: ARB hearing / appraiser-meeting reschedules only 713-812-5860; Hearings Support (virtual meeting check-in problems) 713-812-5802; administrative offices 713-812-5800.",
+      "property_search_url": "https://search.hcad.org/",
+      "protest_portal": {
+        "name": "iFile (HCAD Electronic Filing and Notice System / Owners portal)",
+        "url": "https://owners.hcad.org/",
+        "requires": "Free owners account (owners.hcad.org sign-up) linked to the property. The property's iFile number (printed upper right of the Notice of Appraised Value and on the green protest form) is needed unless the account is already linked; the notice also shows the account number. A lost iFile number can be retrieved with HCAD's free mobile app / features.hcad.org by scanning a Texas driver license whose address matches the account.",
+        "short_name": "iFile"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "Online: iFile through owners.hcad.org is HCAD's preferred method. https://hcad.org/ifile-protest also links a no-account online Notice of Protest form (hcad.seamlessdocs.com/f/NoticeofProtest) under 'No, I don't want to iFile my protest'. Paper: Form 50-132 (Property Appraisal - Notice of Protest; also the protest form enclosed with the notice) can be mailed to Assistance Center, Harris Central Appraisal District, P.O. Box 922004, Houston, TX 77292-2004 (must be postmarked by the deadline; HCAD advises getting the envelope hand-stamped at the post office) or dropped off at 13013 Northwest Freeway during office hours (8 AM-5 PM Mon-Fri; no after-hours drop box). Paper protests do not need an iFile number. No protest fax number or protest email is published (isettle@hcad.org is only for iSettle questions).",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "iSettle: online settlement offer for protests filed via iFile on single-family residential accounts (owner must give an email and an opinion of value; evidence upload allowed for 5 calendar days after filing). Informal meetings with an HCAD appraiser are in person or by Webex videoconference (phone can be used for audio once the Webex meeting launches); check-in via owners.hcad.org. Formal ARB hearings can be in person, videoconference, telephone, by agent, or by sworn affidavit; ARB does not accept evidence by email."
+      },
+      "notice_timing": "HCAD news release dated May 1, 2026 says it had mailed 2026 property value notices to many residential, commercial and industrial owners. Published protest deadline (FAQ and May 6, 2026 release): May 15, or 30 days after the date on the notice, whichever is later; if the notice was not mailed by April 15 the deadline is 30 days after the date printed on the notice. Owners can check notice status / protest deadline on their HCAD property search account page.",
+      "bulk_data": {
+        "url": "https://hcad.org/hcad-online-services/pdata/",
+        "format": "ASCII tab-delimited text files (real and personal property, ownership, buildings, jurisdictions, code tables, ARB hearings data) that need a decompression utility, plus GIS shapefiles. Download list at https://hcad.org/pdata/pdata-property-downloads.html",
+        "notes": "Direct download links; the pages mention no fee and no request form. Files are very large. 2026 Certified Values listed as last updated October 04, 2026. HCAD states it provides no technical support for the data. Timeline on page: April preliminary real values, May-August weekly updates, mid-August certified."
+      },
+      "correspondence_address": {
+        "mailing": "Assistance Center, Harris Central Appraisal District, P.O. Box 922004, Houston, TX 77292-2004 (protest mailing address in HCAD's May 6, 2026 release and its late-protest statement form)",
+        "physical": "13013 Northwest Freeway, Houston, TX 77040-6305"
+      },
+      "quirks": [
+        "iFile number (printed upper right of the notice) is the key to online filing; the account number is also on the notice. If the account has not been 'noticed' yet there is no iFile number.",
+        "iFile numbers for properties other than the owner's primary residence must be obtained through a public information request (HCAD FAQ).",
+        "search.hcad.org sits behind a Cloudflare bot-check page, so automated lookups may fail; HCAD itself links that URL as its property search.",
+        "HCAD publishes more than one P.O. Box: 922004 on protest materials (May 2026), 924208 on its Public Access Policy, 920975 on its split-by-county page. Use 922004 for protest mail.",
+        "Postmark rule: HCAD goes by the USPS postmark, which now reflects sorting-machine date; HCAD says online filing avoids post office delays.",
+        "iSettle (online offer) is limited to single-family residential accounts; an iSettle offer can be accepted online up to the day before the formal hearing. If a settlement offer is rejected the owner is scheduled only for the formal ARB hearing.",
+        "Properties split by a county line receive notices from both appraisal districts and must be protested in both counties (HCAD split-by-county page).",
+        "Saturday hearings are held in summer; HCAD asks owners not to arrive more than 30 minutes before a hearing (limited parking and seating). Hearing evidence in person requires 4 copies.",
+        "Late-filed protests need Statement to Accompany a Late File Protest (good cause) mailed with the protest; the ARB decides whether to accept it.",
+        "Press release text says 'Thursday, May 15' although May 15, 2026 is a Friday; rely on the deadline printed on the notice."
+      ],
+      "table_note": "Online filing is keyed to the iFile number printed on the notice. Protest mail goes to P.O. Box 922004 (HCAD prints other P.O. boxes elsewhere).",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/harris.php",
+      "sources": [
+        "https://hcad.org/",
+        "https://hcad.org/hcad-online-services/ifile-protest/",
+        "https://hcad.org/ifile-protest",
+        "https://owners.hcad.org/",
+        "https://owners.hcad.org/publicArea/help.aspx",
+        "https://hcad.org/hcad-help/protests-and-corrections/",
+        "https://hcad.org/hcad-help/protests-and-corrections/ifile-and-isettle",
+        "https://hcad.org/hcad-help/frequently-asked-questions/",
+        "https://hcad.org/about/contact/",
+        "https://hcad.org/hcad-forms/hcad-all-forms/",
+        "https://hcad.org/property-owner-instructions-for-remote-meetings/",
+        "https://hcad.org/hcad-online-services/pdata/",
+        "https://hcad.org/pdata/pdata-property-downloads.html",
+        "https://hcad.org/news/",
+        "https://hcad.org/assets/uploads/pdf/26-07-Reappraisal-Values.pdf",
+        "https://hcad.org/assets/uploads/pdf/26-08-Protest-Deadline-Reminder.pdf",
+        "https://hcad.org/assets/uploads/pdf/GTA_IAD_001_Protest_Process_2021.pdf",
+        "https://hcad.org/assets/uploads/pdf/resources/2026/2026-Hearings-Rules-and-Procedures-Final.pdf",
+        "https://hcad.org/assets/uploads/pdf/Statement-to-Accompany-a-Late-File-Protest_2025-05-28-180438_spsu.pdf",
+        "https://hcad.org/assets/uploads/pdf/resources/2026/PUBLIC-ACCESS-document-found-on-HCAD-website-rev-1.15.26-005-PO-box-updated-1.16.26.pdf",
+        "https://hcad.org/hcad-help/hcad-properties-split-by-county-line/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "hcad.org",
+        "v1_phone": "713-957-7800",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "hcad.org is the live HCAD site and 713-957-7800 is the Telephone Information Center number shown in the site footer and contact page. Protest portal lives at owners.hcad.org; property search at search.hcad.org."
+      }
+    },
+    {
+      "population_rank": 2,
+      "county": "Dallas",
+      "population_2025": 2661397,
+      "verification_status": "verified",
+      "cad_name": "Dallas Central Appraisal District",
+      "cad_abbrev": "DCAD",
+      "website": "https://www.dallascad.org/",
+      "phone": "214-631-0910",
+      "phone_notes": "Customer Service / Property Records / Exemptions line, 7:30 AM-5:30 PM Mon-Thu and 7:30 AM-5:00 PM Fri. Main switchboard 214-631-0520. Protest/informal-review division lines (open April 15 each year): Residential 214-905-9402, Commercial 214-905-9406, Business Personal Property 214-905-0908 (opens ~May 12-13). BPP records line 214-631-7406.",
+      "property_search_url": "https://www.dallascad.org/SearchOwner.aspx",
+      "protest_portal": {
+        "name": "uFILE Online Protest and Settlement System",
+        "url": "https://www.dallascad.org/SearchOwner.aspx",
+        "requires": "No separate login page: search the account first (by owner name, account number or street address), open the account, then select the 'uFile Online Protest' link. Verification needs the account PIN (top-left corner of the Notice of Appraised Value; changes every year) plus an on-screen Security Code. If you have no notice, the uFile screen has a 'Request PIN to be sent by Email' option (requesting a PIN does not file a protest).",
+        "short_name": "uFile"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "DCAD says uFile is its preferred method and 'the only way for property owners to file a protest electronically'; the ARB will NOT accept protests by fax or e-mail. A written protest (an official form is not required, but it must identify the owner and property and show dissatisfaction) can be mailed to the address on the Notice of Appraised Value or to the Dallas County ARB, P.O. Box 560348, Dallas TX 75356-0348, or delivered to 2949 N. Stemmons Freeway (24/7 drop box/lockbox at the west main entrance; doors lock at 5:00 PM on the deadline). Mailed protests need a postmark by the deadline. If uFile upload fails, DCAD tells owners to mail the protest and documents instead.",
+      "informal_hearings": {
+        "online": true,
+        "phone": true,
+        "in_person": true,
+        "notes": "A protest must be filed and evidence submitted before DCAD staff will do an Informal Review. After filing via uFile with an opinion of value and documents, appraisers review and may send an e-mail settlement offer through uFile (DCAD says online settlement is unavailable if you are represented by a tax consultant, already have a protest on file, or protest on a reason other than value; if you decline the offer no further offers are made under uFile). DCAD otherwise reaches out by phone or e-mail before the ARB hearing if the evidence warrants a change; if not contacted at least 3 days before the ARB hearing, call the division line. DCAD prefers phone/uFile over visiting the office, but the Customer Service lobby is open 7:30 AM-5:00 PM Mon-Fri."
+      },
+      "notice_timing": "2026 calendar: first batch of real property Notices of Appraised Value mailed April 15, 2026 (values also posted online that day); second batch (BPP without rendition extensions) May 12, 2026; third batch (BPP with extensions, utilities, leased equipment, rendered accounts, ag accounts and denials) June 1, 2026. Protest deadlines: May 15, 2026 for first-mailing real property (or 30 days after notice delivery, whichever is later); June 12, 2026 for second-mailing BPP; July 1, 2026 for third-mailing accounts. uFile opened April 15, 2026. DCAD also posts a Notice of Appraised Value and protest form on every account page online, even if no paper notice was mailed. Homepage (Oct 8, 2026) says ARB hearings 'will likely continue through September 2026'; last scheduled ARB hearing day on the calendar was July 16, 2026; roll certified July 24, 2026.",
+      "bulk_data": {
+        "url": "https://www.dallascad.org/DataProducts.aspx",
+        "format": "ZIP files containing comma-delimited (CSV) appraisal data, plus fixed-format certified appraisal rolls (real property and BPP); each ZIP includes field-layout reference documents",
+        "notes": "Direct download links on the page, no request form shown, and the page states no price (cost not published; treat 'free' as unconfirmed). Years 2022-2026 certified plus a '2027 Data Files (Most Current Ownership)' set; certified-at-certification files dated 07/24/2026; also ARB data files (ARB_CURRENT / ARB_ARCHIVE) and annual appraisal-notice data (Mail 1/2/3). Files are large. DCAD gives no technical support for the data."
+      },
+      "correspondence_address": {
+        "mailing": "Dallas County ARB, P.O. Box 560348, Dallas, TX 75356-0348 (for mailed protests/documents per the uFile guide; the Protest Process guide also allows the address on your Notice of Appraised Value or 2949 N. Stemmons Freeway)",
+        "physical": "Dallas Central Appraisal District, 2949 North Stemmons Freeway, Dallas, TX 75247"
+      },
+      "quirks": [
+        "uFile is reached from inside a property's account page (Search Appraisals), not from a standalone login; you need the account PIN from the notice plus the on-screen Security Code.",
+        "Evidence can only be attached when the uFile protest is first submitted; later evidence goes by e-mail to arbdocs@dcad.org (BPP: bpparb@dcad.org), by drop box/mail, or in person. uFile upload limits: 8 MB per file, 15 MB total.",
+        "ARB hearings for uFile filers are scheduled as telephone hearings; owners may instead appear in person, send an affidavit/evidence by mail or e-mail, or send an authorized representative. Hearing notice is mailed at least 15 days ahead.",
+        "The 'Online TaxRep Website' (onlineprotest.dallascad.org) on the nav bar is for tax representatives/agents, not for homeowners.",
+        "DCAD is also the abbreviation used by Denton Central Appraisal District; do not confuse the two.",
+        "Residential and commercial protest deadlines differ from BPP deadlines, and the deadline on your own notice controls.",
+        "DCAD says its 41.461 evidence for your account is posted on the account page after the protest is filed.",
+        "Dallas County has 61 taxing units but one appraisal district (DCAD); the 'Local Tax Offices' PDF on dallascad.org lists the local tax offices where taxes are paid."
+      ],
+      "table_note": "uFile is opened from inside the property's account page and needs the PIN from the notice. DCAD says its ARB does not accept protests by fax or e-mail.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/dallas.php",
+      "sources": [
+        "https://www.dallascad.org/",
+        "https://www.dallascad.org/Contact.aspx",
+        "https://www.dallascad.org/Calendar.aspx",
+        "https://www.dallascad.org/DataProducts.aspx",
+        "https://www.dallascad.org/SearchOwner.aspx",
+        "https://www.dallascad.org/Forms/Protest_Process.pdf",
+        "https://www.dallascad.org/webForms/UFILEONLINE/UFILE_ONLINE_PROTEST_2026.pdf",
+        "https://www.dallascad.org/webForms/INFORMALREVIEW/Informal_Review.pdf"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "dallascad.org",
+        "v1_phone": "214-631-0910",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "dallascad.org is still the CAD domain (canonical host www.dallascad.org). 214-631-0910 is listed on the CAD Contact page as Customer Service and Property Records/Exemptions. Separate protest-division phone lines (214-905-9402 residential, 214-905-9406 commercial, 214-905-0908 BPP) exist and open only when protest season starts."
+      }
+    },
+    {
+      "population_rank": 3,
+      "county": "Tarrant",
+      "population_2025": 2248466,
+      "verification_status": "verified",
+      "cad_name": "Tarrant Appraisal District",
+      "cad_abbrev": "TAD",
+      "website": "https://www.tad.org/",
+      "phone": "817-284-0024",
+      "phone_notes": "Main number, Mon-Fri 8:00 AM-5:00 PM. Department lines from the Contact page: Residential 817-284-3925; Commercial 817-284-2025; Business Personal Property 817-284-9101; Exemptions and Ownership/Mailing Address Changes 817-284-4063; Appraisal Review Board (TARB) 817-284-8884; Georeference/Addressing 817-595-6123.",
+      "property_search_url": "https://tarrant.prodigycad.com/property-search",
+      "protest_portal": {
+        "name": "New Taxpayer Portal (True Prodigy) - Submit Protest",
+        "url": "https://tarrant.prodigycad.com/public-portal/sign-in",
+        "requires": "Create a NEW account (the legacy tad.org login does not carry over), then verify each property with the E-FILE PIN (upper left of the Notice of Appraised Value) and the Owner ID (upper right). Real property only for online protests; PIN can be requested at https://www.tad.org/how-do-i/request-an-online-pin.",
+        "short_name": "Taxpayer Portal (new)"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "TAD's 2026 press release: 'We recommend you file electronically using the dashboard. However, you may also file by mail, or in person.' Paper Notice of Protest (included with the Property Value Notice; form at https://www.tad.org/content/forms/notice-of-protest.pdf) is addressed to the Tarrant Appraisal Review Board (TARB), P.O. Box 185519, Fort Worth, TX 76181-0519. The form states 'Protest forms are not accepted via fax or email.' Hearing-type choices on the form: in person, notarized affidavit/unsworn declaration, telephone conference, or videoconference.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": null,
+        "notes": "Residential 'Value Negotiation' (informal review) is done online in the LEGACY portal at https://www.tad.org/login (same process as prior years; TAD calls it the easiest and fastest route). If no agreement is reached the owner must file a formal protest on the new portal and watch the protest deadline. TAD pages read did not state whether informal conferences can be held by phone or in person; the TARB Notice of Protest has an optional box to request an informal conference with TAD before the hearing."
+      },
+      "notice_timing": "TAD press release dated April 17, 2026 says 2026 Notices of Appraised Value had been officially mailed (new notice format for 2026). TAD's PIN page says notices are generally mailed in April for residential and commercial real property, May for residential/commercial real property and business personal property, and June-July for business personal property and minerals. Protest deadline: May 15, 2026, or 30 days after the notice was delivered (the date is printed on the notice), whichever is later. Notice copies are viewable in the online account.",
+      "bulk_data": {
+        "url": "https://www.tad.org/resources/data-downloads",
+        "format": "ZIP files of delimited text property data (certified, by residential/commercial/personal property/minerals, plus supplemental and exemptions files back to 2021), property location file, True Prodigy extract, and GIS shapefile/geodatabase files; layout PDFs provided",
+        "notes": "Direct download links with no request form; the page does not state a price or update schedule (certified data per year; a 'True Prodigy Extract Data' set appears to be the new-system export). TAD gives no technical support."
+      },
+      "correspondence_address": {
+        "mailing": "Tarrant Appraisal Review Board (TARB), P.O. Box 185519, Fort Worth, TX 76181-0519 (protest filings). The Contact page lists only the street address for the district itself.",
+        "physical": "Tarrant Appraisal District, 2500 Handley-Ederville Road, Fort Worth, TX 76118-6909"
+      },
+      "quirks": [
+        "2026 transition to the True Prodigy system: TWO portals are live. Legacy portal (https://www.tad.org/login) = Value Negotiation (informal), district evidence/documents through end of 2026, and legacy property search. New portal (https://tarrant.prodigycad.com/public-portal/sign-in) = Submit Protest, new property search, limited online forms, agent mass protests.",
+        "A new-portal account must be created separately from any legacy account; link properties using the E-FILE PIN and Owner ID on the 2026 notice.",
+        "Both property searches exist: the legacy search form is on https://www.tad.org/ and the new one is https://tarrant.prodigycad.com/property-search.",
+        "The Appraisal Review Board is a separate entity with its own phone (817-284-8884) and mailing address (P.O. Box 185519); hearing schedules appear in the portal (a downloadable ARB hearing schedule spreadsheet is also linked from the homepage).",
+        "Agents: new agent accounts were created by TAD; agents verify by e-mailing aoa@tad.org for an E-FILE PIN, and the legacy portal no longer accepts agent mass protests.",
+        "Paper protests are not accepted by fax or e-mail.",
+        "TAD certified its 2026 roll early after the system conversion (news post on tad.org); homepage notes the new 2026 notice layout and a 'Property Value Notice Breakdown' guide."
+      ],
+      "table_note": "2026 change: protests are filed on a new True Prodigy portal that needs a new account. The older tad.org login is still used for informal value negotiation.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/tarrant.php",
+      "sources": [
+        "https://www.tad.org/",
+        "https://www.tad.org/about/contact-us",
+        "https://www.tad.org/new-portal",
+        "https://www.tad.org/a-message-for-taxpayers",
+        "https://www.tad.org/how-do-i/home-owners",
+        "https://www.tad.org/how-do-i/request-an-online-pin",
+        "https://www.tad.org/tad-mails-2026-notices-of-appraised-value-to-property-owners",
+        "https://www.tad.org/about/tarb",
+        "https://www.tad.org/resources/data-downloads",
+        "https://www.tad.org/login",
+        "https://www.tad.org/content/forms/notice-of-protest.pdf?1",
+        "https://tarrant.prodigycad.com/property-search",
+        "https://tarrant.prodigycad.com/public-portal/sign-in"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "tad.org",
+        "v1_phone": "817-284-0024",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "tad.org and (817) 284-0024 are both still current. Material change for 2026: protests are now filed on a new True Prodigy portal (tarrant.prodigycad.com) that needs a new account, while informal Value Negotiation stays on the legacy tad.org portal; v1 guidance that assumed a single TAD dashboard/iFile flow is outdated."
+      }
+    },
+    {
+      "population_rank": 4,
+      "county": "Bexar",
+      "population_2025": 2160088,
+      "verification_status": "verified",
+      "cad_name": "Bexar Central Appraisal District",
+      "cad_abbrev": "BCAD",
+      "website": "https://bcad.org",
+      "phone": "210-242-2432",
+      "phone_notes": "Customer Service, Mon-Fri 8 AM-5 PM. Text 844-461-2223 for FAQ chat help. Fax 210-242-2454 (protest help article also lists 210-242-2453). ARB accessibility line 210-242-2418. The Online Portal page prints a different number (210-224-2432) that looks like a typo; the footer and Help Center articles all use 210-242-2432.",
+      "property_search_url": "https://hgo.harrisgovern.com/bexar/property/search",
+      "protest_portal": {
+        "name": "Online Services Portal (Online Appeals / E-Services Portal)",
+        "url": "https://www.bcadonline.org/",
+        "requires": "Register an account with the OWNER/AGENT ID and case-sensitive PIN printed at the top of the Notice of Appraised Value (a prior-year notice works). PIN is mailed only, not given by phone; requesting one does not extend the deadline.",
+        "short_name": "Online Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "fax",
+        "in_person"
+      ],
+      "filing_notes": "Online via the Online Services Portal is the district's preferred route. Alternatives per the BCAD Help Center article 'How to File a Protest': submit the completed protest through the Help Center (web upload), by mail, by fax, or in person. Form 50-132 Notice of Protest (English and Spanish) is on https://bcad.org/forms/. Address for mail/in person: Bexar Central Appraisal Review Board, 411 N Frio St (PO Box 830248, San Antonio, TX 78283-0248); fax 210-242-2454 or 210-242-2453. No protest email address is published. A notice is not required to file. As of 2026-10-08 online appeals are closed for the 2026 cycle (see quirks).",
+      "informal_hearings": {
+        "online": true,
+        "phone": true,
+        "in_person": null,
+        "notes": "Residential informal conferences are by phone or Zoom/video, self-scheduled in the Appointy app (generally May-August) using a link/QR code in the letter BCAD mails after the protest is loaded. Appraisers call from 210-750-9398. If no internet, BCAD staff can help schedule. Commercial: email comminformal@bcad.org with Property IDs. Business personal property: BPP dept contacts the owner. If unresolved, a formal ARB hearing is scheduled and mailed. In-person informal meetings are not described on the pages read."
+      },
+      "notice_timing": "Help Center: Notices of Appraised Value are usually mailed in mid-April, and the online protest section opens when they are mailed. 2026 homepage: notices went to new owners and owners whose market value rose $1,000 or more; people who protested in 2025 may not get one; a notice is not needed to protest. Deadline: May 15 (next business day if weekend/holiday), or 30 days after the notice mailing date if the notice was mailed after April 15, whichever is later. Waiting for a PIN does not extend the deadline.",
+      "bulk_data": null,
+      "correspondence_address": {
+        "mailing": "Bexar Central Appraisal Review Board, P.O. Box 830248, San Antonio, TX 78283-0248",
+        "physical": "411 North Frio Street, San Antonio, TX 78207"
+      },
+      "quirks": [
+        "Online appeals for the 2026 cycle were shut off at 5 PM on Sept 4, 2026 for annual roll maintenance; the protest section reopens when 2027 notices are mailed (usually mid-April). Other portal services such as exemption applications stay available.",
+        "Portal needs the OWNER/AGENT ID plus case-sensitive PIN from the notice; PIN requests are mailed only to the owner (phone 210-242-2432 or Help Center).",
+        "Property search moved to a Harris Govern 'Bexar Public Portal' at hgo.harrisgovern.com; the portal login page still links an older bexar.trueautomation.com property search (cid=110).",
+        "Main site help.bcad.org (Help Center) hosts the protest how-to articles and accepts document uploads, but it blocks simple automated fetches.",
+        "Remote formal hearings: written request for telephone/video hearing is due 5 days before (owner) or 10 days before (agent); evidence must be a notarized affidavit or unsworn declaration (BCAD publishes an Unsworn Declaration form).",
+        "Formal ARB hearing: sign in with the ARB receptionist 15 minutes early; typical hearing is 15 minutes; missing it without a sworn affidavit risks dismissal.",
+        "BCAD does not take tax payments; those go to the Bexar County Tax Assessor-Collector.",
+        "Appraisal data exports (GIS geodatabase, appraisal and protest data) are only 'available upon request' under the Public Information Act (OpenRecords@bcad.org), with fees possible for larger requests; no free download page found."
+      ],
+      "table_note": "Property search now links to hgo.harrisgovern.com/bexar. One BCAD page prints a typo phone (210-224-2432); 210-242-2432 is correct.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/bexar.php",
+      "sources": [
+        "https://bcad.org/",
+        "https://bcad.org/online-portal/",
+        "https://bcad.org/forms/",
+        "https://bcad.org/reports/",
+        "https://bcad.org/taxpayer-resources/",
+        "https://bcad.org/electronic-communication/",
+        "https://bcad.org/wp-content/uploads/2026/04/Bexar-ARB-Hearing-Procedures.pdf",
+        "https://www.bcadonline.org/",
+        "https://hgo.harrisgovern.com/bexar/property/search",
+        "https://help.bcad.org/hc/en-us",
+        "https://help.bcad.org/hc/en-us/categories/40216754047123-Protest-Information",
+        "https://help.bcad.org/hc/en-us/articles/39967966935571-How-to-File-a-Protest",
+        "https://help.bcad.org/hc/en-us/articles/47767849496211-Informal-and-Formal-Protest-Hearing-Process-Explained",
+        "https://help.bcad.org/hc/en-us/articles/39972567857171-Appointy-Scheduling-System-for-Residential-Property-Protests",
+        "https://help.bcad.org/hc/en-us/articles/55264219130899-What-is-a-Public-Information-Act-Request"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "bcad.org",
+        "v1_phone": "210-242-2432",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "bcad.org is the live official site. 210-242-2432 is the Customer Service number in the footer of every bcad.org page and in Help Center articles. One BCAD page (Online Portal) prints 210-224-2432, apparently a typo. Property search is no longer the old trueautomation clientdb; the site now links hgo.harrisgovern.com/bexar/property/search."
+      }
+    },
+    {
+      "population_rank": 5,
+      "county": "Travis",
+      "population_2025": 1389670,
+      "verification_status": "verified",
+      "cad_name": "Travis Central Appraisal District",
+      "cad_abbrev": "TCAD",
+      "website": "https://traviscad.org",
+      "phone": "512-834-9317",
+      "phone_notes": "Customer service hours: Mon/Wed/Fri 7:45 AM-4:45 PM, Tue/Thu 9:00 AM-4:45 PM. General email CSInfo@tcadcentral.org. TCAD says it no longer accepts fax.",
+      "property_search_url": "https://travis.prodigycad.com/property-search",
+      "protest_portal": {
+        "name": "E-File / TCAD online portal ('Your Portal', powered by Prodigy)",
+        "url": "https://travis.prodigycad.com/public-portal/sign-in",
+        "requires": "Create an online account using the property owner ID and PIN printed on the Notice of Appraised Value; Customer Service can supply them if missing.",
+        "short_name": "E-File (Your Portal)"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "Per https://traviscad.org/protests: file online through the portal (immediate confirmation; upload evidence, view TCAD evidence, accept or decline offers), by mail to Travis Central Appraisal District, PO Box 149012, Austin TX 78714, or drop off a protest form at 850 East Anderson Lane, Austin TX 78752 during business hours. No protest email address is published, and TCAD's FAQ says fax is discontinued (the FAQ also says it accepts 'US mail, email and hand delivery' for general communications). Forms library: https://stage.travis.prodigycad.com/forms (linked from traviscad.org/forms).",
+      "informal_hearings": {
+        "online": true,
+        "phone": true,
+        "in_person": null,
+        "notes": "Informal meetings with a TCAD appraiser are offered by phone or video conference; one informal meeting per property. Schedule a date/time in the online portal, or join the day's queue without a portal login at https://travis.prodigycad.com/check-in-beta ('Get in Line Online'). File the protest and have evidence recorded first. Expect a settlement offer within 10 business days after the meeting; respond by email, portal, mail or phone. Online settlement offers can also arrive without a meeting. In-person informal meetings are not described."
+      },
+      "notice_timing": "TCAD FAQ: Notices of Appraised Value are mailed out in April. Only owners whose market value rose at least $1,000 get a notice (agent of record gets it instead if there is one); owners can look up values on the property search. Protest deadline: May 15 or 30 days after the notice is mailed, whichever is later. Late protests with good cause can be filed until the ARB approves the records in mid-July. Formal ARB hearings typically run June-August.",
+      "bulk_data": {
+        "url": "https://traviscad.org/publicinformation",
+        "format": "Zipped appraisal export files (Legacy 8.0.33 appraisal export layout, layout file provided), a JSON 'special export' zip, supplemental roll exports, EARS submission zips, and several CSV property reports.",
+        "notes": "Direct download links on the Public Information page ('Publicly Available Data'), including the 2026 Certified Appraisal Export (July 2026) and supplements. TCAD FAQ says an electronic copy of the full appraisal roll is free on the website; GIS shape file costs $4 and PDF rolls cost $5 on request. The property search itself is 'not intended for the bulk transfer of data'."
+      },
+      "correspondence_address": {
+        "mailing": "Travis Central Appraisal District, P.O. Box 149012, Austin, TX 78714-9012",
+        "physical": "850 East Anderson Lane, Austin, TX 78752"
+      },
+      "quirks": [
+        "TCAD's own web pages link its property search and E-File to the host stage.travis.prodigycad.com; that host and travis.prodigycad.com both resolve to the same portal.",
+        "traviscad.org/portal redirects to travis.prodigycad.com/public-portal/sign-in; the protest page (traviscad.org/efile) is the E-File landing page.",
+        "ARB hearings can be by phone/videoconference, by affidavit, or in person at 850 E Anderson Ln if requested; bring 5 sets of evidence to an in-person formal hearing; hearing notice arrives at least 15 days ahead.",
+        "A protest is dismissed if you do not appear in person, by valid affidavit, by agent, or at a pre-scheduled telephone hearing; ask the ARB chair in writing within 4 days to reopen for good cause.",
+        "Agents: if you have a tax agent, the notice is mailed to the agent of record, not you.",
+        "Public information requests go through https://traviscad.govqa.us/WEBAPP/_rs/SupportHome.aspx or email; ARB public information requests go to the ARB Chairperson at PO Box 149012."
+      ],
+      "table_note": "Property search and e-file moved to the Prodigy platform. TCAD says it no longer accepts fax.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/travis.php",
+      "sources": [
+        "https://traviscad.org",
+        "https://traviscad.org/contact/",
+        "https://traviscad.org/protests",
+        "https://traviscad.org/informals",
+        "https://traviscad.org/efile",
+        "https://traviscad.org/portal",
+        "https://traviscad.org/propertysearch",
+        "https://traviscad.org/arbhearings",
+        "https://traviscad.org/forms",
+        "https://traviscad.org/faqs",
+        "https://traviscad.org/publicinformation",
+        "https://travis.prodigycad.com/property-search",
+        "https://travis.prodigycad.com/public-portal/sign-in"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "traviscad.org",
+        "v1_phone": "512-834-9317",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "traviscad.org is live and 512-834-9317 appears on every page as the Contact Us number. Property search and E-File now run on the Prodigy platform (travis.prodigycad.com). Travis CAD's contact email domain is tcadcentral.org."
+      }
+    },
+    {
+      "population_rank": 6,
+      "county": "Collin",
+      "population_2025": 1297179,
+      "verification_status": "verified",
+      "cad_name": "Collin Central Appraisal District",
+      "cad_abbrev": "CCAD",
+      "website": "https://collincad.org/",
+      "phone": "469-742-9200",
+      "phone_notes": "Metro line, Mon-Fri 8:00 AM-4:00 PM. Toll-free 866-467-1110. The Collin ARB (collinarb.org) lists the same 469-742-9200 and shares the CCAD address.",
+      "property_search_url": "https://esearch.collincad.org/",
+      "protest_portal": {
+        "name": "Taxpayer Portal (Online Appeals eFile)",
+        "url": "https://onlineportal.collincad.org/",
+        "requires": "Create a user account with your Owner ID and eFile PIN, both printed on the most recent Appraisal Notice or Exemptions Notice. The PIN is your digital signature and is unique per owner (do not use a previous owner's PIN). Registered tax agents use https://AgentAppeals.CollinCAD.org instead.",
+        "short_name": "Taxpayer Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "Collin ARB FAQ: 'The ARB will not accept protests submitted by fax or email. Protests to the ARB must be filed by mail, in person, drop-box (available 24/7) or, if eligible, an owner may file their protest through the appraisal district's Online Appeals eFile site.' Mail to: Collin Appraisal Review Board, 250 Eldorado Pkwy, McKinney, TX 75069. A written protest is sufficient if it identifies the property, owner name(s) and reasons; the Notice of Protest form is recommended (collincad.org Forms & Applications). Deadline: postmarked or hand-delivered by May 15 or the deadline printed on the notice. Fax 469-742-9201 and reschedule@cadcollin.org are for evidence/postponement/withdrawal requests only, not for filing a protest.",
+      "informal_hearings": {
+        "online": true,
+        "phone": false,
+        "in_person": true,
+        "notes": "In-person informal meetings with a District appraiser must be booked using the QR code on the Appraisal Notice or at https://waitwhile.com/book/ccad-appraisal; bring all documentation. CCAD says 'Inquiries by telephone will be responded to by mail, typically within 15 business days', i.e. no phone informal reviews. Protests filed in eFile (with opinion of value and evidence) are reviewed by an appraiser and any action is communicated through eFile or by mail. An informal review does not preserve ARB rights; only a timely filed protest does. Owners with more than 10 properties should phone the office."
+      },
+      "notice_timing": "CCAD page 'Appraisal Notices': 2026 Notices of Appraised Value for real property were mailed April 15, 2026; the first batch of BPP notices mailed May 13, 2026 and continued through early June. Protest deadline is typically May 15 (postmarked) or the date on your notice; deadline is the next business day if May 15 is a weekend/holiday. CCAD sends a notice to all property owners every year whether or not law requires it.",
+      "bulk_data": {
+        "url": "https://collincad.org/open-data-portal/",
+        "format": "Texas.gov Open Data Portal (data.texas.gov, Collin CAD Open Data story) with filter/sort/query/export of current appraisal data; separate GIS downloads and an ArcGIS Open Data Hub (open-data-ccad.hub.arcgis.com); exact export file formats are not stated on the CCAD page",
+        "notes": "Free online access is implied (public-domain data) but the pages do not state a price for the open-data portal. CCAD says custom data exports are 'for a fee' via the Open Records process. Publishing timeline per the open-data page: mid-April preliminary real property values, June preliminary personal property, late July/August certified values. No technical support provided."
+      },
+      "correspondence_address": {
+        "mailing": "Collin Appraisal Review Board, c/o Collin Central Appraisal District, 250 Eldorado Pkwy, McKinney, TX 75069",
+        "physical": "Collin Central Appraisal District, 250 Eldorado Pkwy, McKinney, TX 75069 (northeast corner of Eldorado Parkway and College Street, about 1.5 miles east of Hwy 75)"
+      },
+      "quirks": [
+        "Formal protests and hearings are administered by a separate site, CollinARB.org (Collin Appraisal Review Board); CCAD staff handle informal review.",
+        "The CCAD website sits behind a 'Checking your browser' interstitial; a normal browser passes automatically after a few seconds, but scripted fetches (e.g. WebFetch) get HTTP 403.",
+        "Hearing options: in person, or by sworn affidavit/written declaration with optional telephone or video conference; telephone/video requests must be made in writing at least 10 days before the hearing (via eFile or CollinARB@CollinARB.org). Evidence by mail, hand delivery, e-mail (collinarb@collinarb.org) or fax (469-742-9201), requested 3 days before the hearing; ARB does not accept USB drives or other media; PDF preferred, 20 MB limit per property.",
+        "Hearing notice is mailed at least 15 days before the hearing; the ARB must provide evening or Saturday hearing times on request (contact the district).",
+        "Office hours are 8:00 AM-4:00 PM Mon-Fri; doors lock at 4:00 PM on the deadline day and the drop box is emptied at midnight May 15.",
+        "Property search is hosted by BIS Consultants (esearch.collincad.org) and already offers tax year 2027 data alongside 2026.",
+        "Tax bills are not paid through CCAD; CCAD does not bill or collect taxes (see collincad.org/tax-offices)."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/collin.php",
+      "sources": [
+        "https://collincad.org/",
+        "https://collincad.org/2026-appraisal-notices/",
+        "https://collincad.org/category/faqs/notice-of-appraised-value-faqs/",
+        "https://collincad.org/open-data-portal/",
+        "https://esearch.collincad.org/",
+        "https://onlineportal.collincad.org/",
+        "https://collinarb.org/",
+        "https://collinarb.org/contact/",
+        "https://collinarb.org/formal-procedures/",
+        "https://collinarb.org/frequently-asked-questions-faqs/",
+        "https://data.texas.gov/stories/s/mz7k-urqw"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "collincad.org",
+        "v1_phone": "469-742-9200",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "collincad.org and 469-742-9200 both confirmed on the CCAD homepage footer. Toll-free 866-467-1110 also published. Protests run through the Taxpayer Portal at onlineportal.collincad.org and the separate collinarb.org site."
+      }
+    },
+    {
+      "population_rank": 7,
+      "county": "Denton",
+      "population_2025": 1069346,
+      "verification_status": "verified",
+      "cad_name": "Denton Central Appraisal District",
+      "cad_abbrev": "DCAD",
+      "website": "https://www.dentoncad.com/",
+      "phone": "940-349-3800",
+      "phone_notes": null,
+      "property_search_url": "https://www.dentoncad.com/property-search",
+      "protest_portal": {
+        "name": "Public Portal (True Prodigy)",
+        "url": "https://www.dentoncad.com/public-portal/sign-in",
+        "requires": "Create an account using the property Owner ID and PIN from the Notice of Appraised Value (PIN is in the upper right-hand corner of the notice). PINs are not given by phone or e-mail; if the notice is lost, request the PIN in the portal (mailed to the address on file) or visit the office in person with photo ID.",
+        "short_name": "Public Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "DCAD protest page lists three methods: online (portal; immediate confirmation, upload evidence, accept/decline settlement offers), by mail to 3911 Morse Street, Denton, TX 76208, or drop off a protest form at the same office. No fax or e-mail filing is published. Include the property ID or address, contact info and opinion of value. Deadline: May 15 or 30 days after the notice mailing date, whichever is later. A protest must be filed before an informal meeting or formal hearing can be scheduled or CAD evidence requested.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "Informal meetings with an appraiser are in person by appointment, first-come first-served, booked at https://waitwhile.com/locations/dcad/welcome (in 2026 they ran Mon-Fri through May 8 with limited daily capacity; anyone unable to get one is handled the same day as their formal hearing). Settlement offers can also be accepted or declined online through the portal. The protest page does not mention phone informal meetings."
+      },
+      "notice_timing": "DCAD '2026 ARB Season Important Dates' (subject to change): April 10, 2026 Notices of Appraised Value mailed for most real property (protest deadline May 15); April 15 first oil/gas/mineral notices from Wardlaw Appraisal Group (deadline May 15); May 7 first BPP notices (deadline June 8); May 18 second Wardlaw batch (deadline June 17); May 29 second BPP batch (deadline June 29). Informals ended May 8; ARB hearings began May 11; ARB goal to approve records July 17; roll certified July 24, 2026. Hearing notice is mailed at least 15 days before a formal hearing.",
+      "bulk_data": {
+        "url": "https://www.dentoncad.com/data-downloads",
+        "format": "Yearly certified data extracts (2021-2026) split into All Property, Real, Business Personal Property, Mineral and Mobile Home sets, plus a JSON export and layout; weekly-updated GIS file geodatabase and appraisal data CSV (ZIP); shapefile ZIP via Google Drive",
+        "notes": "Direct download links on the page, no request form shown, no price stated. The extract files are hosted as folders on dentoncad.net. DCAD gives no technical support for the exports."
+      },
+      "correspondence_address": {
+        "mailing": "Denton Central Appraisal District, 3911 Morse Street, Denton, TX 76208",
+        "physical": "Denton Central Appraisal District, 3911 Morse Street, Denton, TX 76208"
+      },
+      "quirks": [
+        "Denton CAD also abbreviates itself DCAD, the same abbreviation as Dallas Central Appraisal District.",
+        "Office hours are Mon 8-4, Tue 8-4, Wed 8-12 (noon), Thu 8-4, Fri 8-4; Wednesday is a half day.",
+        "ARB hearings can be by phone or videoconference, by affidavit, or in person at the DCAD office; the Denton ARB contacts owners at least 15 days before the hearing, and portal users receive notice through the portal.",
+        "Owners who file a protest get access to the district's evidence packet through the online portal (account required).",
+        "Mineral and oil-and-gas accounts are appraised by Wardlaw Appraisal Group with their own notice dates and protest deadlines.",
+        "The portal and property search run on True Prodigy; denton.prodigycad.com is an alternate host for some pages (e.g. contact-us, taxpayer liaison).",
+        "Email contact is via a web form (helpdesk.dentoncad.com/contact-form), no public e-mail address is shown on the contact page."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/denton.php",
+      "sources": [
+        "https://www.dentoncad.com/",
+        "https://www.dentoncad.com/the-protest-process",
+        "https://www.dentoncad.com/contact-us",
+        "https://denton.prodigycad.com/contact-us",
+        "https://www.dentoncad.com/property-search-information",
+        "https://www.dentoncad.com/property-search",
+        "https://www.dentoncad.com/data-downloads",
+        "https://www.dentoncad.com/arb"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "dentoncad.com",
+        "v1_phone": "940-349-3800",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "dentoncad.com (canonical www.dentoncad.com) and (940) 349-3800 both confirmed on the homepage and Contact page. Site is now on the True Prodigy platform; protests are filed through the Public Portal."
+      }
+    },
+    {
+      "population_rank": 8,
+      "county": "Fort Bend",
+      "population_2025": 975191,
+      "verification_status": "verified",
+      "cad_name": "Fort Bend Central Appraisal District",
+      "cad_abbrev": "FBCAD",
+      "website": "https://www.fbcad.org/",
+      "phone": "281-344-8623",
+      "phone_notes": "Main line. Mon-Fri 8:00 AM-4:30 PM. General email info@fbcad.org.",
+      "property_search_url": "https://esearch.fbcad.org/",
+      "protest_portal": {
+        "name": "Online Appeal (property owner portal; counts as the informal conference)",
+        "url": "https://webappeals.fbcad.org/User/Login?ReturnUrl=%2f",
+        "requires": "Free portal account (email address as username + password), then register each property with its Quick Ref ID and Passcode printed on the Notice of Appraised Value. A no-account alternative, eFile Notice of Protest, is at https://www.fbcad.org/efile-appeal/.",
+        "short_name": "Online Appeal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "Four options on https://www.fbcad.org/appeals/: (1) Online Appeal portal (account required; an FBCAD appraiser reviews it and it counts as the informal conference); (2) eFile Notice of Protest (no account; emailed confirmation and PDF copy equals the date received); (3) mail Form 50-132 to 2801 B.F. Terry Blvd., Rosenberg, TX 77471-5600; (4) drop off in person at 2801 B.F. Terry Blvd. FBCAD warns that filing by more than one method (for example mail plus online) is a duplicate filing that can delay processing, and that delivering the protest by US mail, email or in person forfeits the Online Appeal option. No protest email address or fax number is published. Late protests (good cause) go to the ARB by mail or in person.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": false,
+        "notes": "FBCAD states informal conferences are conducted remotely with an appraiser; request one at https://www.fbcad.org/informal/ after filing a Notice of Protest. Filing through the Online Appeal portal counts as the informal conference. Formal ARB hearings are held on-site at 2801 B.F. Terry Blvd.; telephone or Zoom hearings need a written request at least 10 days before the hearing (5 days if no agent) plus a notarized affidavit of evidence (Form 50-283), uploaded at https://www.fbcad.org/aoe-upload/."
+      },
+      "notice_timing": "FBCAD's timeline page lists April as when it mails the Notice of Appraised Value, and its online appeal guide says notices are mailed out on April 1 each year (Quick Ref ID and Passcode are printed on it). Appeals page: protest deadline is no later than May 15, 2026, or within 30 days after the notice was mailed, whichever is later. Late protests with good cause are allowed until the ARB approves the appraisal records (typically around July 20-25).",
+      "bulk_data": {
+        "url": "https://www.fbcad.org/certified-and-supplements-reports/",
+        "format": "Downloadable Preliminary / Certified / Supplemental files ('Property Data Export', 'Certified Data Export Roll', residential and commercial segments, grand totals); the page does not state the file type. GIS parcel and shape files are .ZIP downloads at https://www.fbcad.org/gis-data/",
+        "notes": "Direct download links; no fee or request form mentioned. 2026 certified files dated July 2026, supplements through 9-21-2026. GIS data from 2016 or later needs a Public Information Request. FBCAD also links an Open Data Hub at https://fbcad-open-data-hub-fortbend.hub.arcgis.com/"
+      },
+      "correspondence_address": {
+        "mailing": "Fort Bend Central Appraisal District, 2801 B.F. Terry Blvd., Rosenberg, TX 77471-5600 (use 'Attn: Appraisal Review Board' for late protests, reschedules and withdrawals)",
+        "physical": "2801 B.F. Terry Blvd., Rosenberg, TX 77471"
+      },
+      "quirks": [
+        "Two online paths: Online Appeal (account + Quick Ref ID/Passcode, doubles as informal conference) versus eFile (no account, just files the Notice of Protest).",
+        "Do not file the same protest twice by different methods; FBCAD treats it as a duplicate and it can slow processing.",
+        "A Notice of Protest is required before requesting an informal conference or an ARB evidence packet (https://www.fbcad.org/arb-protest-evidence-packet-request/); the packet is sent at least 14 days before the formal hearing.",
+        "Evidence uploaded through the online portal is for the informal review only and is not forwarded to the ARB; formal evidence must be taken to the hearing on paper or electronic device, or uploaded as a notarized affidavit for virtual hearings.",
+        "Virtual ARB hearings use Zoom with WaitWell check-in; screen sharing is not allowed, so all evidence must be provided beforehand.",
+        "Property owners with no agent are entitled to one reschedule without showing cause; reschedule requests must be in writing (online form, mail or in person).",
+        "FBCAD has an at-large board of directors election on 11/03/2026 (not protest related).",
+        "Homepage notes USPS postmark timing changes can make mailed submissions count as late."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/fortbend.php",
+      "sources": [
+        "https://www.fbcad.org/",
+        "https://www.fbcad.org/contact/",
+        "https://www.fbcad.org/appeals/",
+        "https://www.fbcad.org/online-protest-faq/",
+        "https://www.fbcad.org/efile-your-online-protest/",
+        "https://www.fbcad.org/efile-appeal/",
+        "https://www.fbcad.org/informal/",
+        "https://www.fbcad.org/virtual-arb-hearings/",
+        "https://www.fbcad.org/timeline/",
+        "https://www.fbcad.org/knowledge-base/8/",
+        "https://www.fbcad.org/wp-content/uploads/2026/04/PO-Portal-Online-Appeal-Guide-04-2026.pdf",
+        "https://www.fbcad.org/certified-and-supplements-reports/",
+        "https://www.fbcad.org/gis-data/",
+        "https://esearch.fbcad.org/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "fbcad.org",
+        "v1_phone": "281-344-8623",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "fbcad.org is FBCAD's live domain (pages are served as www.fbcad.org) and the contact page lists 281.344.8623 (also printed in FBCAD's 2026 online appeal guide). The 281-341-3710 number on the homepage belongs to the Fort Bend County Assessor-Collector, not FBCAD."
+      }
+    },
+    {
+      "population_rank": 9,
+      "county": "Hidalgo",
+      "population_2025": 921549,
+      "verification_status": "verified",
+      "cad_name": "Hidalgo County Appraisal District",
+      "cad_abbrev": "Hidalgo CAD",
+      "website": "https://hidalgoad.org",
+      "phone": "956-381-8466",
+      "phone_notes": "Customer service line (also cs@hidalgoad.org). Office hours Mon-Fri 8:00 a.m.-4:45 p.m. No separate protest phone line is published.",
+      "property_search_url": "https://hidalgoad.org/property-search",
+      "protest_portal": {
+        "name": "Online Portal (Public Portal, True Prodigy platform)",
+        "url": "https://hidalgoad.org/public-portal/sign-in",
+        "requires": "Free portal login (create one at https://hidalgoad.org/public-portal/sign-up), then use the property owner ID and PIN printed on the Notice of Appraised Value to access the property, file the protest and see the CAD evidence packet",
+        "short_name": "Public Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "CAD's Protest Process page lists: online through the portal; by mail to 4405 S Professional Dr, Edinburg, TX 78539; or drop off the protest form in person at that office during business hours. Form 50-132 (Property Owner's Notice of Protest) is in the CAD forms library. No protest email address or fax number is published. The CAD asks that written evidence requests (HB 201) arrive at least 14 days before the hearing; the statute sets no request deadline, but Tax Code 41.67(d) bars the CAD from using requested information it did not deliver 14 days before the hearing. Homestead / Over-65 exemption applications use a different site (taxpayer.justappraised.com/hidalgocad).",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "CAD states: all informal hearings are conducted via the online portal or in person 30 minutes prior to the formal hearing. Online filers can upload evidence, view the CAD's evidence and review a settlement offer in their portal account. Phone informal hearings are not mentioned. Formal ARB hearings: in person, by agent, by affidavit, or by pre-scheduled telephone hearing (per CAD FAQ)."
+      },
+      "notice_timing": "CAD says every spring owners whose market value rose by at least $1,000 receive a Notice of Appraised Value (no specific mailing date published). Protest deadline: May 15 or 30 days after the notice is mailed, whichever is later. Formal hearing notice is mailed at least 15 days before the ARB hearing.",
+      "bulk_data": {
+        "url": "https://hidalgoad.org/data-downloads",
+        "format": "GIS shapefile export (parcel, school and city data, joined to appraisal data, plus a standalone appraisal DBF table; refreshed monthly) and 'TYP' certified exports (appraisal roll, mineral supporting datasets, mineral appraisal schedule)",
+        "notes": "Download buttons open CAD-hosted Google Drive / Dropbox folders. No fee or request form is mentioned on the page. Export data schema is referenced on the page. Not downloaded or inspected."
+      },
+      "correspondence_address": {
+        "mailing": "Hidalgo County Appraisal District, 4405 S Professional Drive, Edinburg, TX 78539",
+        "physical": "4405 S Professional Drive, Edinburg, TX 78539"
+      },
+      "quirks": [
+        "Domain is hidalgoad.org (not hidalgocad.org). The CAD's own staff/board section abbreviates itself 'HCAD', which collides with Harris CAD (hcad.org).",
+        "The site is a JavaScript app (True Prodigy); pages show a blank 'Public Portal' title for a few seconds before content renders, and some URLs (e.g. /informal-meetings) just redirect to the home page.",
+        "Property search and portal are hosted on True Prodigy (hidalgo.prodigycad.com); the same search is available inside hidalgoad.org/property-search. Tip from CAD: do not use street suffixes (St, Dr, Ln); use % as a wildcard (e.g. 100%).",
+        "Search can be done by owner name, property address, account number or DBA.",
+        "To view the CAD's evidence packet you must have a portal account tied to the owner ID and PIN on your Notice of Appraised Value.",
+        "Formal ARB hearings are held at the CAD office (4405 S Professional Dr). CAD says to bring 5 sets of evidence and your hearing letter. If you miss the hearing you can ask the ARB chair to reopen it by letter within 4 days.",
+        "Homestead and Over-65 exemptions are filed through a separate portal (https://taxpayer.justappraised.com/hidalgocad); protests go through the Public Portal."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/hidalgo.php",
+      "sources": [
+        "https://hidalgoad.org/",
+        "https://hidalgoad.org/contact-us",
+        "https://hidalgoad.org/protest-process",
+        "https://hidalgoad.org/public-portal/sign-in",
+        "https://hidalgoad.org/property-search",
+        "https://hidalgoad.org/property-search-information",
+        "https://hidalgoad.org/forms",
+        "https://hidalgoad.org/data-downloads"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 10,
+      "county": "El Paso",
+      "population_2025": 877858,
+      "verification_status": "verified",
+      "cad_name": "El Paso Central Appraisal District",
+      "cad_abbrev": "EPCAD",
+      "website": "https://epcad.org",
+      "phone": "915-780-2131",
+      "phone_notes": "General information line, Mon-Fri 8 a.m.-5 p.m. ARB department (hearings / late-protest evidence): 915-780-2123. Main fax 915-780-2130; ARB fax 915-792-0447 (arbfax@epcad.org, listed under ARB hearing information but not stated to be a protest-filing channel). A 2026 PDF notice lists 915-780-2000, but every web page lists 915-780-2131. eprotest@epcad.org is the support email on the portal page.",
+      "property_search_url": "https://epcad.org/Search",
+      "protest_portal": {
+        "name": "Online Protest Portal (Digital Protest; also a pre-filled digital form via QR code)",
+        "url": "https://epcad.org/OnlineServices/ProtestPortal",
+        "requires": "No separate account described. Digital protest services are reached from Property Search by clicking 'Property Services' on the account after searching; the QR code on the Notice of Value opens a pre-filled form (no login). Portal filers must opt in to electronic communications and receive email only (sender no-reply@epcad.org).",
+        "short_name": "Protest Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "CAD lists four options: (1) Online Portal (email-only communication, counts as your informal hearing, no in-person appraiser meeting, method cannot be changed once submitted); (2) digital form / QR code (no login, pre-filled, in-person appraiser meeting); (3) in person with Form 50-132 or at the office kiosks using the QR code on the Notice of Value; (4) U.S. Mail with Form 50-132. Mail to El Paso Central Appraisal District, 5801 Trowbridge Dr., El Paso, TX 79925. Hearing type (in person, video or phone) must be requested on the protest form. Website evidence uploads are limited to 25 files per account; video/audio, links to cloud storage and Apple HEIC-type files are not accepted.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "Portal protest = informal review by email only (cannot meet an appraiser in person). Form/QR, kiosk and mail filers can meet an appraiser in person before the hearing. Phone informal review is not mentioned. Formal ARB hearings can be held in person, by video, or by phone regardless of how the protest was filed (request on the protest form at least 5 days before the hearing per CAD procedures)."
+      },
+      "notice_timing": "CAD's 'Notice: Filing Deadlines 2026' (dated April 8, 2026) stated Notices of Appraised Value were 'now being mailed'. Protest deadline: 30 days from the notice date or May 15, whichever is later (May 15 if no notice was received). As of 2026-10-08 the CAD site states the timely protest deadline has ended and all online protest options are closed; late-protest evidence can be submitted via the 'Submit Evidence' button in Property Services or by calling the ARB department at 915-780-2123. Failure-to-receive-notice protests are allowed until the day before taxes become delinquent (per CAD 2026 procedures PDF).",
+      "bulk_data": {
+        "url": "https://epcad.org/OpenGovernment",
+        "format": "Zip downloads: (a) property search datasets as '~'-delimited flat text files (Deeds, Improvements, Lands, Owners, Properties, Rolls, Tax Jurisdictions, Values) with a schema file; (b) 2026 and 2025 Certified Export Files with Appraisal Export Layout 8.0.34 and Owner Agent Export Layout; (c) 2026 appraisal roll / real estate / personal property files; (d) GIS parcel shapefiles for 2023-2025",
+        "notes": "Direct download links under 'CAMA Datasets Downloads' and 'Appraisal Roll, Real Estate, and Personal Property (Open Records)'. No fee or request form is stated; files are labeled 'for development use only'. 2026 certified export last updated Sept 15, 2026; GIS shapefiles are posted as a courtesy with no regular schedule (latest listed: 2025, 85 MB). Not downloaded or inspected."
+      },
+      "correspondence_address": {
+        "mailing": "El Paso Central Appraisal District, 5801 Trowbridge Dr., El Paso, TX 79925",
+        "physical": "5801 Trowbridge Dr., El Paso, TX 79925"
+      },
+      "quirks": [
+        "CAD banner: systems will be temporarily unavailable from 10/09/2026 to 10/16/2026 for planned upgrades; some services may be limited.",
+        "As of 2026-10-08 the protest pages state the 2026 timely protest deadline has ended and online protest options are closed.",
+        "Property search defaults to tax year 2027 ('work in progress'); prior-year data is informational only. Search by ownership, property address or account number.",
+        "Online protest and evidence tools appear only after you search and open 'Property Services' on the account; the portal route and the form/QR route have different consequences (email-only vs. in-person appraiser meeting).",
+        "The CAD does not handle tax bills: it directs tax payment/amount-owed questions to the Consolidated Tax Office (915-212-0106) or the El Paso County Tax Office (915-771-2300).",
+        "Evening or Saturday ARB hearings can be requested (per CAD procedures PDF).",
+        "Open records requests may be faxed to (915) 780-2010; tax agents use a separate Agent Evidence Portal (access via appsupport@epcad.org).",
+        "www.epcad.org returned HTTP 403 to an automated fetch tool but loads normally in a browser."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/elpaso.php",
+      "sources": [
+        "https://epcad.org/",
+        "https://epcad.org/ProtestsAndAppeals",
+        "https://epcad.org/OnlineServices/ProtestPortal",
+        "https://epcad.org/Home/OnlineServices",
+        "https://epcad.org/Home/IWantTo",
+        "https://epcad.org/Home/News",
+        "https://epcad.org/OpenGovernment",
+        "https://epcad.org/Search",
+        "https://epcad.org/Site/SiteMap",
+        "https://blob.epcad.org/documents/2026_Notice_Filing_Deadlines_EN_ES.pdf",
+        "https://blob.epcad.org/documents/ProtestAppealsProcedures_2026_EN.pdf"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 11,
+      "county": "Montgomery",
+      "population_2025": 781194,
+      "verification_status": "verified",
+      "cad_name": "Montgomery Central Appraisal District",
+      "cad_abbrev": "MCAD",
+      "website": "https://www.mcad-tx.org/",
+      "phone": "936-756-3354",
+      "phone_notes": "Main line; a second office line 936-441-2186 is also published on the contact page and site footer. Mon-Fri 8:00 AM-5:00 PM. Customer service email inquiries@mcad-tx.org.",
+      "property_search_url": "https://www.mcad-tx.org/property-search",
+      "protest_portal": {
+        "name": "MCAD Public Portal (File Your Protest)",
+        "url": "https://www.mcad-tx.org/public-portal/sign-in",
+        "requires": "Free portal account (first/last name, cell phone, email, password; owner or agent). How properties are then linked to the account is explained only in a Vimeo video (https://vimeo.com/559034916), so the exact notice credential (ID/PIN) is not confirmed in text.",
+        "short_name": "Public Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "MCAD's informal-meetings page says owners may submit the protest and evidence through the online portal, by mail to PO Box 2233, Conroe, TX 77305, or by hand delivery to the designated dropbox in front of the office at 109 Gladstell Street. Form 50-132 is listed under ARB/Protest forms at https://mcad-tx.org/forms; the FAQ says a written notice identifying the owner, the property and dissatisfaction with a district decision is sufficient. No protest email address or fax number is published (the contact page's department emails are not labelled for protests).",
+      "informal_hearings": {
+        "online": true,
+        "phone": true,
+        "in_person": null,
+        "notes": "Informal-meetings page: owners who file online can upload evidence, view district evidence and receive a settlement offer in their portal account; informal meetings with an MCAD appraiser are by phone/videoconference (one informal meeting per property); settlement offer expected within 10 business days, answerable by email, portal, mail or phone. That page's wording looks pandemic-era (cites April 17, 2023), so in-person informal availability is not confirmed. ARB hearings: by phone/video with an affidavit on file, by affidavit, or in person if requested."
+      },
+      "notice_timing": "MCAD's site does not publish a 2026 notice mailing date. Its protest FAQ says to file by May 15 or no later than 30 days after the district mailed the notice (30 days from mailing, not receipt), whichever is later, and its property tax system page says the ARB begins hearing protests around June 1. ARB hearing notices go out at least 15 days before the hearing.",
+      "bulk_data": {
+        "url": "https://mcad-tx.org/appraisal-data-exports",
+        "format": "Zip files of the Public Appraisal Export (certified rolls 2019-2026 and a 2026 preliminary roll, legacy 8.0.33 export layout) with JSON versions of the 2026 certified and preliminary rolls; layout docs offered as PDF/xlsx",
+        "notes": "Direct links on the page; no fee or request form mentioned. datarequest@mcad-tx.org is listed on the contact page for information not on the website."
+      },
+      "correspondence_address": {
+        "mailing": "PO Box 2233, Conroe, TX 77305",
+        "physical": "109 Gladstell, Conroe, TX 77301 (site footer; the contact page prints the ZIP as 77305)"
+      },
+      "quirks": [
+        "Website is a JavaScript single-page app; pages render blank until loaded. Navigation menu is behind a MENU button.",
+        "ZIP for the office differs between MCAD pages: 77301 on the homepage footer, 77305 on the contact page (77305 is also the PO Box ZIP); confirm before sending anything to the street address.",
+        "Some pages (Informal Meetings, The Protest Process) contain dated text referencing 2023 and 2025 and pandemic safety protocols; confirm current procedures by phone.",
+        "ARB hearing check-in portal: https://montgomery.prodigycad.com/check-in-beta (linked from MCAD homepage as ARB Hearing Check-In).",
+        "Dropbox for hand-delivery is in front of the office at 109 Gladstell Street.",
+        "Homestead exemptions are filed at https://taxpayer.justappraised.com/montgomerycadtx (separate from the protest portal).",
+        "Final orders arrive by certified mail, or by email on request, about 3-4 weeks after the hearing."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/montgomery.php",
+      "sources": [
+        "https://www.mcad-tx.org/",
+        "https://mcad-tx.org/contact-us",
+        "https://www.mcad-tx.org/public-portal/sign-in",
+        "https://www.mcad-tx.org/public-portal/sign-up",
+        "https://mcad-tx.org/informal-meetings",
+        "https://mcad-tx.org/the-protest-process",
+        "https://mcad-tx.org/arb/",
+        "https://mcad-tx.org/forms",
+        "https://mcad-tx.org/property-search",
+        "https://mcad-tx.org/appraisal-data-exports",
+        "https://mcad-tx.org/tax-information",
+        "https://mcad-tx.org/calendar"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "mcad-tx.org",
+        "v1_phone": "936-756-3354",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "mcad-tx.org is MCAD's live site (both mcad-tx.org and www.mcad-tx.org load). 936-756-3354 is the first phone number on the contact page and footer; a second line 936-441-2186 is also published. Protest portal and property search are hosted on mcad-tx.org itself."
+      }
+    },
+    {
+      "population_rank": 12,
+      "county": "Williamson",
+      "population_2025": 752827,
+      "verification_status": "verified",
+      "cad_name": "Williamson Central Appraisal District",
+      "cad_abbrev": "WCAD",
+      "website": "https://www.wcad.org",
+      "phone": "512-930-3787",
+      "phone_notes": "Mon-Fri 8:00 AM-5:00 PM. No fax number is published on the contact pages. A Help Center and a support ticket form are at https://support.wcad.org/portal/en/home and https://support.wcad.org/portal/en/newticket.",
+      "property_search_url": "https://search.wcad.org",
+      "protest_portal": {
+        "name": "Online Protests / Online Appeal System",
+        "url": "https://onlineappeals.wcad.org/User/Login",
+        "requires": "Create a user (email + password), then register the property with the QuickRefID and the Online Protest Passcode printed on the Notice of Appraised Value (only accounts showing an online passcode/watermark are eligible). Reached from the Property Search record via the 'Protest Online' button.",
+        "short_name": "Online Appeals"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "From WCAD's 2026 Protest Process Overview (Rev. 4/2026): file online, or use a paper protest (the form mailed with the notice, the Comptroller-prescribed form, or a signed written statement with owner name, property identification by QuickRefID or address, and reason for protest). Paper protests: mail (postmark on or before the deadline) or deliver to the WCAD office at 625 FM 1460, Georgetown TX 78626-8050. The notice's own 'Scheduled Protest Filing Procedures' section says whether online filing is available for that account. No protest email address is published; Affidavits@wcad.org and Agents@wcad.org are for hearing affidavits and agent authorizations only.",
+      "informal_hearings": {
+        "online": true,
+        "phone": false,
+        "in_person": true,
+        "notes": "WCAD runs the informal review and the formal ARB hearing on the same scheduled hearing date. In person: check in to a queue at the WCAD office and wait for a district staff member (15 minutes each). A virtual (videoconference) hearing request covers both the informal review and the ARB hearing; a telephone hearing request covers ONLY the formal ARB hearing. Separately, after filing online an 'appraisal review' settlement offer may appear in the portal immediately (email from DoNotReply@wcadonline.org)."
+      },
+      "notice_timing": "WCAD Help Center: Notices of Appraised Value are mailed the first week of April and posted online at the same time (property record 'Notice of Appraised Value' icon). 2026 deadline: Friday May 15, or 30 days after the notice mail date, whichever is later. The online protest site is open only from the April mailing until 11:59 PM May 15; notices mailed after the first run are mail/in-person filing only. ARB hearings are scheduled April-July, Monday-Thursday 8 AM-5 PM; the hearing notice is sent at least 15 days ahead.",
+      "bulk_data": {
+        "url": "https://data.wcad.org/",
+        "format": "Socrata open-data portal: tabular datasets (e.g., Property - Certified, Property - Preliminary, Owner, Exemptions, Appeals, *PropertyDataExport tables) with an Export action on each dataset, plus GIS shapefiles (parcels, subdivisions, MUD, ESD). Exact download file types were not verified.",
+        "notes": "Free and publicly browsable (97 catalog items on 2026-10-08, many updated monthly or nightly); no request form or fee stated on the portal. A separate Public Information Request form exists at https://www.wcad.org/public-information-open-records-request/."
+      },
+      "correspondence_address": {
+        "mailing": "Williamson Central Appraisal District, 625 FM 1460, Georgetown, TX 78626-8050",
+        "physical": "625 FM 1460, Georgetown, TX 78626-8050"
+      },
+      "quirks": [
+        "No separate PO Box is published; WCAD's own letterhead and contact pages list 625 FM 1460, Georgetown TX 78626-8050 only. Mail protests so they are postmarked by the deadline.",
+        "Online filing is NOT available for every account: the notice must show an Online Passcode; later-mailed notices usually say mail or in-person only.",
+        "The online appeal system is on its own host (onlineappeals.wcad.org); an HTTPS connection to it failed from the research environment, so the URL comes from WCAD's own Protest Process Overview PDF and Help Center article rather than a page load.",
+        "Account IDs are QuickRefIDs: a six-digit number prefixed R, M, P or N.",
+        "WCAD hearings are not scheduled in the order protests are filed; residential accounts may self-schedule a hearing slot in the portal (May 1 through mid-July, limited slots).",
+        "The CAD asks that requests for the evidence packet (Tax Code 41.461) arrive at least 14 days before the hearing, via the web form, in person or by mail; the statute sets no request deadline, but Tax Code 41.67(d) bars the CAD from using requested information it did not deliver 14 days before the hearing.",
+        "To appear by telephone or virtually, the written request is due 5 days (owner) or 10 days (agent) before the hearing and evidence must be a notarized affidavit.",
+        "Only one person per side is allowed in each informal and ARB session; both sessions are limited to 15 minutes.",
+        "WCAD says the protest deadline cannot be extended because values must be certified in July."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/williamson.php",
+      "sources": [
+        "https://www.wcad.org/",
+        "https://www.wcad.org/contact-us/",
+        "https://www.wcad.org/contact-us-2/",
+        "https://www.wcad.org/online-protest-filing/",
+        "https://www.wcad.org/williamson-county-arb/",
+        "https://www.wcad.org/virtual-hearing-procedures/",
+        "https://www.wcad.org/wp-content/uploads/2026/04/Protest-Process-Overview-2026.pdf",
+        "https://support.wcad.org/portal/en/kb/articles/notice-of-appraisal-value",
+        "https://support.wcad.org/portal/en/kb/articles/why-is-the-online-protest-portal-disabled",
+        "https://support.wcad.org/portal/en/kb/articles/how-to-file-protest",
+        "https://search.wcad.org",
+        "https://data.wcad.org/browse",
+        "https://data.wcad.org/dataset/Property-Certified/ai3c-c9pf/about_data"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": {
+        "v1_website": "wcad.org",
+        "v1_phone": "512-930-3787",
+        "website_status": "correct",
+        "phone_status": "correct",
+        "notes": "wcad.org redirects to https://www.wcad.org/ (same site). 512-930-3787 is the number on the homepage and contact page. Property search is on search.wcad.org and bulk data on data.wcad.org."
+      }
+    },
+    {
+      "population_rank": 13,
+      "county": "Cameron",
+      "population_2025": 433946,
+      "verification_status": "verified",
+      "cad_name": "Cameron Appraisal District",
+      "cad_abbrev": "Cameron CAD",
+      "website": "https://www.cameroncad.org",
+      "phone": "956-399-9322",
+      "phone_notes": "The CAD lists three public lines on every page without saying which office each serves: (956) 399-9322, (956) 541-3365, (956) 428-8020. Fax (956) 399-6969. Hours Mon-Thu 7:30 a.m.-5:30 p.m., Fri 8:00 a.m.-5:00 p.m. General email public@cameroncad.org.",
+      "property_search_url": "https://www.cameroncad.org/Pages/PropertySearch",
+      "protest_portal": null,
+      "filing_methods": [
+        "mail",
+        "fax",
+        "email",
+        "in_person"
+      ],
+      "filing_notes": "Per the CAD FAQ (ARB tab): protests must be in writing; verbal protests are not accepted. No official form is required: any written notice identifying the owner, the property (address or account number) and the reason (e.g. market value) is acceptable. Mail to the address on the Notice of Appraised Value or to P.O. Box 1010, San Benito, TX 78586 (postmarked by the deadline); fax (956) 399-6969; email protest@cameroncad.org; or hand-deliver to 2021 Amistad Drive, San Benito, TX 78586 before the office closes on the deadline date. Evidence: recent fee appraisals must reach the CAD 14 days before the hearing; no memory cards or video; printed photos only.",
+      "informal_hearings": {
+        "online": null,
+        "phone": true,
+        "in_person": true,
+        "notes": "A protest must be filed before an informal discussion with an appraiser. Per CAD FAQ: 'Walk-in' informals are in person, first come first served (FAQ text says April 14 to May 16; no year stated, so may be recycled); 'Requested' informals are by telephone only; agents may request video conference; only one informal per account. Phone negotiation of value is 'not typically' possible without taxpayer documentation under the CAD's Standards of Documentation. Formal ARB hearing: appear in person, appoint an agent, or mail an affidavit."
+      },
+      "notice_timing": "CAD's calendar of events (cameroncad.org/Pages/Calendar) lists 'Notice of Appraised Value' on April 6, 2026 and the ARB Notice of Protest deadline on May 15, 2026. FAQ: protest by May 15 or no later than 30 days after the CAD delivers the notice, whichever is later. A different FAQ answer (business personal property tab) says notices arrive 'in late May or early June', which conflicts with the calendar. ARB gives at least 15 days notice of the hearing date; ARB hearings usually begin early May and finish by end of July but may run into September.",
+      "bulk_data": {
+        "url": "https://www.cameroncad.org/Pages/Data",
+        "format": "Zip downloads: 2026 certified appraisal export (multiple text files, record layout included; 196 MB zipped / 6.8 GB unzipped), 2026 certified JSON export (1.27 GB zipped), 2026 simplified one-record-per-account spreadsheet (110 MB zipped), and a GIS parcel shapefile with owner/appraisal data (63 MB zipped)",
+        "notes": "Direct download buttons on the Data/GIS page; no fee or request form is stated (open records requests are handled separately). Exports dated 7/23-7/29/2026; GIS parcels 9/15/2026; CAD notes the exports are 'mainly used by vendors'. Not downloaded or inspected."
+      },
+      "correspondence_address": {
+        "mailing": "Cameron Appraisal District, P.O. Box 1010, San Benito, TX 78586",
+        "physical": "2021 Amistad Drive, San Benito, TX 78586"
+      },
+      "quirks": [
+        "CAD pages describe only written protests (mail, fax, email, in person). A True Prodigy 'Public Portal' (https://cameron.prodigycad.com/public-portal/sign-in) exists for owners and agents, but the CAD site does not say it accepts protests, so protest_portal is null. A May 2023 KRGV news report (secondary, not verified for 2026) said online protests were accepted via a form on cameroncad.org until 11:59 p.m. on deadline day.",
+        "Only one electronic form is listed on the CAD's E-Forms page (Change of Address).",
+        "Office doors lock promptly at 5:30 p.m. Mon-Thu and 5:00 p.m. Friday; in-person protests must be inside before closing on deadline day.",
+        "Mailed protests must carry a postmark on or before the deadline date.",
+        "Late protests: forgetting or not knowing the deadline is not good cause; hospitalization-type reasons must be documented in writing to the ARB. After a missed deadline the CAD says neither the appraiser nor the ARB can change the value.",
+        "One postponement of the ARB hearing is allowed without good cause if no agent has been designated; request it before the hearing date.",
+        "Property search accepts PID#, GEO ID#, address or owner name (per CAD FAQ). Search is embedded from cameron.prodigycad.com/property-search.",
+        "Cameron County appeals of ARB orders can go to the State Office of Administrative Hearings (SOAH), district court, or binding arbitration (per CAD FAQ).",
+        "Informal-hearing dates in the FAQ (April 14 to May 16) carry no year and may be stale."
+      ],
+      "table_note": "No online protest portal confirmed: the CAD describes written protests by mail, fax, e-mail or in person only.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/cameron.php",
+      "sources": [
+        "https://www.cameroncad.org/",
+        "https://www.cameroncad.org/Pages/ContactUs",
+        "https://www.cameroncad.org/Pages/FAQ",
+        "https://www.cameroncad.org/Pages/ARB",
+        "https://www.cameroncad.org/Pages/Calendar",
+        "https://www.cameroncad.org/Pages/EForms",
+        "https://www.cameroncad.org/Pages/PropertySearch",
+        "https://www.cameroncad.org/Pages/Data",
+        "https://cameron.prodigycad.com/public-portal/sign-in",
+        "https://www.krgv.com/news/deadline-to-protest-new-cameron-county-property-values-approaching"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 14,
+      "county": "Brazoria",
+      "population_2025": 419080,
+      "verification_status": "verified",
+      "cad_name": "Brazoria Central Appraisal District",
+      "cad_abbrev": "BCAD",
+      "website": "https://brazoriacad.org/",
+      "phone": "979-849-7792",
+      "phone_notes": "Main line (voice-mail and email available 24/7); Mon-Fri 8:00 AM-4:30 PM. The homepage and footer also show an unlabeled second number 979-849-7984. Email help@brazoriacad.org.",
+      "property_search_url": "https://esearch.brazoriacad.org/",
+      "protest_portal": {
+        "name": "Taxpayer Portal / Online Appeal (formerly eProtest)",
+        "url": "https://portal.brazoriacad.org/",
+        "requires": "Free portal account (sign up), then register the account with the Property ID and eFile PIN printed on the appraisal notice (per the CAD's eProtest help page). The old eprotest.brazoriacad.org page now says 'Our Online Protest Has Moved' to the Taxpayer Portal.",
+        "short_name": "Taxpayer Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "https://brazoriacad.org/appeals/ lists two options: online appeal through the portal (files the protest and acts as the online informal meeting, with electronic settlement offers), or a mailed / dropped-off protest form (Form 50-132, March 2026 update, https://brazoriacad.org/wp-content/uploads/2026/03/50-132-march-2026-update.pdf) at Brazoria Central Appraisal District, 500 N Chenango, Angleton, TX 77515. FAQ: the protest need not be on an official form and should be sent to the Appraisal Review Board, 500 N. Chenango, Angleton, TX 77515. Evidence can be dropped in either of two drop boxes on the parking-lot side of the office 24 hours a day. No protest fax or protest email is published (arb@brazoriacad.org is only for affidavits of evidence for Zoom/phone hearings).",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "Online appeal through the portal is the online informal meeting (upload evidence, receive an electronic settlement offer). Dropping a paper protest at the office does not guarantee a same-day talk with an appraiser because in-person appraiser slots are very limited. A response can take up to a few months (BCAD reports 50k-65k protests a year). Settlement offers must be returned before the hearing or the protest proceeds to the ARB. ARB hearings run on Zoom with a phone check-in (346-248-7799); Zoom or phone appearance requires a notarized Property Owner's Affidavit of Evidence emailed to arb@brazoriacad.org."
+      },
+      "notice_timing": "Homepage cites Tax Code 25.19: notice by April 1 (or as soon as practicable) for single-family residences and May 1 for other property. The data downloads page lists the 2026 notice date as May 26, 2026. Appeals page: protest deadline is May 15 or 30 days after the notice was mailed, whichever is later (the page still prints the stale year 2025). Notices are sent only if value rose, exceeds the owner's rendition, the property is new, or an exemption was canceled or reduced.",
+      "bulk_data": {
+        "url": "https://brazoriacad.org/public-gis-and-property-data-downloads/",
+        "format": "Tax roll data as database, .txt and .csv (2026 preliminary and 2026 certified real, mobile home and mineral rolls; supplements for prior years) plus ESRI shapefiles for parcels and boundaries; ProTax and property-use exports",
+        "notes": "Direct downloads, no fee or request form mentioned; page says GIS and data exports are updated monthly. Custom GIS requests: contact the CAD."
+      },
+      "correspondence_address": {
+        "mailing": "Brazoria Central Appraisal District, 500 N Chenango St, Angleton, TX 77515-4650 (Attn: Appraisal Review Board for protests)",
+        "physical": "500 N Chenango St, Angleton, TX 77515-4650"
+      },
+      "quirks": [
+        "District was renamed from Brazoria County Appraisal District to Brazoria Central Appraisal District effective January 1, 2026; older forms and links may use the old name.",
+        "eprotest.brazoriacad.org no longer hosts filing; it points to portal.brazoriacad.org (taxpayers) and agentappeals.brazoriacad.org (agents). The help page still describes the older eProtest steps.",
+        "BCAD's data page lists the 2026 notice date as May 26, 2026 (later than the April 1 target for residences), and its ARB page schedules Zoom hearing sessions into November 2026.",
+        "Cities that straddle county lines (for example Pearland in Harris County, per BCAD's FAQ) can be appraised by more than one appraisal district.",
+        "BCAD says you only receive a Notice of Appraised Value if the value changed, you rendered, or ownership changed; a protest can still be filed without a notice.",
+        "The Protest Forms link on the appeals page (?page_id=8663) returns a 404; use the Form 50-132 PDF link instead.",
+        "Formal hearing notices are sent by the method chosen on the protest form (mail, certified mail or email); failing to attend closes the protest at the notice value."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/brazoria.php",
+      "sources": [
+        "https://brazoriacad.org/",
+        "https://brazoriacad.org/appeals/",
+        "https://brazoriacad.org/eprotest-help-page/",
+        "https://brazoriacad.org/contact-us/",
+        "https://brazoriacad.org/general-questions/",
+        "https://brazoriacad.org/appraisal-review-board-meeting-information/",
+        "https://brazoriacad.org/public-gis-and-property-data-downloads/",
+        "https://eprotest.brazoriacad.org/",
+        "https://portal.brazoriacad.org/",
+        "https://esearch.brazoriacad.org/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 15,
+      "county": "Bell",
+      "population_2025": 402248,
+      "verification_status": "verified",
+      "cad_name": "Tax Appraisal District of Bell County",
+      "cad_abbrev": "Bell CAD",
+      "website": "https://bellcad.org",
+      "phone": "254-939-5841",
+      "phone_notes": "Belton office (district headquarters). No single central number is published: Killeen office 254-634-9752, Temple office 254-771-1108. Hours Mon-Fri 8:00 AM-4:45 PM. Per a May 2024 hearing-information PDF, ARB phone hearings use 254-265-7195.",
+      "property_search_url": "https://belltx-search.gsacorp.io/",
+      "protest_portal": {
+        "name": "Online Protest (Taxpayer Portal; separate Agent portal)",
+        "url": "https://bellcad-taxpayer.gsacorp.io/login",
+        "requires": "Account ID (a.k.a. Online Protest ID) and PIN from the top of page 1 of the Notice of Appraised Value, plus a user name/email and password you create (8+ characters). Agents use https://bellcad-protests.gsacorp.io/agent-login.",
+        "short_name": "Online Protest"
+      },
+      "filing_methods": [
+        "online",
+        "email"
+      ],
+      "filing_notes": "Bell CAD's contact page lists protest@bellcad.org as the only email that accepts protests ('ONLINE Preferred! Please only send Protest, no other business'); other district addresses explicitly do not accept protests. Online filing uses the GSA taxpayer portal. Mail (PO Box 390, Belton, TX 76513) and in-person filing are not described for protests on the pages read, although the hearing-information PDF uses the PO Box for affidavits. Notarized affidavits go to Affidavits@bellcad.org with the original mailed or delivered to the office; reschedule requests go to reschedule@bellcad.org at least 24 hours before the hearing.",
+      "informal_hearings": {
+        "online": true,
+        "phone": true,
+        "in_person": true,
+        "notes": "ARB policy (May 2024 Hearing Information PDF) is to meet informally with an appraiser before the formal hearing; both sessions are about 15 minutes and held at the Belton office (411 E Central Ave). Phone or virtual hearing requesters can ask for an informal meeting with an appraiser when they check in (virtual: virtual.hearing@bellcad.org). Bell CAD's 2025 info deck also says most residential owners can see comps, resolve a protest and schedule a hearing online, and that the informal hearing happens on the scheduled hearing date. Those PDFs are 2024-2025; check the current hearing notice."
+      },
+      "notice_timing": "Bell CAD does not publish a notice mailing date on the pages read. Its appraisal-cycle page says the protest phase starts with staff working informally with owners in April and May, with formal ARB hearings beginning in June and running into early August. Standard Tax Code deadline applies (May 15 or 30 days after the notice is mailed, whichever is later); the district's calendar page is the Comptroller's generic deadline list. The homepage's 'mid-October' statement is about 2026 tax bills, not appraisal notices.",
+      "bulk_data": {
+        "url": "https://bellcad.org/data-portal/",
+        "format": "Appraisal export per 'Appraisal Export Layout 8.0.33' (layout .xlsx linked; export files created after 5/1/2026 are described in a file description), preliminary data as tab-delimited text with an Excel version, certified exports and totals for 2024-2026, collections data (delinquent roll, levy, mortgage), and about 20 GIS shape files.",
+        "notes": "Links are publicly listed on the Data Portal page; the page states no fee or request form. Yearly certified exports plus periodic preliminary and supplement files."
+      },
+      "correspondence_address": {
+        "mailing": "Tax Appraisal District of Bell County, P.O. Box 390, Belton, TX 76513",
+        "physical": "411 E. Central Ave., Belton, TX 76513"
+      },
+      "quirks": [
+        "Three offices: Belton (411 E Central Ave, HQ, all ARB hearings), Killeen (301 Priest Dr, 76541) and Temple (205 E Central Ave, 76501); one PO Box (390, Belton) serves all.",
+        "Bell CAD also collects property taxes for local units (pay in person at any office, online, or Belton drop box); 2026 tax statements are scheduled to be mailed by mid-October, and offices are closed Monday Oct 12, 2026.",
+        "The online protest portals are hosted by GSA (gsacorp.io): separate login for taxpayers and for agents.",
+        "Property search was consolidated onto belltx-search.gsacorp.io (homepage news item 'New website update. Consolidated property search'); the interactive map is at belltx-search.gsacorp.io/map.",
+        "Dedicated email inboxes: protest@bellcad.org (protests only), Affidavits@bellcad.org, Reschedule@bellcad.org, agents@bellcad.org, customerservice@bellcad.org (no protests).",
+        "Phone/virtual hearing requests must be in writing at least 5 days (owner) or 10 days (agent) before the hearing; the 2024 PDF says phone participants must call the ARB at least 15 minutes before their time and affidavits must be notarized and received before the hearing.",
+        "Homestead cap: assessed value on homesteads rises at most 10% a year; protests dispute market value, and taxable value changes only if market value falls below assessed value.",
+        "Hearing Information PDF is dated May 20, 2024 and the Online Protest Procedures page still carries a '2021' URL slug; the 2026 ARB Procedures manual is at https://bellcad.org/wp-content/uploads/2026/06/2026-ARB-Procedures.pdf."
+      ],
+      "table_note": "Official name is 'Tax Appraisal District of Bell County'. It publishes protest@bellcad.org for protests only; 254-939-5841 is the Belton headquarters (Killeen and Temple offices have their own lines).",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/bell.php",
+      "sources": [
+        "https://bellcad.org/",
+        "https://bellcad.org/contact-us-help-desk/",
+        "https://bellcad.org/online-protest-procedures-2021/",
+        "https://bellcad.org/data-portal/",
+        "https://bellcad.org/appraisal-information-3/",
+        "https://bellcad.org/most-frequently-requested-forms/",
+        "https://bellcad.org/frequently-asked-questions/",
+        "https://bellcad.org/calendar/",
+        "https://bellcad.org/arb-hearing-procedures-coming-soon/",
+        "https://bellcad.org/wp-content/uploads/2024/05/Hearing-Info-5.20.2024.pdf",
+        "https://bellcad.org/wp-content/uploads/2026/06/2026-ARB-Procedures.pdf",
+        "https://bellcad.org/wp-content/uploads/2026/04/Online-Protest-User-Guide-BellCAD-4-12-26.pdf",
+        "https://bellcad.org/wp-content/uploads/2025/04/2025-Bell-CAD-Market-Review-and-Information.pdf",
+        "https://belltx-search.gsacorp.io/",
+        "https://bellcad-taxpayer.gsacorp.io/login"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 16,
+      "county": "Galveston",
+      "population_2025": 372207,
+      "verification_status": "verified",
+      "cad_name": "Galveston Central Appraisal District",
+      "cad_abbrev": "GCAD",
+      "website": "https://galvestoncad.org/",
+      "phone": "409-935-1980",
+      "phone_notes": "Main line. Separate fax (409) 935-4319. Hours Mon-Thu 7:30 AM-5:30 PM (ARB lunch 12-1), Fri 8:00 AM-noon. Email gcad@galvestoncad.org.",
+      "property_search_url": "https://esearch.galvestoncad.org/",
+      "protest_portal": {
+        "name": "Taxpayer Portal (online protest; serves as the informal hearing)",
+        "url": "https://portal.galvestoncad.org/",
+        "requires": "Free portal account registered with the Owner ID and eFile PIN printed on the Notice of Appraised Value. If the notice is unavailable, GCAD says to email gcad@galvestoncad.org to request them.",
+        "short_name": "Taxpayer Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "GCAD's How to Protest and Informal Meetings pages say protests and evidence can be submitted in person, by mail, or via the online portal; a form can be dropped off before the deadline at 9850 Emmett F Lowry Expressway, Ste A during business hours. GCAD lists an office fax (409) 935-4319 and email gcad@galvestoncad.org, but the pages do not say protests are accepted by fax or email (email is explicitly accepted for HB 201 evidence requests and ARB reschedule requests). The pages read do not link a downloadable Notice of Protest form; call 409-935-1980 or use the portal.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "Online protest through the portal serves as the informal meeting: an appraiser reviews evidence, shares district evidence and proposes a settlement in the portal; if no agreement or no response, it advances to a formal ARB hearing. In-person: informal and formal hearings are scheduled the same day at the GCAD office; meet the appraiser first on arrival, then the ARB if no agreement. Formal ARB hearings can be by phone/videoconference (Property Owner's Affidavit of Evidence must be submitted 24 hours before), by affidavit, or in person; virtual hearing links are emailed on the hearing day."
+      },
+      "notice_timing": "GCAD's property tax system page says the Notice of Appraised Value is sent on April 1, or as soon thereafter as practicable, and the Notice of Protest must be submitted by May 15 or within 30 days of the date the notice is sent. ARB hearings begin in May each year; hearing notices go out at least 15 days before the hearing by postal mail and through the portal (if registered for electronic delivery, Form 50-843).",
+      "bulk_data": {
+        "url": "https://galvestoncad.org/preliminary-and-certified-roll-export-data/",
+        "format": "Zip files of certified and preliminary roll exports, 2017-2026 (the 2026 certified zip includes the export layout); GIS data at https://galvestoncad.org/gis-data/",
+        "notes": "Direct download links, no fee or request form mentioned. Supplement roll exports are listed on a separate page: https://galvestoncad.org/current-and-historical-supplement-roll-export-data/"
+      },
+      "correspondence_address": {
+        "mailing": "9850 Emmett F. Lowry Expressway Ste. A101, Texas City, TX 77591",
+        "physical": "9850 Emmett F. Lowry Expressway, Ste. A, Texas City, TX 77591 (same building; GCAD labels the A101 address as its mailing address and says forms may be dropped off at Ste A)"
+      },
+      "quirks": [
+        "HCAD's split-by-county page lists an older Galveston P.O. Box 3647, Texas City 77592-3647; GCAD's own site shows the Lowry Expressway address as its mailing address, so use GCAD's.",
+        "Protesting through the portal counts as your informal hearing; skipping it means you meet an appraiser in person on the same day as your ARB hearing.",
+        "Owners may reschedule an ARB hearing one time for any reason; further reschedules need ARB approval. Email gcad@galvestoncad.org or phone is accepted.",
+        "Office is closed Friday afternoons (Fri 8:00-noon only) and ARB lunch is 12-1 Mon-Thu.",
+        "GCAD posted a Disaster Declaration dated 06/15/2026 on its homepage; check for disaster-exemption deadlines."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/galveston.php",
+      "sources": [
+        "https://galvestoncad.org/",
+        "https://galvestoncad.org/how-to-protest-online/",
+        "https://galvestoncad.org/informal-meetings/",
+        "https://galvestoncad.org/arb-virtual-hearing/",
+        "https://galvestoncad.org/contact-us/",
+        "https://galvestoncad.org/public-data/",
+        "https://galvestoncad.org/preliminary-and-certified-roll-export-data/",
+        "https://galvestoncad.org/property-tax-system/",
+        "https://esearch.galvestoncad.org/",
+        "https://hcad.org/hcad-help/hcad-properties-split-by-county-line/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 17,
+      "county": "Nueces",
+      "population_2025": 352992,
+      "verification_status": "partial",
+      "cad_name": "Nueces Central Appraisal District",
+      "cad_abbrev": "NCAD",
+      "website": "https://nuecescad.net",
+      "phone": "361-881-9978",
+      "phone_notes": "Main line, Mon-Fri 8:00 a.m.-5:00 p.m. Taxpayer Liaison Officer direct line 361-696-7683 (tlo@nuecescad.net). ARB Administrator ext. 4280; Chief Appraiser ext. 4230. General email info@nuecescad.net. A legacy help-desk article (last updated 7 years ago) lists 361-826-2100, which does not match the current site.",
+      "property_search_url": "https://esearch.nuecescad.net/",
+      "protest_portal": {
+        "name": "Taxpayer Portal (formerly 'Online Appeals' / e-file protest)",
+        "url": "https://portal.nuecescad.net/",
+        "requires": "Register with the property credentials on the Notice of Appraised Value (Property ID, Owner ID and E-File PIN), plus name, cell phone, email and a password",
+        "short_name": "Taxpayer Portal"
+      },
+      "filing_methods": [
+        "online"
+      ],
+      "filing_notes": "The CAD's E-File Protest Instructions page offers online filing after you receive your Notice of Appraised Value (Texas Tax Code 41.415). Form 50-132 (Notice of Protest) and a Withdrawal of Protest form are hosted at https://nuecescad.net/forms/. The CAD site does not publish mail, fax, email or in-person protest filing channels, so those are not listed here; call 361-881-9978 to confirm. Agents use a separate Agent Portal (https://agentappeals.nuecescad.net/).",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": null,
+        "notes": "The CAD's 2024 e-file guide says online filers can upload evidence, see CAD evidence and accept or reject a settlement offer in the portal; unresolved protests go to a formal ARB hearing. In-person or phone informal procedures are not published on the CAD site. Formal ARB hearings can be by telephone or videoconference if requested in writing at least five days before the hearing; evidence/affidavits are not accepted by fax or email (in person, by mail, or on a portable device) per the 2026 ARB hearing procedures."
+      },
+      "notice_timing": "The CAD publishes only deadline messaging: protest deadline is May 15, or within 30 days after delivery of the Notice of Appraised Value, whichever is later (CAD news post and /protest-deadline/ page). No notice mailing date is published on the CAD site.",
+      "bulk_data": {
+        "url": "https://nuecescad.net/downloads-reports/",
+        "format": "Zip downloads: certified appraisal roll exports by year (2026 certified export uploaded 08/06/2026, 165 MB) with export layout files version 8.0.33, plus GIS parcel shapefiles (latest dated 10-06-26, 61 MB), certified totals reports (PDF) and top-taxpayer reports",
+        "notes": "Direct download links, no fee or request form stated. CAD says it cannot provide technical support for reading or loading the exports. Not downloaded or inspected."
+      },
+      "correspondence_address": {
+        "mailing": "Nueces Central Appraisal District, 201 N. Chaparral St., Corpus Christi, TX 78401",
+        "physical": "201 N. Chaparral Street, Corpus Christi, TX 78401"
+      },
+      "quirks": [
+        "Domain is nuecescad.net (.net). Some page headings say 'Nueces County Appraisal District' but the official name used in the footer and contact pages is Nueces Central Appraisal District.",
+        "Online protest moved: the homepage 'Online Appeals' link still goes to eprotest.nuecescad.net, which now shows 'Our Online Protest Has Moved' and points to the new Taxpayer Portal at https://portal.nuecescad.net/ (registration page version dated 08/26/2026).",
+        "Legacy help-desk articles (ncadhelpdesk.nuecescad.net, last updated 7 years ago) say e-file was limited to certain residential properties with homestead-type exemptions, excluded agent-represented properties, and listed the E-File PIN as the owner's signature; they also cite a retired URL and an old phone number. Treat as stale.",
+        "No separate mailing address or P.O. Box is published; written complaints to the Taxpayer Liaison Officer go to 201 N Chaparral Suite 206, Corpus Christi, TX 78401.",
+        "The CAD's wording is 30 days after 'delivery' of the notice (not 'mailing').",
+        "Property search (esearch.nuecescad.net) has By Owner (Last First), By Address, By ID, ARB Search and Advanced tabs; default year shows 2027.",
+        "Homestead exemption applications are online via a separate form (form.jotform.com/NuecesCAD/hsapplication).",
+        "The 2026 ARB hearing procedures PDF says evidence and affidavits are not accepted by fax or email.",
+        "Mailing address comes from the Comptroller county directory (secondary); the CAD site publishes the same street address as its physical address and for taxpayer-liaison complaints.",
+        "The Comptroller directory still lists the old website ncadistrict.com, which redirects (301) to nuecescad.net."
+      ],
+      "table_note": "Online protest moved to portal.nuecescad.net. The homepage 'Online Appeals' link still points to the old site. Domain is nuecescad.net (ncadistrict.com redirects).",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/nueces.php",
+      "sources": [
+        "https://nuecescad.net/",
+        "https://nuecescad.net/e-file-protest-instructions/",
+        "https://nuecescad.net/wp-content/uploads/2024/04/Taxpayer-Appeals-Taxpayer-Guide.pdf",
+        "https://eprotest.nuecescad.net/",
+        "https://portal.nuecescad.net/",
+        "https://portal.nuecescad.net/Account/Register",
+        "https://esearch.nuecescad.net/",
+        "https://nuecescad.net/appraisal-review-board/",
+        "https://nuecescad.net/wp-content/uploads/2026/05/2026-NUECES-CENTRAL-ARB-HEARING-PROCEDURES.pdf",
+        "https://nuecescad.net/forms/",
+        "https://nuecescad.net/news/",
+        "https://nuecescad.net/protest-deadline/",
+        "https://nuecescad.net/downloads-reports/",
+        "https://nuecescad.net/taxpayer-liaison-officer/",
+        "https://nuecescad.net/how-to-file-a-complaint/",
+        "https://ncadhelpdesk.nuecescad.net/kb/faq.php?id=1",
+        "https://ncadhelpdesk.nuecescad.net/kb/faq.php?id=2",
+        "https://comptroller.texas.gov/taxes/property-tax/county-directory/nueces.php"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {
+        "correspondence_address.mailing": "secondary"
+      },
+      "v1_check": null
+    },
+    {
+      "population_rank": 18,
+      "county": "Lubbock",
+      "population_2025": 328906,
+      "verification_status": "verified",
+      "cad_name": "Lubbock Central Appraisal District",
+      "cad_abbrev": "LCAD",
+      "website": "https://www.lubbockcad.org/",
+      "phone": "806-762-5000",
+      "phone_notes": "Main line; ext. 5 for exemption questions (per CAD home page). Fax is 806-762-2451 (Contact Us page).",
+      "property_search_url": "https://www.lubbockcad.org/",
+      "protest_portal": {
+        "name": "Online Inquiry/Protest (launched from the 'Online Protest' link on a property's Details screen in LCAD Property Search)",
+        "url": "https://www.lubbockcad.org/",
+        "requires": "Find the property in Property Search, click 'Online Protest', create a Login ID (username, email, password, captcha), then associate the property using the QuickRef # (top-right of the Notice of Appraised Value, e.g. R124579) and the Online Protest ID # (bottom-left of the notice).",
+        "short_name": "Online Protest"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "email",
+        "in_person"
+      ],
+      "filing_notes": "Protest page: 'You are encouraged to use our online inquiry/protest process.' The CAD's Online Protest Instructions PDF says a protest not filed online can be submitted 'by mail, email or in person' by the deadline on the notice (Form 50-132 Notice of Protest is linked on the protest page; Form 50-283 affidavit also linked). The page does not print a dedicated 'file your protest' email address. protests@lubbockcad.org is the ARB email published in the 2026 ARB Hearing Procedures (affidavits, evidence, data requests); info@lubbockcad.org is the general email. Fax 806-762-2451 is published for exemption forms; fax filing of protests is not stated, so it is not listed as a filing method. In person: 2109 Avenue Q, Lubbock, TX 79411 (drop box also available there). The Online Protest Instructions PDF is dated 2024 but is still linked from the current 2026 protest page.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "Online protests are assigned to an LCAD appraiser, who contacts the owner within 7 business days; the owner can view and accept or decline a settlement offer in the portal (declining sends the protest to a formal ARB hearing). FAQ: 'Appraisal district staff meets informally with property owners about values.' 2026 ARB Hearing Procedures encourage requesting an informal hearing with an appraiser in Section 5 (Hearing Type) of Form 50-132. Phone-based informal discussion is not explicitly described. Formal ARB hearings can be in person, by teleconference or videoconference (written request at least 5 days before, 10 days if represented by an agent), or by affidavit."
+      },
+      "notice_timing": "No mailing date is published on the pages read. Protest page: 'PROTEST DEADLINE IS MAY 15TH OR 30 DAYS AFTER THE DATE THE NOTICE WAS MAILED'. FAQ: 'You have 30 days from the date of the Notice of Appraised Value or May 15th, whichever is later.' 2026 ARB procedures: 2026 Regular Season Protest Request Deadline was May 15, 2026. Hearing notice is mailed at least 15 days before the hearing.",
+      "bulk_data": null,
+      "correspondence_address": {
+        "mailing": "Lubbock Central Appraisal District, PO Box 10542, Lubbock, TX 79408",
+        "physical": "2109 Avenue Q, Lubbock, TX 79411"
+      },
+      "quirks": [
+        "Two different PO Boxes are published: PO Box 10542 is the return address on the Forms page (exemption forms etc.); PO Box 10568 is for payments by check/money order (home page). Protest mail address is not separately stated; ARB data requests are to be mailed to 'ARB c/o Lubbock Central Appraisal District, 2109 Avenue Q, Lubbock, TX 79411'. Call 806-762-5000 to confirm before mailing a protest.",
+        "Online protest uses the Online Protest ID# printed at the bottom-left of the notice plus the QuickRef # at top-right; you create your own username/password (use the email you want LCAD to use). Confirmation email comes from no-reply@lubbockcad.org and must be kept as proof of filing.",
+        "Per the CAD's instructions, canceling an online protest forfeits the online-protest right for the year; you must then file a paper protest by mail, email or in person by the notice deadline.",
+        "Accepting an online settlement offer waives further remedies for that tax year; declining it closes the online protest and schedules a formal ARB hearing (notice by regular first-class mail).",
+        "Property Search has a simple search bar on the home page and a separate Advanced Search page at https://www.lubbockcad.org/Advanced-Search.",
+        "ARB hearings (2026 procedures): in person at 2109 Avenue Q, Mon-Fri 8:30 a.m.-5:00 p.m. (last appointment 4:10 p.m.), at least one evening session starting 5:30 p.m.; 20 minutes per residential parcel; ARB cannot view evidence on phones or other personal devices.",
+        "Protest Hearing Database is published at https://www.lubbockcad.org/Protest-Hearing-Database.",
+        "No free bulk appraisal-roll download was found on the CAD site (Reports page lists PDF reports only; GIS maps are at https://gis.bisclient.com/lubbockcad). Public information requests: piarequest@lubbockcad.org."
+      ],
+      "table_note": "Online protest is launched from the 'Online Protest' link on a property's Details screen in property search.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/lubbock.php",
+      "sources": [
+        "https://www.lubbockcad.org/",
+        "https://www.lubbockcad.org/Protest-Information",
+        "https://www.lubbockcad.org/FAQ",
+        "https://www.lubbockcad.org/Forms",
+        "https://www.lubbockcad.org/Contact-Us",
+        "https://www.lubbockcad.org/Advanced-Search",
+        "https://www.lubbockcad.org/Reports",
+        "https://www.lubbockcad.org/Other",
+        "https://www.lubbockcad.org/Portals/0/Online%20Protest%20Instructions%202024.pdf",
+        "https://www.lubbockcad.org/Portals/0/Final-2026%20ARB%20Procedures%2004142026.pdf"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 19,
+      "county": "Hays",
+      "population_2025": 304390,
+      "verification_status": "verified",
+      "cad_name": "Hays Central Appraisal District",
+      "cad_abbrev": "Hays CAD",
+      "website": "https://hayscad.com",
+      "phone": "512-268-2522",
+      "phone_notes": "Customer Service Helpline Mon-Fri 8:30 AM-4:30 PM (office hours listed as 8:00 AM-5:00 PM). Taxpayer Liaison direct extension 225. The site also lists (512) 713-0563 next to a fax icon, so it appears to be the fax line. General email info@hayscad.com.",
+      "property_search_url": "https://esearch.hayscad.com/",
+      "protest_portal": {
+        "name": "Online Protest Filing (Online Appeal portal)",
+        "url": "https://propertysearch.hayscad.com/",
+        "requires": "Online Protest ID (passcode) printed at the top of the Notice of Appraised Value (or scan the QR code on the notice), plus a user account you create with a valid email and a password of 6+ characters; register each property by its Quick Ref # (starts with R, P or M) and its Online Protest ID.",
+        "short_name": "Online Protest"
+      },
+      "filing_methods": [
+        "online",
+        "email",
+        "mail",
+        "in_person"
+      ],
+      "filing_notes": "Hays CAD lists 4 options at https://hayscad.com/protest/: (1) online portal (fastest; owners get informal review by an appraiser), (2) emailing the Notice of Protest to protest@hayscad.com if you cannot create an account or have no Online Protest ID, (3) US mail to 21001 N IH 35, Kyle TX 78640, (4) in person at 21001 N IH 35, Kyle TX 78640, Mon-Fri 8:30 AM-4:30 PM (drop box at the front door). Email, mail and in-person protests are keyed by hand in the order received and may be slower. Form 50-132 and the agent-appointment form are on the protest page. Fax is not listed as a protest filing method.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": null,
+        "notes": "Informal reviews are done by appraisal district staff via email (and via the online portal for online filers) and must conclude 5 business days before the hearing date; informal reviews are not available on the day of the hearing. All received protests are scheduled for a formal ARB hearing; an accepted informal settlement cancels the hearing. Phone and in-person informal meetings are not described."
+      },
+      "notice_timing": "The CAD's appraisal-cycle page (still showing 2025 text) says notices for most owners were mailed on April 1, 2025, and that the protest deadline is May 15 unless the notice was mailed after April 15; its FAQ says notices are typically sent in April. The protest page gives the deadline as not later than May 15 or 30 days after the notice was mailed, whichever is later; late protests are allowed for good cause until the ARB approves the records (July). The ARB approves records by about July 20 and the roll is certified by July 25.",
+      "bulk_data": {
+        "url": "https://hayscad.com/data-downloads/",
+        "format": "Zip downloads: monthly 'Property Data Export Files' snapshots (the linked layout PDF is titled 'PropertyDataExport CSV Layout'), yearly certified appraisal-roll exports (2026 file labeled 'Orion 2026 Certified Export'), and preliminary exports.",
+        "notes": "Direct download links publicly listed with no fee or request form stated (latest snapshot dated 9-17-2026); open records requests use a separate form."
+      },
+      "correspondence_address": {
+        "mailing": "Hays Central Appraisal District, 21001 N IH 35, Kyle, TX 78640",
+        "physical": "21001 North IH 35, Kyle, TX 78640"
+      },
+      "quirks": [
+        "Every protest receives a formal ARB hearing slot even if you file online; informal settlement with an appraiser (by email) must finish 5 business days before the hearing.",
+        "Notice of hearing is sent by email (from noreply@hayscad.com) or postal mail, whichever you choose on the protest form.",
+        "Formal hearings are held on-site at 21001 N IH 35 (Lex Word Building) and the ARB also hosts a videoconference (Zoom) link for scheduled hearings; affidavit hearings are available (upload at https://hayscad.com/aoe-upload/, Form 50-283).",
+        "Online evidence uploads must be PDFs; if you have no Online Protest ID the district suggests filing by email. All online protests must be received by 11:59 PM Central on the deadline date.",
+        "USPS postmark warning on the CAD site: collection-box mail may get a later postmark; mail weeks early or file electronically/in person.",
+        "Hays CAD does not send tax bills or take payments; those are handled by the Hays County Tax Office (https://tax.co.hays.tx.us/).",
+        "The website 'Phases of the Property Appraisal Cycle' page still shows 2025 dates, so confirm 2027 dates when notices are mailed.",
+        "Hays CAD hosts two separate sites: esearch.hayscad.com (property search) and propertysearch.hayscad.com (online protest login)."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/hays.php",
+      "sources": [
+        "https://hayscad.com/",
+        "https://hayscad.com/contact-us/",
+        "https://hayscad.com/customer-service-survey/",
+        "https://hayscad.com/protest/",
+        "https://hayscad.com/data-downloads/",
+        "https://hayscad.com/faqs/",
+        "https://hayscad.com/phases-of-the-property-appraisal-cycle-and-calendar/",
+        "https://hayscad.com/%f0%9f%93%ac-important-notice-regarding-usps-postmark-policy/",
+        "https://hayscad.com/wp-content/uploads/2023/03/OLA-USERS-HELP-GUIDE-1.pdf",
+        "https://esearch.hayscad.com/",
+        "https://propertysearch.hayscad.com/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 20,
+      "county": "Webb",
+      "population_2025": 281224,
+      "verification_status": "partial",
+      "cad_name": "Webb County Appraisal District",
+      "cad_abbrev": "Webb CAD",
+      "website": "https://www.webbcad.org",
+      "phone": "956-718-4091",
+      "phone_notes": "Main line, Mon-Fri 8 a.m.-5 p.m. Fax 956-718-4052 (the Administration section of the contact page lists fax 956-718-3041). Public Information Coordinator 956-718-3730. Taxpayer Liaison Officer 956-718-3798 (wcadtlo@webbcad.org).",
+      "property_search_url": "https://www.webbcad.org/property-search",
+      "protest_portal": {
+        "name": "Public Portal ('File Your Protest' quick link; True Prodigy platform)",
+        "url": "https://www.webbcad.org/public-portal/sign-in",
+        "requires": "Free portal account (first and last name, cell phone, email, password; create at https://www.webbcad.org/public-portal/sign-up). The CAD site does not state which notice credentials link a property to the account.",
+        "short_name": "Public Portal"
+      },
+      "filing_methods": [
+        "online",
+        "in_person"
+      ],
+      "filing_notes": "The CAD homepage describes the portal as giving 'the ability to file appeals and exemptions' and its 'File Your Protest' quick link goes to the portal login (primary). In-person filing at 3302 Clark Blvd is confirmed only by a 2025 KGNS interview with the chief appraiser (secondary). The CAD forms page hosts a 'Property Owner's - Notice of Protest' form and a 'Request For Same Day Protest Hearing' form. No protest email, fax or mail channel is published (enotice@webbcad.org is only for electronic-notice requests).",
+      "informal_hearings": {
+        "online": null,
+        "phone": null,
+        "in_person": null,
+        "notes": "The CAD site does not describe informal hearing procedures. KGNS (2025, secondary) reported that in-person filers are assigned an appraiser who reviews the case. The forms page includes a 'Request For Same Day Protest Hearing' form. Call 956-718-4091 to confirm."
+      },
+      "notice_timing": "The CAD news list includes '2026 Notice Of Appraised Value Mailout' and '2026 Protest Deadline is Wednesday, May 15, 2026' (these are download-only documents that were not opened; note May 15, 2026 is actually a Friday, so the 'Wednesday' wording looks like a typo). KGNS reported in 2025 that notices were mailed in March (secondary). The CAD publishes no other timing details.",
+      "bulk_data": {
+        "url": "https://www.webbcad.org/reports",
+        "format": "'Certified Export Files' for 2026 and 2025 (all entities, real property only, mineral only) plus a 'Preliminary Data' tab; file format is not stated on the page",
+        "notes": "Download buttons on the Reports page (homepage banner says 2026 certified information is available there). No fee or request form is stated. Not downloaded or inspected."
+      },
+      "correspondence_address": {
+        "mailing": "Webb County Appraisal District, 3302 Clark Boulevard, Laredo, TX 78043-3346",
+        "physical": "3302 Clark Blvd., Laredo, TX 78043"
+      },
+      "quirks": [
+        "Official name is Webb County Appraisal District (not 'Central'). The abbreviation WCAD is also used by Williamson CAD (wcad.org), so use webbcad.org.",
+        "The site is a JavaScript app (True Prodigy): pages show a generic 'Public Portal' title and may appear blank for a few seconds before rendering. /protest-process and similar URLs redirect to the home page.",
+        "News/PSA items (e.g. 'Property Tax Protest and Appeal Procedures', '2026 Notice Of Appraised Value Mailout') are file-download links; they were not opened, so protest procedures could not be read from the CAD.",
+        "The CAD's single mailing/physical address (3302 Clark Blvd) appears on its electronic-notice request form; no separate P.O. Box is published.",
+        "Office is closed Oct 12 (Columbus Day), Nov 11, Nov 26-27 and Dec 24-25, 28 and 31, 2026 per the CAD holiday schedule.",
+        "Search can be done by owner name, property address, account number or DBA; do not use street suffixes and use % as a wildcard.",
+        "onlineappeals.webbcad.org and propaccess.webbcad.org appear in search-engine results; onlineappeals.webbcad.org failed to load in my browser, so rely on the portal at webbcad.org.",
+        "The CAD homepage warns homeowners against solicitors who offer to file a 'designation of homestead' for a fee."
+      ],
+      "table_note": "Partly confirmed. Several Webb CAD procedure pages are download-only, so in-person filing rests on a secondary source.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/webb.php",
+      "sources": [
+        "https://www.webbcad.org/",
+        "https://www.webbcad.org/contact-us",
+        "https://www.webbcad.org/news",
+        "https://www.webbcad.org/forms",
+        "https://www.webbcad.org/reports",
+        "https://www.webbcad.org/calendars",
+        "https://www.webbcad.org/property-search-information",
+        "https://www.webbcad.org/public-portal/sign-up",
+        "https://www.webbcad.org/public/webb_eNotice_Request_Form1.pdf",
+        "https://www.kgns.tv/2025/04/24/webb-county-chief-appraiser-encourages-citizens-protest-their-properties"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {
+        "filing_methods": "secondary",
+        "informal_hearings": "secondary",
+        "notice_timing": "secondary"
+      },
+      "v1_check": null
+    },
+    {
+      "population_rank": 21,
+      "county": "McLennan",
+      "population_2025": 272020,
+      "verification_status": "verified",
+      "cad_name": "McLennan Central Appraisal District",
+      "cad_abbrev": "MCAD",
+      "website": "https://www.mclennancad.org/",
+      "phone": "254-752-9864",
+      "phone_notes": "Single main number for Property Owner Assistance, protests and the e-file help desk; staff directory emails are on the Contact Us page.",
+      "property_search_url": "https://www.mclennancad.org/property-search",
+      "protest_portal": {
+        "name": "Public Portal (E-Services / e-file online protest)",
+        "url": "https://www.mclennancad.org/public-portal/sign-in",
+        "requires": "Create a portal login (name, cell phone, email, password), then add the property using the Owner ID and PIN printed on the Notice of Appraised Value. If you lack the notice, use 'Request Pin' with your email and owner ID or call 254-752-9864.",
+        "short_name": "Public Portal"
+      },
+      "filing_methods": [
+        "online",
+        "email",
+        "in_person"
+      ],
+      "filing_notes": "Protest Process page lists: online via the Public Portal ('Submit Protest Online - Available for most residential properties April 10th - May 15th'), BY EMAIL to mcadmail@mclennancad.org, and IN-PERSON drop-off of the protest form at 315 S 26th Street, Waco, TX 76710 during business hours. The E-Services page also offers a 'Protest by Mail' button that actually opens an email template addressed to efileteam@mclennancad.org (the E-File Team). Form 50-132 Notice of Protest is in the CAD forms library. Postal mail and fax are not described on the protest pages (the CAD lists 315 S 26th Street as its 'Physical & Mailing Address'; a PO Box also appears on an ARB hearing outline PDF), so neither is listed as a confirmed filing method.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": null,
+        "notes": "After a protest is filed and evidence is processed, the owner is eligible for an informal meeting with an MCAD appraiser; if no settlement offer is accepted the protest goes to the ARB. The portal sends offer, evidence-available and hearing-scheduled emails, so offers are handled online. The meeting format (phone vs in person) is not specified on the pages read. The CAD's 'What to Expect at Your Formal ARB Hearing' PDF includes a checklist item 'Met with a STAFF APPRAISER prior to my hearing' and the CAD FAQ says 'In-person hearings are conducted at the McLennan Appraisal District office at 315 S 26th Street'."
+      },
+      "notice_timing": "No notice mailing date is published on the pages read. Protest Process page: owners whose market value rose at least $1,000 receive a Notice of Appraised Value every spring; 'The deadline to file your protest is May 15, or 30 days after your Notice is mailed, whichever is later.' Online protest link text says online filing is available for most residential properties April 10th - May 15th. Formal hearing notice is mailed by general mail at least 15 days before the hearing.",
+      "bulk_data": {
+        "url": "https://www.mclennancad.org/data-downloads",
+        "format": "ESRI Shapefile in a ZIP (parcel and subdivision geospatial data joined to appraisal data), hosted in a Google Drive folder linked from the page",
+        "notes": "Page says parcel/subdivision data is exported weekly; a download button is provided with no fee or request form stated. The Open Data page (https://www.mclennancad.org/open-data) says 'A full data export will typically be uploaded quarterly' and GIS data/common queries annually after certification, but only certified-totals links were visible when read; other data requests go via a Public Information Request form or mcadmail@mclennancad.org. The Reports page lists a '2026 Notice Data Query' download."
+      },
+      "correspondence_address": {
+        "mailing": "McLennan Central Appraisal District, 315 S 26th Street, Waco, TX 76710",
+        "physical": "315 S 26th Street, Waco, TX 76710"
+      },
+      "quirks": [
+        "The website footer says 'Physical & Mailing Address: 315 S 26th Street, Waco, TX 76710'; the CAD's ARB hearing outline PDF (hosted on its Google Drive) instead lists 'Mail Address: PO Box 2297, Waco, TX 76703-2297'. Confirm by phone before mailing anything time-sensitive.",
+        "Portal runs on True Prodigy; the protest page also links the same portal at https://mclennan.prodigycad.com/public-portal/sign-in.",
+        "Name: the current site calls the district 'McLennan Central Appraisal District'; a 2023 news headline reads 'MCAD Board Votes to Change Name', and older CAD PDFs (e.g. the ARB hearing outline) still say 'McLennan County Appraisal District'.",
+        "E-file guide (CAD PDF): add efileteam@mclennancad.org to your contacts; if portal emails are blocked by your ISP, online appeals may not be the best method. Your opinion of value cannot be changed in the portal after filing (change it at the informal meeting or ARB hearing). Do not withdraw a protest intending to refile - you must then file a paper protest if the deadline has not passed.",
+        "All owners who file a protest get access to MCAD's evidence packet in the portal using the Owner ID and PIN from the notice.",
+        "Property Search is a single 'Compound Text Search' box; result columns are PropID, GEO ID, Ref ID, Tax Office ID, owner name, ARB Hearing, DBA and property address. A separate map search is at https://www.mclennancad.org/maps.",
+        "Taxpayer Liaison e-mail: tlo@mclennancad.org. Agent correspondence: agents@mclennancad.org.",
+        "Most ARB hearings last about 15 minutes; evidence must be scanned by MCAD staff (no evidence from phones/tablets/cameras)."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/mclennan.php",
+      "sources": [
+        "https://www.mclennancad.org/",
+        "https://www.mclennancad.org/mclennan-cad-e-services",
+        "https://www.mclennancad.org/public-portal/sign-in",
+        "https://www.mclennancad.org/public-portal/sign-up",
+        "https://www.mclennancad.org/the-protest-process",
+        "https://www.mclennancad.org/contact-us",
+        "https://www.mclennancad.org/property-search",
+        "https://www.mclennancad.org/forms",
+        "https://www.mclennancad.org/data-downloads",
+        "https://www.mclennancad.org/open-data",
+        "https://www.mclennancad.org/reports",
+        "https://www.mclennancad.org/news",
+        "https://drive.google.com/file/d/1gLn5qpqItDS_AhepzXEm0pzPXRHK20Td/view?usp=sharing",
+        "https://drive.google.com/file/d/1qA34J1taI8YE8ODYF55Uyvmgn-zmctcV/view?usp=sharing"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 22,
+      "county": "Jefferson",
+      "population_2025": 254321,
+      "verification_status": "verified",
+      "cad_name": "Jefferson Central Appraisal District",
+      "cad_abbrev": "JCAD",
+      "website": "https://jcad.org/",
+      "phone": "409-840-9944",
+      "phone_notes": "Beaumont office main line. A second office line for Mid County is 409-727-4611. Fax: 409-840-9732 (Beaumont) or 409-727-5621 (Mid County).",
+      "property_search_url": "https://esearch.jcad.org/",
+      "protest_portal": {
+        "name": "Taxpayer Portal (Online Protest / Online Appeals)",
+        "url": "https://portal.jcad.org/",
+        "requires": "Register a Taxpayer Portal account using the property credentials listed on the Notice of Appraised Value (the registration page says so and offers 'Request Current PIN'; the CAD help video is titled 'New User Registration and Requesting Your PIN'). Exact credential fields are not described in text. Agents use https://agentappeals.jcad.org/.",
+        "short_name": "Taxpayer Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "email",
+        "in_person"
+      ],
+      "filing_notes": "2026 Value Notices and Protest Procedures PDF: file by mail to PO Box 21337, Beaumont TX 77720; hand delivery to 4610 S 4th St., Beaumont TX 77705; email the completed protest form to protests@jcad.org; or file online at portal.jcad.org. A protest in any written format is valid if it includes the property ID/account number, reason, mailing address and phone number. Form: Notice of Protest (https://jcad.org/wp-content/uploads/2026/04/Protest-Form-2026-for-Website.pdf). Hearing type can be chosen on the form: telephone conference, Zoom video conference, in person, or written affidavit (Form 50-283). Fax numbers are published on the Contact page but fax filing of protests is not stated, so it is not listed.",
+      "informal_hearings": {
+        "online": null,
+        "phone": null,
+        "in_person": null,
+        "notes": "Once a protest is filed 'an appraiser will contact you for an informal review' (FAQ and Before Protest Deadline page); resolving it cancels the ARB hearing. The contact method is not specified. Upload evidence at https://protestupload.jcad.org (or mail/hand-deliver); request the District's evidence at evidence@jcad.org or by phone ('Evidence Department'). Formal ARB hearings may be in person, telephone, video conference, or by notarized affidavit."
+      },
+      "notice_timing": "2026 Value Notices and Protest Procedures PDF: Notices of Appraised Value 'will be mailed between April 10, 2026 and May 15, 2026'. FAQ: typically mailed in mid-April for residential, commercial and mineral property; business personal property and industrial notices later, but no later than May 14. Protest deadline: 'the later of May 15, 2026 or 30 days after your notice is mailed', printed on the notice. Hearing notice is sent at least 15 days before the hearing; contact the office if none is received within 14 days of filing.",
+      "bulk_data": {
+        "url": "https://jcad.org/data-download/",
+        "format": "ZIP archives of appraisal roll data (e.g. CERTIFIED-2026_0_PUBLIC.zip, certified 7/20/2026, plus supplement files, latest as supplemented 10/7/2026) and GIS parcel/entity ZIPs; record layout is not described on the page",
+        "notes": "Direct download links, no request form or fee stated on the page. Tax years 2025 and 2026 listed. Open records requests: openrecords@jcad.org."
+      },
+      "correspondence_address": {
+        "mailing": "Jefferson Central Appraisal District, P O Box 21337, Beaumont, TX 77720",
+        "physical": "4610 S 4th St, Beaumont, TX 77705"
+      },
+      "quirks": [
+        "Two offices/phone lines: Beaumont (409-840-9944) and Mid County (409-727-4611); only the Beaumont physical address (4610 S 4th St) is published.",
+        "Hours Monday-Friday 8:00 a.m.-5:30 p.m. ARB schedules appointments on the half-hour from 8:00 a.m. to 4:30 p.m. (FAQ says last appointments 4:30 p.m.) and at least one evening session starting 6:00 p.m.",
+        "To receive the hearing notice and ARB order by email, owners must sign a Request for Electronic Delivery of Communications (taxpayers via portal.jcad.org, agents via agentappeals.jcad.org); otherwise notices go by mail.",
+        "The older eprotest.jcad.org address is superseded by the Taxpayer Portal; the home page labels 'Online Forms', 'Taxpayer Portal' and 'Online Protest' all as portal.jcad.org.",
+        "USPS postmark warning posted by the CAD: postmarks now reflect first automated processing, not drop-off date; the District will not extend deadlines, so mail several days early or get a hand-stamped postmark.",
+        "ARB does not accept evidence stored on a cell phone.",
+        "The 'Protest File Upload' menu item on the site has no link; the evidence upload site named in the 2026 protest PDF is https://protestupload.jcad.org.",
+        "Taxpayer Liaison Officer: jcad-taxpayer-liaison@jcad.org."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/jefferson.php",
+      "sources": [
+        "https://jcad.org/",
+        "https://jcad.org/contact-us/",
+        "https://jcad.org/before-protest-deadline/",
+        "https://jcad.org/faqs/",
+        "https://jcad.org/instructional-videos/",
+        "https://jcad.org/data-download/",
+        "https://jcad.org/wp-content/uploads/2026/04/Notice-and-Protest-Procedures-2026.pdf",
+        "https://jcad.org/wp-content/uploads/2026/09/Important-Property-Tax-Deadlines.pdf",
+        "https://portal.jcad.org/",
+        "https://portal.jcad.org/Account/Register",
+        "https://esearch.jcad.org/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 23,
+      "county": "Smith",
+      "population_2025": 252549,
+      "verification_status": "verified",
+      "cad_name": "Smith County Appraisal District",
+      "cad_abbrev": "SCAD",
+      "website": "https://www.smithcad.org/",
+      "phone": "903-510-8600",
+      "phone_notes": "Same number for Public Inquiry, protests and the Taxpayer Liaison Officer. Fax: 903-510-8621.",
+      "property_search_url": "https://smithcad-search.gsacorp.io/search",
+      "protest_portal": {
+        "name": "Online Protest System (Property Owner Online Protest / Taxpayer Portal)",
+        "url": "https://smithcad-taxpayer.gsacorp.io/login",
+        "requires": "Register a Taxpayer Portal account (name, email, password) and use the online protest ID printed on the Notice of Appraised Value (or contact the CAD to be assigned an ID). Agents use https://smithcad-protests.gsacorp.io/agent-login.",
+        "short_name": "Online Protest"
+      },
+      "filing_methods": [
+        "online"
+      ],
+      "filing_notes": "Protest Process page: a protest must be made 'in writing'; it need not be the official form (Form 50-132 is on the Forms page) and 'a letter may be submitted' stating the owner's name, identifying the property and indicating dissatisfaction. The page states the online protest system as the only channel by name and does not state whether paper protests are accepted by mail, fax, email or drop-off, so only 'online' is listed. The CAD publishes fax 903-510-8621 and a mailing/physical address (245 SSE Loop 323, Tyler, TX 75702) but does not tie them to protest filing; call 903-510-8600 to confirm. No protest email address is published (published emails are inquiry@scad.org and tlo@scad.org).",
+      "informal_hearings": {
+        "online": null,
+        "phone": null,
+        "in_person": true,
+        "notes": "Protest Process page, 'Informal Review': 'Please visit our office if you believe your appraisal is in excess of fair market value or is of unequal value. A member of the appraisal staff will review your property record with you. The appraiser will make an immediate adjustment if an error affecting value is determined.' Online or phone informal reviews are not described. Formal ARB hearings per the FAQ: appear in person or send notarized evidence; telephone/video hearings are not mentioned."
+      },
+      "notice_timing": "No 2026 mailing date is published. Protest Process page: owners must notify the CAD in writing 'by 30 days from the date of the Notice of Appraised Value' (specific deadline printed on the notice); 'If no Notice of Appraised Value was generated by the appraisal district, a protest may still be filed by May 20.' FAQ: a notice is usually only sent if you rendered, the value changed by more than $1,000, or ownership changed. The site's Tax Calendar page is stale (shows 2024: notices mailed April 22, protest deadline May 22).",
+      "bulk_data": {
+        "url": "https://www.smithcad.org/downloads.html",
+        "format": "Zipped CSV ('Standard Data (CSV)') 2026 Certified Appraisal Roll: Residential (Real), Business Personal Property, Mineral, and All Property files",
+        "notes": "Direct ZIP downloads on the page with no fee or request form stated; page warns files are large and the CAD offers no technical support for loading them. GIS data is at https://opendata.smithcountymapsite.org/search?collection=dataset."
+      },
+      "correspondence_address": {
+        "mailing": "Smith County Appraisal District, 245 SSE Loop 323, Tyler, TX 75702",
+        "physical": "245 SSE Loop 323, Tyler, TX 75702"
+      },
+      "quirks": [
+        "The CAD calls itself 'Smith County Appraisal District' (SCAD), not 'Central' appraisal district; email addresses use the scad.org domain (inquiry@scad.org, tlo@scad.org) while the website is smithcad.org.",
+        "Office hours are 8:00 AM to 4:30 PM Monday-Friday (earlier close than most CADs).",
+        "The FAQ's 'Mail to' address for written requests is the same street address, 245 SSE Loop 323; no PO Box is published.",
+        "Property search is hosted on gsacorp.io; a legacy search remains at https://smithcad-legacy.gsacorp.io/ and a 'Hearing Search' for protest hearings is at https://smithcad-search.gsacorp.io/search#tab-search-protests.",
+        "The 'May 20' no-notice protest date on the Protest Process page differs from the usual statutory May 15; rely on the deadline printed on your notice or call the CAD.",
+        "Most ARB hearings are in June and July, before three-member panels; people needing an interpreter should contact the Taxpayer Liaison Officer 72 hours before the hearing.",
+        "Online protests use a separate login from the property search; the taxpayer portal login page shows an HB 2188 disclaimer that sales information is confidential and may be used only as evidence at the protest hearing."
+      ],
+      "table_note": "Only the online protest system is described on the CAD's site; call before relying on mail, fax or e-mail.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/smith.php",
+      "sources": [
+        "https://www.smithcad.org/home.html",
+        "https://www.smithcad.org/contacts.html",
+        "https://www.smithcad.org/protest.html",
+        "https://www.smithcad.org/faq.html",
+        "https://www.smithcad.org/arb.html",
+        "https://www.smithcad.org/forms.html",
+        "https://www.smithcad.org/downloads.html",
+        "https://www.smithcad.org/calendar.html",
+        "https://smithcad-taxpayer.gsacorp.io/login",
+        "https://smithcad-taxpayer.gsacorp.io/register",
+        "https://smithcad-search.gsacorp.io/search"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 24,
+      "county": "Brazos",
+      "population_2025": 249088,
+      "verification_status": "verified",
+      "cad_name": "Brazos Central Appraisal District",
+      "cad_abbrev": "BCAD",
+      "website": "https://brazoscad.org/",
+      "phone": "979-774-4100",
+      "phone_notes": "Main line. 979-774-4196 is the fax number (Contact Us page labels it Fax; the site footer lists it unlabeled next to the main number).",
+      "property_search_url": "https://esearch.brazoscad.org/",
+      "protest_portal": {
+        "name": "Appeals Portal (Taxpayer Portal / Online Appeals)",
+        "url": "https://portal.brazoscad.org/",
+        "requires": "Sign up with the PROPERTY ID and E-FILE PIN printed on the appraisal notice, then add a valid email address, password and cell number. Agents use https://agentappeals.brazoscad.org/.",
+        "short_name": "Appeals Portal"
+      },
+      "filing_methods": [
+        "online",
+        "mail",
+        "email",
+        "in_person"
+      ],
+      "filing_notes": "Important Information notice (2026): protest forms can be dropped off or mailed in, and the CAD provides a drop box at the front entrance of 4051 Pendleton Dr, Bryan. ARB email arb@brazoscad.org: 'Please only send protests, affidavits, or information relevant to a protest to this email address.' Online appeals via the Appeals Portal. The 2026 Brazos CAD Notice of Protest form (Form 50-132 variant) is on the ARB page. Do not file both an online appeal and a paper protest on the same property. Fax 979-774-4196 is published but fax filing of protests is not stated, so it is not listed.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": true,
+        "notes": "Per CAD: 'The electronic protest through the online appeals portal is considered the informal meeting'; do not come in after filing online. Walk-in informal meetings at the BCAD office (first-come, first-served) ran April 22 through May 15, Mon-Fri 9-11 a.m. and 1-4 p.m.; scheduled informal meetings began May 19 (check the box on the protest form to request one). The online-appeals instructions say 'If you want to speak to someone in person or on the phone, please do not file an online appeal', which implies phone contact is available to paper filers; no phone-meeting procedure is published. Online offers must be answered within 2 days or the protest goes to a formal hearing; an accepted offer cannot be withdrawn."
+      },
+      "notice_timing": "No notice mailing date is published on the pages read. The 2026 Important Information notice says walk-in informal meetings began April 22 and ran through May 15 and that the protest deadline is not extended by an informal meeting: 'the deadline to file a protest is on your notice of appraised value.' Formal hearing information can be delivered by first-class mail, certified mail or email (chosen in Section 6 of the protest form).",
+      "bulk_data": {
+        "url": "https://brazoscad.org/certified-data-downloads/",
+        "format": "Compressed ZIP exports of the certified appraisal roll by year (2016-2026), with a 'File Layout Reference - Updated 7.2026' ZIP",
+        "notes": "Direct download links; no fee or request form stated. CAD says no technical support is provided. GIS data page: https://brazoscad.org/tax-information/gis/. Public Information Act and other data requests must be emailed to pia@brazoscad.org."
+      },
+      "correspondence_address": {
+        "mailing": "Brazos Central Appraisal District, 4051 Pendleton Dr., Bryan, TX 77802-2465",
+        "physical": "4051 Pendleton Dr., Bryan, TX 77802-2465"
+      },
+      "quirks": [
+        "No separate PO Box or mailing address is published; the street address 4051 Pendleton Dr. is the only address listed.",
+        "Online appeals need an email address for ALL correspondence; agents do NOT receive portal emails and must monitor the portal.",
+        "Formal hearings: in person, telephone conference, videoconference, or written affidavit (choose in Section 5 of the protest form). Phone/video hearings require written notice to the ARB at least 5 days before (10 days for agents); the hearing call-in number published in the 2026 procedures is (979) 704-6953.",
+        "All evidence for formal hearings must be electronic: send to evidence@brazoscad.org or upload in the portal at least 24 hours before the hearing, or have it scanned at the office. Hearing reschedule requests must be in writing to resch@brazoscad.org.",
+        "USPS postmark warning posted by the CAD: postmark date (not receipt date) governs timeliness but may now be a regional-facility date; mail several days early, get a hand-canceled postmark, or use certified mail/drop box.",
+        "Mineral and industrial account valuations are handled by Capitol Appraisal Group (www.cagi.com); business personal property questions go to bpp@brazoscad.org; exemptions to exemptions@brazoscad.org.",
+        "Portal users who did not use the new portal in 2024 or 2025 must create a new user ID.",
+        "Hours Monday-Friday 8:30 a.m.-5:00 p.m."
+      ],
+      "table_note": null,
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/brazos.php",
+      "sources": [
+        "https://brazoscad.org/",
+        "https://brazoscad.org/contact-us/",
+        "https://brazoscad.org/arb/",
+        "https://brazoscad.org/certified-data-downloads/",
+        "https://brazoscad.org/calendar/",
+        "https://brazoscad.org/address-change-request/",
+        "https://brazoscad.org/wp-content/uploads/2026/04/2026-online-protest-instructions.pdf",
+        "https://brazoscad.org/wp-content/uploads/2026/04/2026-Important-Information-updated-3.25.26.pdf",
+        "https://brazoscad.org/wp-content/uploads/2026/02/2026-Telephone-Videoconference-Hearing-Procedures-.pdf",
+        "https://brazoscad.org/wp-content/uploads/2026/04/50-132-Protest-Over-120k.pdf",
+        "https://portal.brazoscad.org/",
+        "https://esearch.brazoscad.org/"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    },
+    {
+      "population_rank": 25,
+      "county": "Ellis",
+      "population_2025": 240867,
+      "verification_status": "verified",
+      "cad_name": "Ellis Appraisal District",
+      "cad_abbrev": "EAD",
+      "website": "https://www.elliscad.org/",
+      "phone": "972-937-3552",
+      "phone_notes": "Toll-free 1-866-348-3552 (About Us page). Mon-Fri 8:00 AM-5:00 PM. Fax 972-937-1618. General e-mail ecad@elliscad.com (note .com domain). Do not confuse with the Ellis County Tax Office (302 N. Monroe St., Waxahachie, 972-825-5150), which is a separate office that collects taxes.",
+      "property_search_url": "https://www.elliscad.org/property-search",
+      "protest_portal": {
+        "name": "Public Portal",
+        "url": "https://www.elliscad.org/public-portal/sign-in",
+        "requires": "Owner login/account (create a login from the sign-in page); to file, click the protest icon, open the Action menu and choose 'Protest Property', then enter the Property ID and PIN number to create the protest (the page does not say where the PIN is printed). Evidence can be submitted at filing or later.",
+        "short_name": "Public Portal"
+      },
+      "filing_methods": [
+        "online"
+      ],
+      "filing_notes": "Only online filing is explicitly described on the EAD site ('File Your Protest' 4-step portal guide). EAD also hosts a Notice of Protest Form and the Comptroller's Property Tax Protest and Appeal Procedures notice (Form 50-195), which say a written notice of protest must be filed with the ARB by the deadline, but the pages read do not say whether written protests may be mailed, hand-delivered, faxed or e-mailed, so those methods are not listed. Contact the office (972-937-3552) before relying on mail/fax/e-mail.",
+      "informal_hearings": {
+        "online": true,
+        "phone": null,
+        "in_person": null,
+        "notes": "Informal meetings are scheduled through the portal ('Schedule Informal Meeting' action; one property at a time) and checked into through the portal on the day; the check-in page says 'If your meeting is virtual, test your video & audio', so virtual meetings are supported. The pages read do not say whether phone or in-person informal meetings are offered."
+      },
+      "notice_timing": "No 2026 appraisal-notice mailing date was found on the EAD pages read. The EAD calendar page (Texas Comptroller tax calendar) states the protest deadline is May 15 (or the 30th day after a notice of appraised value is mailed to the owner, whichever is later) and that April 15 is the rendition deadline. EAD's posted Form 50-195 notice allows late protests for good cause only until the ARB approves the records.",
+      "bulk_data": {
+        "url": "https://www.elliscad.org/appraisal-data-export",
+        "format": "ZIP files of the Public Appraisal Export Certified Appraisal Roll (certified rolls 2015-2026, plus 2015/2016 mineral rolls), with an Appraisal Export Layout spreadsheet; files are linked via Google Drive",
+        "notes": "Direct links, no request form, price not stated. EAD also has a GIS data page (https://www.elliscad.org/gis-data). No technical support provided."
+      },
+      "correspondence_address": {
+        "mailing": "Ellis Appraisal District, PO Box 878, Waxahachie, TX 75168",
+        "physical": "Ellis Appraisal District, 400 Ferris Avenue, Waxahachie, TX 75165"
+      },
+      "quirks": [
+        "Official name is 'Ellis Appraisal District' (EAD), not 'Ellis Central Appraisal District'.",
+        "The EAD instruction pages say 'ELLISCAD.COM/PUBLIC-PORTAL' and the e-mail address uses elliscad.com, but the working site and portal are on elliscad.org (https://www.elliscad.org/public-portal).",
+        "The Ellis County Tax Office (302 N. Monroe St., Waxahachie, 972-825-5150, ellistaxes.com) is separate from the appraisal district; EAD does not set rates or collect taxes.",
+        "Creating a protest in the portal needs both the Property ID and PIN; the portal and property-search screens look the same as the Denton and Tarrant portals.",
+        "Site hosts forms and records on Google Drive; the Notice of Protest form, ARB hearing procedures, a '2026 Ellis ARB Procedures for Telephone' document and unsworn declaration/affidavit forms are listed on https://www.elliscad.org/forms (not opened; links are download-only).",
+        "Per the posted Form 50-195, hearings may be in person, by telephone/video conference or by written affidavit; the hearing type must be indicated on the notice of protest, filed no later than the 5th day before the hearing (10 days if an agent is designated).",
+        "EAD is accepting applications for the next Ellis Appraisal Review Board (homepage announcement)."
+      ],
+      "table_note": "Only online filing is described on the CAD's site; call before relying on mail, fax or e-mail.",
+      "comptroller_directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/ellis.php",
+      "sources": [
+        "https://www.elliscad.org/",
+        "https://www.elliscad.org/contact-us",
+        "https://www.elliscad.org/about-us",
+        "https://www.elliscad.org/file-your-protest",
+        "https://www.elliscad.org/schedule-your-informal-appointment",
+        "https://www.elliscad.org/meeting-check-in",
+        "https://www.elliscad.org/online-portal-instructions",
+        "https://www.elliscad.org/public-portal",
+        "https://www.elliscad.org/property-search",
+        "https://www.elliscad.org/calendar",
+        "https://www.elliscad.org/appraisal-data-export",
+        "https://www.elliscad.org/forms",
+        "https://drive.google.com/file/d/1b_uEMigG3pVdLest7Tp3jKUtN7ZpYiqi/view"
+      ],
+      "verified_date": "2026-10-08",
+      "confidence": {},
+      "v1_check": null
+    }
+  ]
+}

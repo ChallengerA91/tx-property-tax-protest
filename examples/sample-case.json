@@ -1,0 +1,313 @@
+{
+  "_comment": "Fictional homestead sample. The address, people, phone numbers and the property and market figures are invented. Exemption amounts, cites and deadlines follow references/law-and-figures.md and deadlines.md.",
+  "path": "homestead",
+  "tax_year": 2027,
+  "county": "Example County",
+  "prepared_on": "2027-04-20",
+  "cad": {
+    "name": "Example County Appraisal District",
+    "address": "100 Appraisal Way, Exampleville, TX 75000",
+    "phone": "555-0100",
+    "website": "www.example-cad.invalid",
+    "protest_addressee": "Appraisal Review Board"
+  },
+  "filing": {
+    "methods": [
+      {
+        "method": "Online",
+        "detail": "Use the district's online filing system if it has one, and keep the confirmation."
+      },
+      {
+        "method": "Mail",
+        "detail": "Mail the protest so it is postmarked on or before the last day (Tax Code §1.08); use a method that gives a dated receipt."
+      },
+      {
+        "method": "In person",
+        "detail": "Deliver the protest to the district office and ask for a dated copy."
+      }
+    ],
+    "hearing_documents": [
+      "Your written request for the district's evidence, with proof of the date you sent it"
+    ],
+    "notes": [
+      "Ask the chief appraiser in writing for the district's evidence when you file. Information you request that is not delivered at least 14 days before the hearing cannot be used by the district (Tax Code §41.461; §41.67(d))."
+    ]
+  },
+  "notice_date": "2027-04-01",
+  "owner": {
+    "name": "Pat Sample",
+    "mailing_address": "123 Example Street, Exampleville, TX 75000",
+    "phone": "555-0142",
+    "email": "pat.sample@example.invalid"
+  },
+  "subject": {
+    "address": "123 Example Street, Exampleville, TX 75000",
+    "cad_account": "R000123456",
+    "legal_description": "Lot 12, Block 3, Sample Meadows Phase 2",
+    "subdivision": "Sample Meadows",
+    "sqft": 2100,
+    "year_built": 2005,
+    "beds": 4,
+    "baths": 2.5,
+    "lot_sqft": 8400,
+    "appraised_value": 465000,
+    "land_value": 95000,
+    "improvement_value": 370000,
+    "value_history": [
+      {
+        "year": 2025,
+        "value": 420000
+      },
+      {
+        "year": 2026,
+        "value": 440000
+      }
+    ],
+    "purchase_price": 428000,
+    "purchase_date": "2026-03-12"
+  },
+  "legal_basis": {
+    "market_value_cite": "Tax Code §41.41(a)(1)",
+    "unequal_cite": "Tax Code §41.41(a)(2)",
+    "protest_form": "Form 50-132, Property Owner's Notice of Protest (the form is optional; counties under 120,000 population use Form 50-132-A)",
+    "valuation_date": "2027-01-01"
+  },
+  "tax_rates": {
+    "total": 2.15,
+    "school": 1.05,
+    "source": "Sample tax rate sheet for the Exampleville taxing units"
+  },
+  "exemptions": {
+    "on_file": [
+      {
+        "name": "School-district residence homestead exemption",
+        "amount": 140000,
+        "applies_to": "school",
+        "cite": "Tax Code §11.13(b)"
+      }
+    ],
+    "eligible": [
+      {
+        "name": "Over-65 or disabled additional school exemption",
+        "amount": 60000,
+        "applies_to": "school",
+        "cite": "Tax Code §11.13(c)",
+        "how_to_claim": "The district must grant it without an application if your birth date is already in its records and you have the general homestead exemption. Otherwise file Form 50-114 with the appraisal district (not the Comptroller) with a copy of your Texas driver's license or state ID showing the property address. Apply no later than the first anniversary of turning 65.",
+        "documents": [
+          "Texas driver's license or state ID showing the property address"
+        ],
+        "note": "Effective January 1 of the tax year you turn 65 and applies to the whole year. An owner who is both 65 or older and disabled may choose either exemption, not both."
+      },
+      {
+        "name": "School tax ceiling (tax freeze)",
+        "cite": "Tax Code §11.26(a)",
+        "how_to_claim": "There is no separate application: the ceiling follows the over-65 or disabled school exemption. Ask the school district's tax office for the dollar ceiling that applies to your account.",
+        "note": "Savings depend on future rate and value changes, so they are not included in the estimate."
+      }
+    ]
+  },
+  "comps": [
+    {
+      "address": "118 Sample Court, Exampleville, TX 75000",
+      "price": 438000,
+      "price_type": "sale",
+      "sale_date": "2026-09-18",
+      "sqft": 2050,
+      "year_built": 2006,
+      "beds": 4,
+      "baths": 2.5,
+      "lot_sqft": 8100,
+      "distance_mi": 0.2,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Has pool (subject has none)",
+          "amount": -15000
+        },
+        {
+          "label": "Smaller living area (50 sq ft)",
+          "amount": 2500
+        }
+      ],
+      "notes": "Same builder and floor plan family."
+    },
+    {
+      "address": "207 Demo Lane, Exampleville, TX 75000",
+      "price": 421500,
+      "price_type": "sale",
+      "sale_date": "2026-07-02",
+      "sqft": 2180,
+      "year_built": 2004,
+      "beds": 4,
+      "baths": 2.5,
+      "lot_sqft": 8800,
+      "distance_mi": 0.4,
+      "source": "MLS export",
+      "adjustments": [
+        {
+          "label": "Larger living area (80 sq ft)",
+          "amount": -4000
+        }
+      ]
+    },
+    {
+      "address": "36 Specimen Trail, Exampleville, TX 75000",
+      "price": 409000,
+      "price_type": "sale",
+      "sale_date": "2026-11-05",
+      "sqft": 1960,
+      "year_built": 2003,
+      "beds": 3,
+      "baths": 2,
+      "lot_sqft": 7600,
+      "distance_mi": 0.6,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Smaller living area (140 sq ft)",
+          "amount": 7000
+        },
+        {
+          "label": "One fewer bedroom",
+          "amount": 5000
+        }
+      ],
+      "notes": "Original kitchen; no updates."
+    },
+    {
+      "address": "502 Prototype Place, Exampleville, TX 75000",
+      "price": 449900,
+      "price_type": "sale",
+      "sale_date": "2026-05-21",
+      "sqft": 2240,
+      "year_built": 2007,
+      "beds": 4,
+      "baths": 3,
+      "lot_sqft": 9000,
+      "distance_mi": 0.8,
+      "source": "MLS export",
+      "adjustments": [
+        {
+          "label": "Larger living area (140 sq ft)",
+          "amount": -7000
+        },
+        {
+          "label": "Extra full bath",
+          "amount": -8000
+        },
+        {
+          "label": "Newer by two years",
+          "amount": -4000
+        }
+      ]
+    },
+    {
+      "address": "89 Illustration Way, Exampleville, TX 75000",
+      "price": 401000,
+      "price_type": "sale",
+      "sale_date": "2026-12-10",
+      "sqft": 2090,
+      "year_built": 2002,
+      "beds": 4,
+      "baths": 2,
+      "lot_sqft": 7900,
+      "distance_mi": 0.9,
+      "source": "County records",
+      "adjustments": [
+        {
+          "label": "Half bath fewer",
+          "amount": 4000
+        },
+        {
+          "label": "Older by three years",
+          "amount": 6000
+        }
+      ]
+    },
+    {
+      "address": "14 Mock Orchard Road, Exampleville, TX 75000",
+      "price": 455000,
+      "price_type": "listing",
+      "sqft": 2120,
+      "year_built": 2005,
+      "beds": 4,
+      "baths": 2.5,
+      "distance_mi": 1.1,
+      "source": "Listing site",
+      "adjustments": [
+        {
+          "label": "Listing price, unsold after 140 days",
+          "amount": -22000
+        }
+      ],
+      "notes": "Still on the market; shows buyer resistance at this price."
+    }
+  ],
+  "neighbors": [
+    {
+      "address": "121 Example Street",
+      "appraised_value": 428000,
+      "sqft": 2080,
+      "year_built": 2005
+    },
+    {
+      "address": "125 Example Street",
+      "appraised_value": 441000,
+      "sqft": 2150,
+      "year_built": 2005
+    },
+    {
+      "address": "129 Example Street",
+      "appraised_value": 417000,
+      "sqft": 2040,
+      "year_built": 2004
+    },
+    {
+      "address": "133 Example Street",
+      "appraised_value": 452000,
+      "sqft": 2200,
+      "year_built": 2006
+    },
+    {
+      "address": "122 Example Street",
+      "appraised_value": 436000,
+      "sqft": 2120,
+      "year_built": 2005
+    },
+    {
+      "address": "126 Example Street",
+      "appraised_value": 409000,
+      "sqft": 2010,
+      "year_built": 2003
+    },
+    {
+      "address": "130 Example Street",
+      "appraised_value": 447000,
+      "sqft": 2170,
+      "year_built": 2005
+    },
+    {
+      "address": "134 Example Street",
+      "appraised_value": 470000,
+      "sqft": 2090,
+      "year_built": 2005
+    }
+  ],
+  "market_notes": [
+    "Neighborhood median sale price fell about 3% over the past 12 months (sample figure).",
+    "The subject's purchase on 2026-03-12 for $428,000 was an arm's-length sale after 21 days on the market.",
+    "Online value estimates for the subject cluster near $430,000 (sample figures)."
+  ],
+  "arguments": [
+    "The appraisal rose 5.7% in one year while sales in the neighborhood were flat to down.",
+    "Two recent sales of homes with more living area closed below the appraised value of this property.",
+    "A similar home at 14 Mock Orchard Road has been listed for 140 days without selling."
+  ],
+  "strategy": "both",
+  "argued_value": 425000,
+  "settlement_scenarios": {
+    "low_fraction": 0.5,
+    "high_fraction": 1.0
+  },
+  "disclaimer_text": "Sample output for a fictional property; all names, addresses and figures are invented. This package is general information, not legal, tax, or appraisal advice, and does not guarantee any reduction."
+}

@@ -1,7 +1,7 @@
 {
   "name": "tx-property-tax-protest",
-  "description": "Protest property tax appraisals in Texas — researches comps, builds evidence packages, generates protest letters, and guides you through the DCAD hearing process.",
-  "version": "1.0.0",
+  "description": "Protest a Texas property tax appraisal for a home or a rental: checks the county record and exemptions, builds comps and an evidence package, computes your deadlines, and rehearses the hearing.",
+  "version": "2.0.0",
   "author": {
     "name": "Avedis Minassian"
   }

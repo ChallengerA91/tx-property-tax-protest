@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Keep the GitHub Actions pinned in .github/workflows/*.yml current.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  # Keep the Python packages used by the build scripts current. The pins in
+  # requirements.txt are deliberate (see the determinism note in
+  # references/case-schema.md), so review each bump against the tests.
+  - package-ecosystem: "pip"
+    directory: "/skills/tx-property-tax-protest/scripts"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "deps"
+    labels:
+      - "dependencies"
+      - "python"

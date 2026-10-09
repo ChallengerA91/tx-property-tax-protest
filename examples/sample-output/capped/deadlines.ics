@@ -1,0 +1,101 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//tx-property-tax-protest//deadlines//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Texas property tax protest 2027
+BEGIN:VEVENT
+UID:26c46820-e539-522c-a1fd-9c6ae30cd920@tx-property-tax-protest
+DTSTAMP:20270418T000000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Exemption application deadline
+TRANSP:TRANSPARENT
+DESCRIPTION:The statute says before May 1. The chief appraiser may extend o
+ nce\, by written order\, for good cause\, by up to 60 days. Basis: Tax Cod
+ e §11.43(d)\; §1.06
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Exemption application deadline is in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Exemption application deadline is in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dee6f13d-d3b3-53f8-b51f-0a01e7ce74ec@tx-property-tax-protest
+DTSTAMP:20270418T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:Protest filing deadline
+TRANSP:TRANSPARENT
+DESCRIPTION:Later of May 15 and 30 days after the notice mailing date. A fi
+ rst-class-mail notice is presumed delivered the day it is mailed (rebuttab
+ le). A mailed protest is timely if postmarked on or before the last day. I
+ f your notice or the CAD shows an earlier date\, protest by the earlier da
+ te. Statutory date: Sat\, May 15\, 2027 (Saturday). It moves to the next b
+ usiness day\, Mon\, May 17\, 2027. Some county portals close on the origin
+ al date\; file by the last business day before it to be safe: Fri\, May 14
+ \, 2027. Basis: Tax Code §41.44(a)(1)\; §1.06\; §1.07(c)\; §1.08
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Protest filing deadline is in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Protest filing deadline is in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7aa248af-4959-590b-84a7-a46e5e40d1d4@tx-property-tax-protest
+DTSTAMP:20270418T000000Z
+DTSTART;VALUE=DATE:20270720
+DTEND;VALUE=DATE:20270721
+SUMMARY:ARB records-approval date (not an owner deadline)
+TRANSP:TRANSPARENT
+DESCRIPTION:The ARB must approve the appraisal records by this date. A prot
+ est filed after your deadline can still be heard\, if the ARB finds good c
+ ause\, only until the ARB actually approves the records\, which may be ear
+ lier. Do not treat this as your filing date. A county of 1\,000\,000 or mo
+ re may postpone approval to August 30 by CAD board resolution. Basis: Tax 
+ Code §41.44(b)\; §41.12(a)\, (c)
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARB records-approval date (not an owner deadline) is in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARB records-approval date (not an owner deadline) is in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e973fdb8-9b1a-5cf4-9506-eca1f9f9bafc@tx-property-tax-protest
+DTSTAMP:20270418T000000Z
+DTSTART;VALUE=DATE:20280201
+DTEND;VALUE=DATE:20280202
+SUMMARY:Taxes become delinquent
+TRANSP:TRANSPARENT
+DESCRIPTION:Tax is delinquent if not paid before February 1\, so the last d
+ ay to pay without penalty is January 31. If the bill is mailed after Janua
+ ry 10\, the date is the first day of the next month that gives at least 21
+  days after the mailing date. Read the date on your bill. Basis: Tax Code 
+ §31.02(a)\; §31.03\; §31.04(a)
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Taxes become delinquent is in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Taxes become delinquent is in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

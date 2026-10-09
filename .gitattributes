@@ -1,0 +1,4 @@
+# Keep generated binaries and calendar files byte-exact.
+*.docx binary
+*.xlsx binary
+*.ics -text
